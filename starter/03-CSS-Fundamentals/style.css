@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: serif;
+}
+
+h1 {
+  font-size: 26px; /* tamaño del texto */
+  text-transform: uppercase; /* Transforma el texto en mayúscula, minúscula, etc */
+  font-style: italic; /* estiliza el texto */
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center; /* esta en el centro de su elemento padre */
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5; /* la altura de cada linea, es como un pequeño padding significa que toma el alto del fondo mas la mitad del mismo */
+}
+
+li {
+  font-size: 20px;
+}
+
+/* footer p {
+  font-size: 16px;
+} */
+
+/* article header p {
+  font-style: italic;
+} */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+.related-authors {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none; /* para darles estilo de lista solo a los que tiene esta clase, simbólicamente siguen siendo lista */
+}
