@@ -73,3 +73,51 @@ En el mundo real nunca se usan ID's, siempre clases ya que es bueno prepararse p
 Se tiene primero el model RGB, que posee trees valores siendo `red`, `green` and `blue`, cada uno apuntando de valor de 0 hasta 255, siendo estos mas de 16 millones de combinaciones, rgba, usa un opacity value, llamado alpha, es como cuanto de cada color se quiere.
 
 En los _hexadecimales_ usamos una escala de 0 a ff(es como 255), la diferencia es que en lugar de 0-9, hay 16 combinaciones por cada dos dígitos: `#00 ff ff` con el símbolo _#_
+
+> Escala de Grises
+
+Cuando todos los valores de rgb son 0, quiere decir que es negro rgb(0,0,0), y cuando son 255 o sea su máximo, son blanco rgb(255,255,255), igual en hexadecimal #000000, #FFFFFF
+
+> Border
+
+Para la propiedad _border_ esta se le conoce como una prop especial ya que acepta varios valores, en este orden:
+
+```
+border: 5px solid #1098ad; <!-- Primero el size, luego el estilo del border, y por ultimo el color -->
+```
+
+Están dotted y dashed pero casi no se usan, para usarlos solo en un lado se usaría una variante, asi:
+
+```
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+
+```
+
+## Pseudo-classes
+
+En lugar de:
+
+```
+/* .first-li {
+  font-weight: bold;
+}
+ */
+```
+
+Para seleccionar el primer hijo de una lista, es mejor usar:
+
+```
+li:first-child {
+  font-weight: bold;
+}
+```
+
+Usando la anotación _:_ luego del elemento, también se puede hacer con last child, para el tercero se usaría _:nth-child(3)_ con el numero de hijo que se desee, como impares _:nth-child(odd)_ y con el argumento even para los pares, son `perfectas` cuando los child elements son los mismos, como listas
+
+```
+article p:last-child {
+  /* cuando se combinan varios selectors no trabajan muy bien, funcionan mas para padres o tablas */
+  color: red;
+}
+```
