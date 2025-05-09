@@ -96,6 +96,8 @@ Están dotted y dashed pero casi no se usan, para usarlos solo en un lado se usa
 
 ## Pseudo-classes
 
+Las pseudo-clases en CSS son palabras clave que se añaden a los selectores para aplicar estilos basados en un estado o posición especial de un elemento dentro del documento, sin necesidad de agregar clases o modificar el HTML.
+
 En lugar de:
 
 ```
@@ -121,3 +123,32 @@ article p:last-child {
   color: red;
 }
 ```
+
+## Styling Hyperlinks
+
+Los links tipo anchors, se encuentran en un estado especial, ya que para decir que un link es legitimo, se debe usar el atributo `href`, por lo que en el css, la mejor practica es hacer:
+
+```
+a:link {
+  color: #1098ad;
+  text-decoration: none; <!-- Y se usa el text decoration para establecer el estilo de la linea de abajo, en este caso seria sin ella -->
+}
+```
+
+En el `text-decoration` también es una special prop, por lo que se divide en /_ line, style, color _/
+
+Por ejemplo _text-decoration: underline wavy orangered;_
+
+Si se deja en dos argumentos, CSS inferirá las propiedades que nosotros le establecemos, asi:
+
+```
+ text-decoration: underline orangered;
+```
+
+También existe el _:visited_ que selecciona todos los elementos que el usuario ya ha dado click alguna vez, siempre se deben definir en este orden:
+
+- link
+- visited
+- hover
+- active
+Si es mas fácil, se puede usar el acrónimo *LVHA*
