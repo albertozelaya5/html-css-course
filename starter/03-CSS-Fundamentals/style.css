@@ -1,33 +1,55 @@
 * {
-  border-top: 10px solid #1098ad;
+  /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
 } /* Este selecciona cada elemento especifico de la pagina */
 
 body {
   /* color: red; */
   color: #444;
   font-family: serif;
-  border-top: 10px solid red;
+  border-top: 10px solid #1098ad;
 }
 
-h1,
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+nav {
+  font-size: 18px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+}
+
+/* h1,
 h2,
 h3,
 h4,
 p,
 li {
-  /* font-family: serif; */
-  /* color: #444444; */
+  font-family: serif; 
+   color: #444444;
 }
-
+ */
 h1,
 h2,
 h3 {
-  color: rgba(
-    206,
-    44,
-    162,
-    0.767
-  ); /* Siempre que se nombres dos propiedades, se usara la ultima */
+  color: #1098ad; /* Siempre que se nombres dos propiedades, se usara la ultima */
 }
 
 h1 {
@@ -39,10 +61,13 @@ h1 {
 
 h2 {
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 h4 {
@@ -54,10 +79,18 @@ h4 {
 p {
   font-size: 22px;
   line-height: 1.5; /* la altura de cada linea, es como un pequeño padding significa que toma el alto del fondo mas la mitad del mismo */
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px; /* Esto ya que se ocupa margen pa que se vean */
+  margin-bottom: 20px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 /* footer p {
@@ -86,16 +119,6 @@ li {
   list-style: none; /* para darles estilo de lista solo a los que tiene esta clase, simbólicamente siguen siendo lista */
 }
 
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
-}
-
 /* body{
   background-color: blue;
 } */
@@ -110,6 +133,7 @@ li:first-child {
 }
 li:last-child {
   font-style: italic;
+  margin-bottom: 0;
 }
 
 /* li:nth-child(3) {
@@ -124,10 +148,10 @@ li:last-child {
 } */
 
 /* MissConception: this wont work! */
-article p :first-child {
+/* article p :first-child {
   color: red;
 }
-
+ */
 /* styling links */
 a {
   color: purple;
@@ -156,7 +180,7 @@ a:active {
 
 /* Resolving conflicts */
 #copyright {
-  color: red;
+  /* color: red; */
 }
 
 .copyright {
@@ -167,14 +191,18 @@ a:active {
   color: yellow;
 }
 
-footer p {
+/* footer p {
   color: green !important;
-}
+} */
 
 /* nav a:link, nav p{
   font-size: 18px;
 } */
 
-nav {
-  font-size: 18px;
+div p:first-child {
+  padding-bottom: 20px;
+}
+
+div p:last-child {
+  padding-top: 20px;
 }
