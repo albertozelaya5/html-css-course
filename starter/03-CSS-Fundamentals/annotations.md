@@ -275,3 +275,29 @@ li:last-child {
 Cando tenemos que dos margenes ocupan el mismo espacio en pantalla, se solapan, de modo que si hay un margin-top: 15px del elemento 1, y un margin-top: 20px del elemento de abajo2, no se veran 35px, sino que 20, a esto se le llama como _collapsing margins_, sin embargo en el padding si se suman los sizes de ambos elementos
 
 En resumen, si se quiere crear espacio vertical entre elementos, lo mas recomendable es usar margin-bottom
+
+## Adding Dimensions
+
+Cuando se setea manualmente una anchura, la altura tambien debe ser correspondida, por ello usamos:
+
+```
+.post-img {
+  width: 100%;
+  height: auto;
+}
+```
+
+Cuando se usan porcentajes "100%" suele ser el _porcentaje de anchura del contenedor padre_
+
+## Centering Our Page
+
+Podemos dejar todos los elementos dentro de un elemento padre en comun, para que este cea el centro de dichos:
+
+```
+.container {
+  width: 700px;
+  margin: 0 auto;
+}
+```
+
+Asi, nigun elemento hijo puede sobrpasar ese ancho, y para ello, se deja que margenes de izquierda y derecha tengan el mimso size, estableciendo un _auto_ como size
