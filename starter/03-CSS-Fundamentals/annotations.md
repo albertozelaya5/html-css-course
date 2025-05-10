@@ -301,3 +301,84 @@ Podemos dejar todos los elementos dentro de un elemento padre en comun, para que
 ```
 
 Asi, nigun elemento hijo puede sobrpasar ese ancho, y para ello, se deja que margenes de izquierda y derecha tengan el mimso size, estableciendo un _auto_ como size
+
+## Types of Boxes
+
+Hay elementos que usan todo el ancho posible para que sean visibles, por ejemplo:
+
+```
+<p>hola</p>
+```
+
+> Block elements
+
+- Elements formatted visually as blocks
+- 100& parent's width
+- Vertically, one ofter another
+- Box-model applies as showed
+
+A estos elementos, se les conoce como `inline-elements`, por el otro lado los `block-elements` son todos los elementos que ocupan TODO el espacio que tienen, pero ademas crean saltos de linea tras ellos(margin, padding), o sea no pueden estar uno al lado del otro, o sea que si se ponene al lado no ocuparan todo el espacio que pueden
+
+> Default elements: body, main, header, footer, section, nav, aside, div, h1-h6, p, ul, ol, li, etc
+
+Casi todos los elementos por defecto son `block-elements`, ahora podemos cambiar estas propiedades con la prop `display: block`
+
+> Inline elements
+
+- Occupies only content's space
+- Casuses no line-breaks
+- Box model is different: heights and widths do not apply
+- Paddings and margins only horizontal (left and right)
+
+> Los inline-elements son: a, img, strong, em, button, etc
+
+Los paddings y margins solo se aplican horizontalmente, pero no en el top y bottom
+
+```
+nav a:link {
+  background-color: orangered; /* como son en linea, no ocuparon espacio vertical */
+  margin: 20px;
+  padding: 20px; /* lo que se marca es el fill */
+
+  display: block; /* ocupan todo el espacio que pueden, con margenes verticales */
+}
+```
+
+Ahora, si se hace con una lista
+
+```
+li {
+  display: inline; <!-- Solo ocuparan el espacio que necesitan -->
+}
+```
+
+Ahora, si fuera un `inline-element` que por defecto es block
+
+```
+p {
+  display: inline;
+}
+```
+
+Todo el texto colapsa, ya que dentro de el hay sangrias y margenes que ahora ya no estan
+
+> Inline-block boxes
+
+- Parecen inline desde afuera, pero se comportan como bloques desde adentro
+- Occupies only content's space
+- Casuses no line-breaks
+- Box-model applies as showed
+
+`display: inline-block`
+
+Significa que se le aplican margin y padding, pero por fuera ocupan solamente el espacio que necesitan, no todo el que puedan a diferencia de un block
+
+Tambien se pueden combinar pseudoclases:
+
+```
+nav a:link:last-child {
+  margin-right: 0;
+}
+```
+
+En el estado de href, se toma el ultimo valor y se establece a 0, las imgs realmente se comportan como inline-blocks, si no, no se les podria manualmente ajustar width ni height

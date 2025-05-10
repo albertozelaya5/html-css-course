@@ -4,6 +4,7 @@
   padding: 0;
 } /* Este selecciona cada elemento especifico de la pagina */
 
+/* PAGE SECTIONS */
 body {
   /* color: red; */
   color: #444;
@@ -19,8 +20,8 @@ body {
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
-  margin-bottom: 60px;
-  height: 80px; /* Como se aplica dentro del elemento, se suma mas el borde y padding */
+  margin-bottom: 60px; /* Como se aplica dentro del elemento, se suma mas el borde y padding */
+  /* height: 80px;  */
 }
 
 article {
@@ -53,6 +54,8 @@ li {
    color: #444444;
 }
  */
+
+/* SMALLER ELEMENTS */
 h1,
 h2,
 h3 {
@@ -87,6 +90,7 @@ p {
   font-size: 22px;
   line-height: 1.5; /* la altura de cada linea, es como un pequeño padding significa que toma el alto del fondo mas la mitad del mismo */
   margin-bottom: 15px;
+  /* display: inline; */
 }
 
 ul,
@@ -98,6 +102,7 @@ ol {
 li {
   font-size: 20px;
   margin-bottom: 10px;
+  /* display: inline; */
 }
 
 /* footer p {
@@ -191,6 +196,25 @@ a:active {
 .post-img {
   width: 50%;
   height: auto;
+  margin: 100px;
+}
+
+nav a:link {
+  /* background-color: orangered; */
+  /* como son en linea, no ocuparon espacio vertical */
+  /* margin: 20px; */
+  /* padding: 20px; */
+  /* lo que se marca es el fill */
+
+  /* display: block; */
+  /* ocupan todo el espacio que pueden, con margenes verticales */
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
 }
 
 /* Resolving conflicts */
