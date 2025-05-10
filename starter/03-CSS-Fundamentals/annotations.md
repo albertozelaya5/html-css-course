@@ -220,5 +220,19 @@ body{
 }
 ```
 
-Aquí caso nada del código cambia, debido a que si se hereda una propiedad, cuando se sobre escribe al mismo elemento, esa herencia ya no queda sobre puesta, son los que tienen menor prioridad.
+Aquí caso nada del código cambia, debido a que si se hereda una propiedad, cuando se sobre escribe al mismo elemento, esa herencia ya no queda sobre puesta, `son los que tienen menor prioridad.`
 Lo que se hace es que se pasa el valor a un elemento padre, y este pasa el valor a sus elementos hijos, por lo que no hay un conflicto de clases
+
+No todas las propiedades se heredan, pero si las relacionadas con el texto, pero estas si:
+
+- font-family
+- font-size
+- font-weigth
+- font-style
+- color
+- line-height
+- letter-spacing
+- text-align
+- text-transform
+- text-shadow
+- list-style, etc
