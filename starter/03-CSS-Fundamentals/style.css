@@ -1,11 +1,17 @@
+body {
+  /* color: red; */
+  color: #444;
+  font-family: serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 p,
 li {
-  font-family: serif;
-  color: #444444;
+  /* font-family: serif; */
+  /* color: #444444; */
 }
 
 h1,
@@ -103,6 +109,54 @@ li:last-child {
 /* li:nth-child(odd){
   color: red;
 } */
-li:nth-child(even) {
+/* li:nth-child(even) {
   color: red;
+} */
+
+/* MissConception: this wont work! */
+article p :first-child {
+  color: red;
+}
+
+/* styling links */
+a {
+  color: purple;
+  font-weight: bold;
+}
+/* Se estilizara todos los anchor que tengan el atributo href */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+a:visited {
+  /* color: #777; */
+  color: #1098ad;
+}
+/* line, style, color */
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+/* Resolving conflicts */
+#copyright {
+  color: red;
+}
+
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+footer p {
+  color: green !important;
 }

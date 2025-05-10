@@ -96,6 +96,8 @@ Están dotted y dashed pero casi no se usan, para usarlos solo en un lado se usa
 
 ## Pseudo-classes
 
+Las pseudo-clases en CSS son palabras clave que se añaden a los selectores para aplicar estilos basados en un estado o posición especial de un elemento dentro del documento, sin necesidad de agregar clases o modificar el HTML.
+
 En lugar de:
 
 ```
@@ -121,3 +123,102 @@ article p:last-child {
   color: red;
 }
 ```
+
+## Styling Hyperlinks
+
+Los links tipo anchors, se encuentran en un estado especial, ya que para decir que un link es legitimo, se debe usar el atributo `href`, por lo que en el css, la mejor practica es hacer:
+
+```
+a:link {
+  color: #1098ad;
+  text-decoration: none; <!-- Y se usa el text decoration para establecer el estilo de la linea de abajo, en este caso seria sin ella -->
+}
+```
+
+En el `text-decoration` también es una special prop, por lo que se divide en /_ line, style, color _/
+
+Por ejemplo _text-decoration: underline wavy orangered;_
+
+Si se deja en dos argumentos, CSS inferirá las propiedades que nosotros le establecemos, asi:
+
+```
+ text-decoration: underline orangered;
+```
+
+También existe el _:visited_ que selecciona todos los elementos que el usuario ya ha dado click.
+Asi como _active_ que es el estado en el que los elementos están siendo clickeados
+alguna vez, siempre se deben definir en este orden:
+
+- link
+- visited
+- hover
+- active
+  Si es mas fácil, se puede usar el acrónimo _LVHA_
+
+## Conflicts Between Selectors
+
+Cuando se tiene que se aplican dos estilos:
+
+```
+h1{
+  color: #444444;
+}
+
+.header {
+  color: #1098ad;
+}
+#firstHeader {
+  color: #1098ad;
+}
+```
+
+Se tienen conflictos entre ambos estilos, y la respuesta es, que se aplican todos ellos.
+Cuando tenemos varias declaraciones, lo que importan son los selectors, de esta forma
+
+> !important keyword
+
+Esta es la que mas tiene prioridad, pero debe usarse como ultimo recurso
+
+> Inline Styles
+
+Aunque estos no se deben usar, es seguro que tienen mas prioridad que los Id Selectors
+
+> ID selectors #
+
+Si hay varios de ellos, se aplica el ultimo, si no hay Id selectors, el siguiente seria
+
+> Class (.) or pseudo-class (:) selector
+
+Nuevamente, si hay varios, se selecciona el ultimo aplicado, ahora, si no se tienen ninguno de ellos dos, el siguiente es
+
+> Element selector (p,div,li,etc)
+
+Si hay varios, "", el ultimo de ellos, también hay algo llamado
+
+> Universal selector(\*)
+
+Este se vera hasta después, pero lo importante es que este es el que tiene menos prioridad de todos
+
+A su vez, en un elemento se pueden usar varias clases en conjunto, de esta formaL
+
+```
+<p id="copyright" class="copyright text">Copyright &copy; 2027 by The Code Magazine.</p>
+```
+
+De cualquier modo, vsCode tiene un modo para resolver esos conflictos en el mouse hover, algo llamado _Especificidad del selector: (1, 0, 0)_
+que muestra la prioridad que tiene cada selector
+
+Siempre hacer los selectores lo mas simples posibles, sin tanto anidamiento, ID's ni clases
+
+## CSS Inheritance and the Universal Selector
+
+La herencia quiere decir que se obtienen valores que se pasan de elementos padre a hijos
+
+```
+body{
+  color: red;
+}
+```
+
+Aquí caso nada del código cambia, debido a que si se hereda una propiedad, cuando se sobre escribe al mismo elemento, esa herencia ya no queda sobre puesta, son los que tienen menor prioridad.
+Lo que se hace es que se pasa el valor a un elemento padre, y este pasa el valor a sus elementos hijos, por lo que no hay un conflicto de clases
