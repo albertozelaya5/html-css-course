@@ -1,7 +1,12 @@
+* {
+  border-top: 10px solid #1098ad;
+} /* Este selecciona cada elemento especifico de la pagina */
+
 body {
   /* color: red; */
   color: #444;
   font-family: serif;
+  border-top: 10px solid red;
 }
 
 h1,
@@ -17,7 +22,12 @@ li {
 h1,
 h2,
 h3 {
-  color: rgba(206, 44, 162, 0.767); /* Siempre que se nombres dos propiedades, se usara la ultima */
+  color: rgba(
+    206,
+    44,
+    162,
+    0.767
+  ); /* Siempre que se nombres dos propiedades, se usara la ultima */
 }
 
 h1 {
@@ -159,4 +169,12 @@ a:active {
 
 footer p {
   color: green !important;
+}
+
+/* nav a:link, nav p{
+  font-size: 18px;
+} */
+
+nav {
+  font-size: 18px;
 }

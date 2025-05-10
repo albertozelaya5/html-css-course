@@ -236,3 +236,7 @@ No todas las propiedades se heredan, pero si las relacionadas con el texto, pero
 - text-transform
 - text-shadow
 - list-style, etc
+
+Ahora, podemos usar el `universal selector`, que a diferencia del body selector este afecta a todas las propiedades, mientras que el body no se hereda, solo algunas propiedades muy especificas como el color, etc, pero es el que _menos_ tiene prioridad de todos
+
+El `universal selector`, simplemente se aplica a todos los elementos, sin herencia incluida, ahora en el body solo se heredan algunas propiedades como _color_ y _font-family_
