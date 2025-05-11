@@ -507,3 +507,25 @@ Ahora que tenemos esa duda, MDN nos dice que
 [Text Align MDN](https://developer.mozilla.org/es/docs/Web/CSS/text-align)
 
 Esto setea de manera horizontal alineandolo este contenido dentro de un block-element
+
+## Debugging and Asking Questions
+
+Debuggear significa, encontrar y arreglar errores en nuestro codigo
+Para esto, cuando se encuentra algun error, se debe ver donde comienza ese error.
+
+Una buena pagina para detectar si hay errores en nuestro html es:
+
+[Html Checker](https://validator.w3.org/nu/)
+[Code Comparer](https://www.diffchecker.com/)
+
+Por ejemplo en CSS, si tenemos un salector bastante largo que aplica pseudo clases, es usalmente ese selector el que tiene mayor prioridad, por ejemplo:
+
+```
+.main-header nav a:link {
+  margin-top: 100px;
+}
+```
+
+Por lo que es recomendable, evitar selectores tan grandes, manten la especificidad basica
+
+Ahora, si realmente luego de todas estas herramientras uno todavia tiene estas preguntas, lo mejor es consultar en stack overflow, o en udemy usando codePen o codeSandBox
