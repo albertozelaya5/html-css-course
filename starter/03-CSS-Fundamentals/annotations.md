@@ -483,3 +483,27 @@ h2 {
 Tambien, se tiene que en la position-absolute, al declarar left, right, etc, se hace desde ese lado la posicion, pero si se hace negativo, se sacara de ese padre..
 
 Basicamente before se convertira en el primer elemento hijo del seleccionado, heredando por defecto algunas de sus propiedades
+
+## Googlind and Reading Documentation
+
+En caso cuando no sepas algo `esta bien, y es completamente normal`, lo que se hace es buscar en google o en la documentacion, por ejemplo con este prefijo:
+
+- css property to add mouse cursor to button
+
+Sitios muy buenos suelen ser
+
+- Css tricks
+- MDN
+- StackOverflow
+
+Hasta Jonas(el creador del curso) googlea todos los dias, y eso no esta mal, los buenos programadores saben donde buscar la informacion
+
+Es como por ejemplo, querer centrar varios `inline-elements` con text-align: center, no va a funcionar y tiene sentido, ya que por defecto usan todo el espacio que necesita le contenido, por lo que no hay algo relacionado con que centrarlo.
+
+Por lo que, luego de buscar en StackOverflow, la solucion correcta es poner ese text-align: center, en el elemento padre, y esto tiene sentido, ya que ahora lo centramos en relacion a un elemento del cual no ocupan todo su espacio por defecto.
+
+Ahora que tenemos esa duda, MDN nos dice que
+
+[Text Align MDN](https://developer.mozilla.org/es/docs/Web/CSS/text-align)
+
+Esto setea de manera horizontal alineandolo este contenido dentro de un block-element
