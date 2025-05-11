@@ -431,3 +431,55 @@ Asi, el hijo estara hasta abajo pero del elemento padre, no de lo visible.
 > Siempre sera el primer elemento padre del que tenga position relative, que se colgara para ese absolute del hijo
 
 No es recomendable abusar de este recurso, sino usarlo para cosas pequeñas
+
+## Pseudo-elements
+
+Son elementos que no existen en el HTML, pero que podemos estilizar en el CSS, como la primera letra de una palabra, etc, y para hacerlo usamos "::", y para pseudo clases ":", de esta forma:
+
+```
+h1::first-letter{
+  font-style: normal;
+  margin-right: 5px;
+}
+```
+
+Se tienen de pseudo elementos:
+
+- ::first-letter
+- ::first-line
+
+> adjacent element
+
+Tenemos el adjacent element, que es el elemento que viene justo despues o al lado de otro hermano, hijos de un mismo padre, siendo seleccionados con un +
+
+```
+h3 + p::first-line {
+  color: red;
+}
+```
+
+Es como decir "todos los p que esten siguientes al h3"
+Tambien tenemos los pseudo after y before, que es crear un elemento antes o despues del que se hace referencia:
+
+```
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+}
+```
+
+El contenido que debe ser obligatorio es el `content` aunqune este vacio, por defecto se comportan como `inline-elements`, ahora, este por defecto es hijo del elemento a partir del que fue creado:
+
+```
+h2 {
+  background-color: orange;
+  position: relative;
+  right: -25px;
+}
+```
+
+Tambien, se tiene que en la position-absolute, al declarar left, right, etc, se hace desde ese lado la posicion, pero si se hace negativo, se sacara de ese padre..
+
+Basicamente before se convertira en el primer elemento hijo del seleccionado, heredando por defecto algunas de sus propiedades
