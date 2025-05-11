@@ -243,6 +243,10 @@ El `universal selector`, simplemente se aplica a todos los elementos, sin herenc
 
 ## The CSS Box Model
 
+El box model completo se aplica:
+
+> width + padding + border + margin
+
 El padding es un espacio que podemos crear dentro de los elementos, mientras que margin lo hace al rededor del elemento, tambien tenemos el:
 
 > Fill area
@@ -312,6 +316,8 @@ Hay elementos que usan todo el ancho posible para que sean visibles, por ejemplo
 
 > Block elements
 
+- width + padding + border + margin(El box model completo se aplica)
+- Todo afecta tanto horizontal como verticalmente
 - Elements formatted visually as blocks
 - 100& parent's width
 - Vertically, one ofter another
@@ -326,6 +332,7 @@ Casi todos los elementos por defecto son `block-elements`, ahora podemos cambiar
 > Inline elements
 
 - Occupies only content's space
+- NO aceptan bien width y height (no tienen efecto). Sí aplican horizontalmente (padding-left, padding-right, margin-left, margin-right)
 - Casuses no line-breaks
 - Box model is different: heights and widths do not apply
 - Paddings and margins only horizontal (left and right)
@@ -382,3 +389,45 @@ nav a:link:last-child {
 ```
 
 En el estado de href, se toma el ultimo valor y se establece a 0, las imgs realmente se comportan como inline-blocks, si no, no se les podria manualmente ajustar width ni height
+
+## Absolute Positioning
+
+> Normal Flow
+
+- Default positioning (position: relative)
+- Elements "in flow"
+- Elements are simply laid out according to theis order in the HTML code
+
+> Absolute Positioning
+
+- Nos permite posicionar elementos en cualquier lugar de la pagina
+- position: absolute
+- El elemento se retira del flujo normal, decimos que esta "out of flow"
+- Pierde cualquier impacto en los elementos cercanos
+- Pueden ser solapados
+- Usamos top, left, bottom or right, y va a ocurrir en relacion a un contenedor relativo
+- Se posiciona _en relacion_ al viewport, o sea `la parte visible de la pagina`
+
+Si tomamos un elemento, y lo ponemos en posicion abosluta:
+
+```
+button {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+```
+
+Lo hara, pero en relacion al viewport(o sea a la parte visible de la pagina), pero usualmente, queremos que este absoluto en relacion a algo, a un elemento padre, asi que, tenemos que setear al padre en (position: relative), para que el hijo sea un absoluto de la posicion del padre:
+
+```
+body{
+  position: relative;
+}
+```
+
+Asi, el hijo estara hasta abajo pero del elemento padre, no de lo visible.
+
+> Siempre sera el primer elemento padre del que tenga position relative, que se colgara para ese absolute del hijo
+
+No es recomendable abusar de este recurso, sino usarlo para cosas pequeñas
