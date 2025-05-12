@@ -230,3 +230,36 @@ El elemento donde lo queremos usar(padre) se llama `Flex container`, seteando su
 - flex-basis: auto, to define an item's width, instead of the width prop
 - flex: 0 1 auto, Recommended shorthand flow flex-groe, shrink, basis
 - order: 0, controle el orden de los items, -1 los hace primeros, 1 los hace last
+
+## Spacing and Aligning Flex items
+
+`align-items` hará que todos los elementos dentro del container tengan la misma alineación
+
+Ahora, para alinear un solo elemento diferente a los demás, se usa:
+
+```
+.el--1{
+  align-self: flex-start;
+}
+.el--5{
+  align-self: stretch(behavior default) que todos ocupen todo el espacio disponible verticalmente,
+}
+```
+
+También, para que un elemento aparezca antes que los demás, se debe ajustar su prop individual `order`, por defecto todos tienen 0, asi que mientras menor, mas antes sale:
+
+```
+.el--6{
+  order: -1;
+}
+```
+
+Por ultimo, para adicionar un espacio horizontal entre cada hijo, se usa gap en el elemento padre:
+
+```
+.container {
+  /* FLEXBOX */
+  display: flex;
+  gap: 30px;
+}
+```
