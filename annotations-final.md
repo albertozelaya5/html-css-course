@@ -295,7 +295,7 @@ Cuando se usan porcentajes "100%" suele ser el _porcentaje de anchura del conten
 
 ## Centering Our Page
 
-Podemos dejar todos los elementos dentro de un elemento padre en comun, para que este cea el centro de dichos:
+Podemos dejar todos los elementos dentro de un elemento padre en común, para que este sea el centro de dichos:
 
 ```
 .container {
@@ -304,7 +304,7 @@ Podemos dejar todos los elementos dentro de un elemento padre en comun, para que
 }
 ```
 
-Asi, nigun elemento hijo puede sobrpasar ese ancho, y para ello, se deja que margenes de izquierda y derecha tengan el mimso size, estableciendo un _auto_ como size
+Asi, ningún elemento hijo puede sobrepasar ese ancho, y para ello, se deja que margenes de izquierda y derecha tengan el mismo size, estableciendo un _auto_ como size
 
 ## Types of Boxes
 

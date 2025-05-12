@@ -2,10 +2,10 @@
 
 ## Que es un Layout?
 
-Layout es la manera en que texto, imagenes y otro contenido se coloca y organiza en una pagina web.
+Layout es la manera en que texto, imágenes y otro contenido se coloca y organiza en una pagina web.
 
 - Le da a al pagina una estructura visual, en el cual agrupamos nuestro contenido
-- _Building Layout_: agrupar elementos en una estructura visual, en lugar de simplemente ponerlos uno detras o despues de otro(normal-flow)
+- _Building Layout_: agrupar elementos en una estructura visual, en lugar de simplemente ponerlos uno detrás o después de otro(normal-flow)
 
 El diseño existe para hacer una webpage entendible y visualmente mas agradable
 
@@ -13,17 +13,17 @@ Hay dos tipos de Layouts
 
 ### Page Layout
 
-- Disposicion de elementos, piezas grandes de contenido dentro de un website
-  Ahora estas piezas grandes estan formadas de componentes, que tienen algo de diseño(layout), que necesitan ser organizados de alguna manera
+- Disposición de elementos, piezas grandes de contenido dentro de un website
+  Ahora estas piezas grandes están formadas de componentes, que tienen algo de diseño(layout), que necesitan ser organizados de alguna manera
 
-Por lo que podriamos decir, que esos componentes tambien tienen un layout, ahora, para crearlos de manera antigua se usa una propiedad llamada `float layout`
+Por lo que podríamos decir, que esos componentes también tienen un layout, ahora, para crearlos de manera antigua se usa una propiedad llamada `float layout`
 
 > Floats
 
 - float:left, right
 - Cuando un elemento tiene esto, se remueve del normal flow, out of flow
-- Pero estos todavia tienen efecto en elementos alrededor de ellos
-- Text and inline elements will wrap arrount the floated element(texto e inline-elements se ajustaran al rededor de este elemento)
+- Pero estos todavía tienen efecto en elementos alrededor de ellos
+- Text and inline elements will wrap around the floated element(texto e inline-elements se ajustaran al rededor de este elemento)
 - El container element no ajustara su altura en base al elemento flotado
 
 > Flexbox
@@ -54,11 +54,11 @@ Por lo que un elemento que este al lado como
 
 Comenzara ese padding desde donde esta la imagen, ya que no la cuenta, como un position absolute, es como si ambos flotaran, como si ya no estuvieran en la pagina, por lo que elementos padres que toman en cuenta los hijos para sus propiedades, pueden desaparecer o verse perjudicados.
 
-A este fenomeno se le conoce como `collapsing-elements`, porque los hijos de un padre flotan, que es como si no tuvieran hijos
+A este fenómeno se le conoce como `collapsing-elements`, porque los hijos de un padre flotan, que es como si no tuvieran hijos
 
 ## Clearing Floats
 
-El primer metodo es por medio de un div vacio, que se establece una prop clear
+El primer método es por medio de un div vació, que se establece una prop clear
 
 ```
 .clear{
@@ -67,11 +67,11 @@ El primer metodo es por medio de un div vacio, que se establece una prop clear
 ```
 
 Que se pone _both_ si se quiere limpiar sus hermanos tanto right como left
-Ahora, cuando se tienen tablas con varias columnas, esto no es recomendable, puesto que se crearian demasaiados divs, afectando al HTML, por loq ue tambien esta
+Ahora, cuando se tienen tablas con varias columnas, esto no es recomendable, puesto que se crearían demasiados divs, afectando al HTML, por loq ue también esta
 
-> clearfix trick
+> ClearFix trick
 
-Que consiste en agregar esta clase clearfix al elemento que sera el colapsado porque todos sus hijos usan float, y en su CSS, agregar un nuevo pseudo elemento como su ultimo hijo:
+Que consiste en agregar esta clase ClearFix al elemento que sera el colapsado porque todos sus hijos usan float, y en su CSS, agregar un nuevo pseudo elemento como su ultimo hijo:
 
 ```
 .clearfix::after {
@@ -82,7 +82,7 @@ Que consiste en agregar esta clase clearfix al elemento que sera el colapsado po
 
 Aunque `after` se crea como un ultimo hijo del elemento que se pone ::, y por defecto es un `inline-element` y clear solo funciona en los block elements
 
-Un ejemplo para una sidebar podria ser este:
+Un ejemplo para una sidebar podría ser este:
 
 ```
 article {
@@ -97,21 +97,21 @@ footer {
 }
 ```
 
-La cuestion es que `siempre` que se ponga float, los elementos que se pongan despues, van a flotar al rededor del que tiene esa propiedad, en este caso el footer con el aside.
+La cuestión es que `siempre` que se ponga float, los elementos que se pongan después, van a flotar al rededor del que tiene esa propiedad, en este caso el footer con el aside.
 Por ello, el `clear` detiene que un elemento flote al rededor del que tiene esa propiedad
 
 ## Border-box
 
-Las listas por defecto puednen tener algun margen, siempre es bueno sersiorarse de quitarlos para el estilo.
+Las listas por defecto pueden tener algún margen, siempre es bueno cerciorarse de quitarlos para el estilo.
 
-Cuando queremos espacio dentro de un elemento, no deberiamos usar margin, sino padding, para elementos dentro de componentes por ejemplo.
+Cuando queremos espacio dentro de un elemento, no deberíamos usar margin, sino padding, para elementos dentro de componentes por ejemplo.
 
-Ahora, el contenedor padre comun de dos elementos puede tener un ancho total, y aunque esten en float, si se pasan de ese ancho con el `box-model`, terminan tirando un elemento abajo de otro para que quepan, ya que el box-behavior por defecto es sumar el padding al width original
+Ahora, el contenedor padre común de dos elementos puede tener un ancho total, y aunque estén en float, si se pasan de ese ancho con el `box-model`, terminan tirando un elemento abajo de otro para que quepan, ya que el box-behavior por defecto es sumar el padding al width original
 
 > El box-model por defecto es: border + padding + width
 > box-sizing: content-box es su prop por defecto
 
-Seria genial si definieramos el size, y el padding o el border se ajustaran a ese size final, bueno, esto se puede lograr con:
+Seria genial si definiéramos el size, y el padding o el border se ajustaran a ese size final, bueno, esto se puede lograr con:
 
 > box-sixing: border-box
 
@@ -129,3 +129,72 @@ Cuando se agrega un padding, siempre se restara al area de contenido(content-are
 ```
 
 Esto es lo que cada desarrollador suele hacer, poner buenas bases al comportamiento por defecto
+
+## Introduction to Flexbox
+
+```
+<a href="flexbox.html">Flexbox</a>
+```
+
+El `anchor` se puede usar para ir a elementos externos(paginas web etc), como para ir a archivos que se tienen locales, con la propiedad `href`
+
+Para poner el _display: flex_, se establece en el container que tiene a los hijos:
+
+```
+
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        height: 250px;
+      }
+      .container {
+        /* FLEXBOX */
+        display: flex;
+      }
+    </style>
+    <div class="container">
+      <div class="el el--1">HTML</div>
+      <div class="el el--2">and</div>
+      <div class="el el--3">CSS</div>
+    </div>
+```
+
+> Ajustar verticalmente
+
+Y estos hijos, ocuparan por defecto solo el espacio que necesitan, al menos de lo ancho, ya que de lo alto, todos los elementos son tan altos como el elemento mas alto, por lo que, si un elemento se establece mas alto del normal(block), todos los demás tendrán ese nuevo size, sino, por defecto, ocuparan solo el espacio necesario.
+
+Ahora, se pueden alinear verticalmente con _align-items: center_, y cuando esta prop se aplique, si bien siempre el container tomara como size el elemento de altura mas grande, todos los demás solo ocuparan la necesaria, y cual elementos inline, se alinearan verticalmente en medio:
+
+- align-items: center (eje y centro)
+- align-items: flex-start(inicio)
+- align-items: flex-end(fin)
+- align-items: stretch(por default, todos los elementos serán tan altos como el elemento mas alto)
+
+> Ajustar horizontalmente
+
+Ahora, para hacer lo mismo pero de forma horizontal, de modo que todos los hijos del padre _container_ tengan el mismo espacio a la izquierda y a la derecha, se usa:
+
+- justify-content: center;
+
+Cabe aclarar que esto funciona con los hijos, no con el texto de los hijos.
+También, el espacio se puede distribuir uniformemente con `justify-content: space-evenly`
+
+### Anotación de refuerzo
+
+para centrar elementos horizontalmente, se debe primero definir la anchura del padre en común, y los hijos(debe ser block asi como los hijos). Ya que, este margin horizontal auto toma como referencia la anchura del padre, y el espacio que sobre en el hijo, lo distribuye uniformemente:
+
+```
+article {
+  width: 200px;
+}
+.p {
+  width: 40px;
+  margin: 0 auto;
+}
+```

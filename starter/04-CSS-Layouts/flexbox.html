@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flexbox</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
       .el--1 {
         background-color: blueviolet;
       }
@@ -14,7 +18,7 @@
       }
       .el--3 {
         background-color: green;
-        height: 150px;
+        height: 250px;
       }
       .el--4 {
         background-color: goldenrod;
@@ -36,11 +40,23 @@
         /* STARTER */
         font-family: sans-serif;
         background-color: #ddd;
-        font-size: 40px;
+        font-size: 30px;
         margin: 40px;
 
         /* FLEXBOX */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
       }
+
+      /* article {
+        width: 200px;
+      }
+
+      .conchil {
+        width: 40px;
+        margin: 0 auto;
+      } */
     </style>
   </head>
   <body>
@@ -54,5 +70,9 @@
       <div class="el el--7">to</div>
       <div class="el el--8">learn</div>
     </div>
+
+    <!-- <article>
+      <p class="conchil">holis</p>
+    </article> -->
   </body>
 </html>
