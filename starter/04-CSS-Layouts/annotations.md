@@ -263,3 +263,26 @@ Por ultimo, para adicionar un espacio horizontal entre cada hijo, se usa gap en 
   gap: 30px;
 }
 ```
+
+## The Flex Property
+
+Cuando seteamos el size de los flex-items(items que están dentro del flexbox) no solemos usar width, sino en su lugar usamos `flex-basis`.
+Cuando el elemento(flex-item) tiene un width, pero el contenido es mas grande, se ajusta para el contenido, ya que flex-basis no es como un width rígido, es mas como la recomendación que le damos al navegador para determinar la longitud optima
+
+Aunque los ajustemos asi:
+
+```
+.el {
+  /* DEFAULTS */
+  flex-basis: 200px;
+}
+```
+
+Flex-box hará que los elementos encajen con su contenido, y respeten el contenedor, por lo que si la anchura combinada lo pasa, estos no lo sobrepasaran
+
+- flex-shrink: 1 - significa que si no hay espacio suficiente en el container para mostrar el width total de los elementos, el mismo container podrá encojerlos
+- flex-shrink: 0 - Hará que los elementos si tengan el basis(width) establecido, aunque ya no encaje(sobrepase) el container, no es aconsejarle, pero a veces necesario
+
+> flex-shrink: 0 Es como decirle "Hey, no me importa que sobrepases el ancho del container"
+
+En resumen, lo que hace es determinar si el container(flexbox) puede contener dentro el ancho de todos los elementos
