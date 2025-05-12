@@ -208,7 +208,7 @@ Es un conjunto de propiedades CSS relacionadas, hechos para construir diseños d
 - Resuelve problemas como el alineamiento vertical y crea columnas de igual tamaño
 - Es perfecto para reemplazar los antiguos floats, dándonos un HTML y CSS mucho mas limpios
 
-### Conceptos de Flexbox importantes
+### Conceptos de Flexbox importantes (Dentro del container flex-item)
 
 El elemento donde lo queremos usar(padre) se llama `Flex container`, seteando su propiedad a _display: flex_, haciendo esto, todos los hijos de ese padre se llamaran `Flex items`, ahora la dirección donde estos elementos se disponen es llamada `main-axis`(horizontal), y el vertical `cross-axis`, y es importante conocerlos ya que los podemos alinear en base a estos ejes.
 
@@ -266,6 +266,10 @@ Por ultimo, para adicionar un espacio horizontal entre cada hijo, se usa gap en 
 
 ## The Flex Property
 
+### Dentro de cada elemento (flex-item)
+
+> flex-basis
+
 Cuando seteamos el size de los flex-items(items que están dentro del flexbox) no solemos usar width, sino en su lugar usamos `flex-basis`.
 Cuando el elemento(flex-item) tiene un width, pero el contenido es mas grande, se ajusta para el contenido, ya que flex-basis no es como un width rígido, es mas como la recomendación que le damos al navegador para determinar la longitud optima
 
@@ -280,9 +284,23 @@ Aunque los ajustemos asi:
 
 Flex-box hará que los elementos encajen con su contenido, y respeten el contenedor, por lo que si la anchura combinada lo pasa, estos no lo sobrepasaran
 
+> flex-shrink
+
 - flex-shrink: 1 - significa que si no hay espacio suficiente en el container para mostrar el width total de los elementos, el mismo container podrá encojerlos
 - flex-shrink: 0 - Hará que los elementos si tengan el basis(width) establecido, aunque ya no encaje(sobrepase) el container, no es aconsejarle, pero a veces necesario
 
 > flex-shrink: 0 Es como decirle "Hey, no me importa que sobrepases el ancho del container"
 
 En resumen, lo que hace es determinar si el container(flexbox) puede contener dentro el ancho de todos los elementos
+
+> flex-grow
+
+Determina cuanto un elemento puede crecer
+
+- flex-grow: 0(por defecto) - Los elementos hijos ocuparan solo el espacio necesario dentro del container
+- flex-grow: 1 - Los elementos hijos ocuparan todo el espacio del container
+
+Esto se debe repetir `EN TODOS LOS ELEMENTOS HIJOS`, ya que si solo se hace en uno, este abarcara todo el espacio restante vació del container.
+Ahora, si uno de ellos se establece en "2" mientras los demás siguen siendo 1, tomara el doble del espacio remanente que toman equitativamente los demás, dependiendo de su numero sera su porcentaje.
+
+Aunque usualmente lo que hacemos es establecer todos en 1, para que todos uniformemente abarquen todo el espacio disponible del container
