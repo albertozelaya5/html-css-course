@@ -198,3 +198,35 @@ article {
   margin: 0 auto;
 }
 ```
+
+## A Flexbox Overview
+
+Es un conjunto de propiedades CSS relacionadas, hechos para construir diseños de 1 dimension.
+
+- La idea principal detrás de flexbox, es que el espacio vació dentro de un contenedor puede ser automáticamente dividido por sus hijos, por lo que ya no tendría que setearse un width manualmente
+- Hace muchísimo mas fácil alinear items one to another dentro de un elemento padre, horizontal y verticalmente
+- Resuelve problemas como el alineamiento vertical y crea columnas de igual tamaño
+- Es perfecto para reemplazar los antiguos floats, dándonos un HTML y CSS mucho mas limpios
+
+### Conceptos de Flexbox importantes
+
+El elemento donde lo queremos usar(padre) se llama `Flex container`, seteando su propiedad a _display: flex_, haciendo esto, todos los hijos de ese padre se llamaran `Flex items`, ahora la dirección donde estos elementos se disponen es llamada `main-axis`(horizontal), y el vertical `cross-axis`, y es importante conocerlos ya que los podemos alinear en base a estos ejes.
+
+> Flex container
+
+- gap: 0, crea espacio entre lineas, sin necesidad de usar margin
+- justify-content: flex-start, flex-end, center, alinea los items horizontalmente (main-axis)
+- align-items: stretch, flex-start, flex-end, alinea los items verticalmente (cross-axis)
+
+- flex-direction: row, row-reverse, column, column-reverse, define cual es el comportamiento main-axis(alineamiento horizontal)
+- flex-wrap: nowrap, wrap, wrap-reverse, permite a los items wrap into a new line si son demasiado largos(too large)
+- align-content:stretch, flex-start, flex-end, center, space-between, space-around, solo aplica cuando hay multiple lineas (flex-wrap: wrap)
+
+> Flex items
+
+- align-self: auto, stretch, flex-start, flex-end, center, baseline, para align-items para individual flex
+- flex-grow: 0, to allow an element to grow (0 means no, 1+ means yes)
+- flex-shrink: 1, to allow element to shrink (0 means no, 1+ means yes)
+- flex-basis: auto, to define an item's width, instead of the width prop
+- flex: 0 1 auto, Recommended shorthand flow flex-groe, shrink, basis
+- order: 0, controle el orden de los items, -1 los hace primeros, 1 los hace last
