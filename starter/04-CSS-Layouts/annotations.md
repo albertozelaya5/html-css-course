@@ -99,3 +99,33 @@ footer {
 
 La cuestion es que `siempre` que se ponga float, los elementos que se pongan despues, van a flotar al rededor del que tiene esa propiedad, en este caso el footer con el aside.
 Por ello, el `clear` detiene que un elemento flote al rededor del que tiene esa propiedad
+
+## Border-box
+
+Las listas por defecto puednen tener algun margen, siempre es bueno sersiorarse de quitarlos para el estilo.
+
+Cuando queremos espacio dentro de un elemento, no deberiamos usar margin, sino padding, para elementos dentro de componentes por ejemplo.
+
+Ahora, el contenedor padre comun de dos elementos puede tener un ancho total, y aunque esten en float, si se pasan de ese ancho con el `box-model`, terminan tirando un elemento abajo de otro para que quepan, ya que el box-behavior por defecto es sumar el padding al width original
+
+> El box-model por defecto es: border + padding + width
+> box-sizing: content-box es su prop por defecto
+
+Seria genial si definieramos el size, y el padding o el border se ajustaran a ese size final, bueno, esto se puede lograr con:
+
+> box-sixing: border-box
+
+Algo fundamental para cada desarrollador, seria imposible construir layouts gigantes sin esto,
+Ahora con esto, el size final SIEMPRE sera width, ya que estos crecen para adentro, sin importar el margen y los paddings, lo que si es que estos dos pueden reducir el content area del marco de contenido
+
+Cuando se agrega un padding, siempre se restara al area de contenido(content-area), por los beneficios, lo pondremos en el universal-selector, para que se aplique a cada elemento
+
+```
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
+Esto es lo que cada desarrollador suele hacer, poner buenas bases al comportamiento por defecto
