@@ -82,3 +82,20 @@ Que consiste en agregar esta clase clearfix al elemento que sera el colapsado po
 
 Aunque `after` se crea como un ultimo hijo del elemento que se pone ::, y por defecto es un `inline-element` y clear solo funciona en los block elements
 
+Un ejemplo para una sidebar podria ser este:
+
+```
+article {
+  float: left;
+}
+aside {
+  float: right;
+}
+footer {
+  background-color: yellow;
+  clear: both;
+}
+```
+
+La cuestion es que `siempre` que se ponga float, los elementos que se pongan despues, van a flotar al rededor del que tiene esa propiedad, en este caso el footer con el aside.
+Por ello, el `clear` detiene que un elemento flote al rededor del que tiene esa propiedad
