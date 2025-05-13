@@ -320,13 +320,18 @@ footer {
   margin-bottom: 5px;
 }
 
-.body-container {
-  width: 100%;
+.row {
   display: flex;
-  gap: 50px;
+  gap: 75px;
+  margin-bottom: 60px;
+  align-items: flex-start;
 }
 
-.body-item {
-  background-color: yellow;
-  flex: 1 1 auto;
+article {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+aside {
+  flex: 0 0 300px;
 }
