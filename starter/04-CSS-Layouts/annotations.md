@@ -304,3 +304,7 @@ Esto se debe repetir `EN TODOS LOS ELEMENTOS HIJOS`, ya que si solo se hace en u
 Ahora, si uno de ellos se establece en "2" mientras los demás siguen siendo 1, tomara el doble del espacio remanente que toman equitativamente los demás, dependiendo de su numero sera su porcentaje.
 
 Aunque usualmente lo que hacemos es establecer todos en 1, para que todos uniformemente abarquen todo el espacio disponible del container
+
+### Recordatorio de Revisar
+
+Si un elemento le aplico margin-block y no se aplica, es porque probablemente sea un inline-element(como los anchor)
