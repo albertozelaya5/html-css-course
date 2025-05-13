@@ -189,7 +189,6 @@ nav a:link {
   display: block; */
 
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -236,37 +235,14 @@ h2::before {
   right: -25px;
 }
 
-/* Resolving conflicts */
-/* #copyright {
-  color: red;
-}
-
-.copyright {
-  color: blue;
-}
-
-.text {
-  color: yellow;
-}
-
-footer p {
-  color: green !important;
-} */
-
-/* nav a:link,
-nav p {
-  font-size: 18px;
-} */
-
 /* FLOATS */
 
-.author-img {
+/* .author-img {
   float: left;
   margin-bottom: 20px;
 }
 
 .author {
-  /* padding-left: 80px; */
   float: left;
   margin-top: 10px;
   margin-left: 20px;
@@ -301,4 +277,16 @@ aside {
 
 footer {
   clear: both;
+} */
+
+/* FLEX */
+
+.main-header {
+  display: flex;
+  align-items: space-between;
+}
+
+.author-box{
+  display: flex;
+  align-items: center;
 }
