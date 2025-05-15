@@ -308,3 +308,62 @@ Aunque usualmente lo que hacemos es establecer todos en 1, para que todos unifor
 ### Recordatorio de Revisar
 
 Si un elemento le aplico margin-block y no se aplica, es porque probablemente sea un inline-element(como los anchor)
+
+## Introduction to CSS Grid
+
+Para desaparecer los objetos de una pagina HTML se usa esta propiedad:
+
+```
+.container--2{
+  display:none;
+}
+```
+
+> display: grid;
+
+Asi como en flexBox tenemos flexContainer y flexItems, en CSS Grid tenemos gridContainer y gridItems, es una lógica similar, el primer paso es, en el elemento padre:
+
+```
+.container--1 {
+  /* CSS GRID */
+  display: grid;
+}
+```
+
+> grid-template-columns
+
+Ahora se ocupan definir el diseño de dos dimensiones(filas y columnas).
+Comenzamos por las columnas, con la propiedad `grid-template-columns`, mientras mas width's le pongamos, mas columnas hará:
+
+```
+.container--1 {
+  /* CSS GRID */
+  display: grid;
+  grid-template-columns: 250px 150px; //* DEFINIMOS DOS COLUMNAS
+}
+```
+
+> grid-template-rows
+
+Luego de ello, se crearan automáticamente las filas para agrupar todo el contenido(todos los hijos).
+Justamente asi como en `display: flex`, los elementos estiran su alto en stretch, en orden al elemento propio mas alto.
+
+Ahora asi como en las columnas, también podemos definir el size de las filas:
+
+```
+grid-template-rows: 300px 200px; // EN EL CONTAINER PADRE
+```
+
+Y todos excepto el grid item con height definida(150px), se adaptaran al alto pre establecido.
+
+> gap
+
+Ahora, para darle espacio a cada elemento entre si, también se usa la propiedad `gap`, NUNCA se usa margin, no va a funcionar, y a diferencia del `display: flex`, a este se le puede dar un gap tanto a las rows, como a las columns, como un gap general también, asi:
+
+```
+.container--1{
+  /* gap: 30px; */
+  column-gap: 30px;
+  row-gap: 60px;
+}
+```
