@@ -512,3 +512,38 @@ Para esto, en lugar de calcular cuantos tracks hay, es mejor usar números negat
   grid-row: 2 / 4;
 }
 ```
+
+## Aligning Grid Items and Tracks
+
+> Aligning entire Content
+
+Cuando en un container sobra demasiado espacio, podemos alinear las celdas(tracks) tanto dentro del contenedor, como el contenido interior de los tracks dentro de si mismos, cuando estos no ocupan todo el espacio:
+
+Para hacerlo en el se usa:
+
+```
+.container--2 {
+  align-content: center; cross axis(eje y), mismas propiedades que justify-content
+  justify-content: center; main axis(eje x)
+}
+```
+
+Al igual que en `flexBox`, existen las mismas propiedades, `space-between`, etc
+Solo que en align-content, solo seria start y end, no como flex-start etc, eso solo funciona en `flexBox`
+
+> Aligning inside the Cells
+
+Para esto tenemos casi lo mismo, solo que con `items`;
+
+```
+.container--2 {
+  align-items: center; Verticalmente, ya que por defecto cada item tiene stretch
+  justify-items: center;
+}
+```
+
+También poseen las mismas propiedades de `start` y `end`
+
+> Align self y justify self
+
+Asi como en `flexBox`, se puede modificar la alineación de un elemento en especifico, con `algin-self` y `justify self`, con `start` y `end`
