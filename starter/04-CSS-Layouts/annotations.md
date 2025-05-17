@@ -212,6 +212,8 @@ Es un conjunto de propiedades CSS relacionadas, hechos para construir diseños d
 
 El elemento donde lo queremos usar(padre) se llama `Flex container`, seteando su propiedad a _display: flex_, haciendo esto, todos los hijos de ese padre se llamaran `Flex items`, ahora la dirección donde estos elementos se disponen es llamada `main-axis`(horizontal), y el vertical `cross-axis`, y es importante conocerlos ya que los podemos alinear en base a estos ejes.
 
+Propiedades dentro del padre y los hijos
+
 > Flex container
 
 - gap: 0, crea espacio entre lineas, sin necesidad de usar margin
@@ -367,3 +369,48 @@ Ahora, para darle espacio a cada elemento entre si, también se usa la propiedad
   row-gap: 60px;
 }
 ```
+
+## CSS Grid Teoría
+
+Es un set de propiedades que pueden usar los desarrolladores para hacer layouts(diseños) de dos dimensiones
+
+La idea principal era dividir un contenedor en elementos y filas, que luego podríamos llenar sus elementos hijos
+
+No esta hecho para reemplazar a flexBox, sino que son para situaciones diferentes, cuando se ocupen layouts de 1D, se usa flexBox, ahora si es 2D `Grid` es la mejor alternativa
+
+Asi como flexBox, tenemos row axis(main axis), y column axis(cross axis), solo que aquí no se puede cambiar la dirección de la fila y la columna.
+
+Ahora, también debemos conocer el concepto de las `grid-lines` que son las que separan las columnas y filas, estas son nombradas del numero de filas + 1, y el numero de columnas +1, las intersecciones de esas lineas hacen espacios donde podemos trabajar, siendo estas las `grid-cells`
+
+> Anotación
+
+Se puede usar `display: none` para ocultar un elemento del documento HTML
+
+> grid-cells
+
+Siempre son creadas, pero no siempre son llenadas
+
+> grid-track
+
+Otro termino que se usa bastante, puede ser una fila o una columna, es como decir cuantas filas y cuantas columnas hay
+
+Propiedades dentro del padre y los hijos
+
+> Grid container
+
+- grid-template-rows: track size (una unidad de medida por cada fila o columna)
+- grid-template-columns: track size
+- row-gap: 0 (crear espacio entre las celdas o tracks)
+- column-gap: 0
+- gap: 0
+- justify-items: stretch eje x
+- align-items: stretch eje y
+- justify-content: stretch eje x( solo si el container es mas grande que el grid)
+- align-content: stretch eje y( solo si el container es mas grande que el grid)
+
+> Grid items
+
+- grid-column: 1 / 3 start line / end line (ajusta un item a la fila y col deseada)
+- grid-row: 1 / 3 start line / end line (ajusta un item a la fila y col deseada)
+- justify-self: stretch
+- align-self: stretch
