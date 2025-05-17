@@ -457,9 +457,58 @@ Si te fijas, hay 3 columnas pero solo dos filas declaradas, y cuando hay element
 
 Y en los rows, la altura seria similar, solo que si en un elemento individual declaramos mas altura, todos por defecto tendrán esa altura:
 
-````
+```
 .el--3 {
   background-color: green;
   height: 150px;
 }
-````
+```
+
+## Placing and Spanning Grid Items
+
+Como se cambia de lugar, a un elemento cuyo lugar por defecto es otro.
+Para ello se usan las propiedades `grid-column` y `grid-row` en el elemento hijo:
+
+```
+.el--8 {
+  grid-column: 2 / 3; <!-- con la nomenclatura, dondeInicia / dondeTermina -->
+  grid-row: 1 / 2;
+}
+```
+
+Y recordemos que para ver ese grid order de items es necesario ir a las devTools en la opción `grid`
+
+Ahora, si el valor es solo un numero de distancia del primer valor, se puede omitir el segundo, asi:
+
+> Multiple space
+
+```
+.el--2 {
+  grid-column: 1;
+  grid-row: 2 / 4;
+}
+```
+
+Ahora, si el valor de distancia final es mas de uno, abarcara hasta el `track`(espacio) especificado
+
+> Span keyword
+
+```
+.el--2 {
+  grid-column: 1 / span 3;
+  grid-row: 2 / 4;
+}
+```
+
+Con esto, nos dejamos de tanta matemática ya que le decimos _expande este elemento tres veces, tres celdas_
+
+> Expandir por toda la columna
+
+Para esto, en lugar de calcular cuantos tracks hay, es mejor usar números negativos:
+
+```
+.el--2 {
+  grid-column: 1 / -1; <!-- Desde el inicio hasta el final de las columnas -->
+  grid-row: 2 / 4;
+}
+```
