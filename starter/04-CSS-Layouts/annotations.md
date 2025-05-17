@@ -414,3 +414,52 @@ Propiedades dentro del padre y los hijos
 - grid-row: 1 / 3 start line / end line (ajusta un item a la fila y col deseada)
 - justify-self: stretch
 - align-self: stretch
+
+## Sizing Grid Columns and Rows
+
+Se pueden usar otras unidades, por ejemplo el fr:
+
+```
+.container--1 {
+  grid-template-columns: 200px 2fr 1fr auto;
+  <!-- grid-template-columns: repeat(4, 1fr); -->
+}
+```
+
+En la tercera columna, va a ocupar todo el espacio restante que tenga el container, `fr` quiere decir _fractional_, si se usan varias, se van a distribuir igualmente el espacio restante.
+
+Si ademas de eso, uno tiene un fr mas grande que el otro, como lo tal lo que hace es dividir en fracciones, por lo que uno usara dos partes mientras que uno solo una fracción del available space in the container
+
+> Auto keyword
+
+Cuando se usa esta palabra, ocupara solo el espacio necesario para mostrar el contenido
+
+> Repeat
+
+También, en lugar de escribir el mismo valor una por una, con esta función, especificamos cuantos valores, y cuando va a ser la medida, `repeat(4, 1fr)` seria 4 filas con 1fr de width
+
+.container--1 {
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 300px 200px;
+}
+
+> grid-auto-rows
+
+Si te fijas, hay 3 columnas pero solo dos filas declaradas, y cuando hay elementos que sobrepasen ese numero, se hará una tercera fila no declarada, a la que le llamamos `implicit row`, y tenemos forma de estilizaras, que es con `grid-auto-rows`
+
+```
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Solo definimos columnas */
+  grid-auto-rows: 150px; /* Así definimos la altura de filas implícitas */
+}
+```
+
+Y en los rows, la altura seria similar, solo que si en un elemento individual declaramos mas altura, todos por defecto tendrán esa altura:
+
+````
+.el--3 {
+  background-color: green;
+  height: 150px;
+}
+````
