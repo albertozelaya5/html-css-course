@@ -547,3 +547,16 @@ También poseen las mismas propiedades de `start` y `end`
 > Align self y justify self
 
 Asi como en `flexBox`, se puede modificar la alineación de un elemento en especifico, con `algin-self` y `justify self`, con `start` y `end`
+
+## Building a Simple CSS Grid Layout
+
+Si se pone un width definido, y se quiere que el espacio sobrante se usa 1fr:
+
+```
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+```
+
+Es muy común solo definir las columns y no las rows, ya que usualmente las rows se ajustan al contenido de las columns
