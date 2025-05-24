@@ -529,3 +529,31 @@ Por ejemplo en CSS, si tenemos un salector bastante largo que aplica pseudo clas
 Por lo que es recomendable, evitar selectores tan grandes, manten la especificidad basica
 
 Ahora, si realmente luego de todas estas herramientras uno todavia tiene estas preguntas, lo mejor es consultar en stack overflow, o en udemy usando codePen o codeSandBox
+
+> Como hacer un select
+
+```
+<select>
+  <option>opción 1</option>
+  <option>opción 2</option>
+</select>
+```
+
+> Como hacer un slider - input tipo range
+
+```
+<input
+  type="range"
+  min="0"
+  max="10"
+/>
+```
+
+Al editarlo en CSS
+
+```
+input[type="range"] {
+  width: 200px;
+  accent-color: rgb(50, 197, 255);
+}
+```
