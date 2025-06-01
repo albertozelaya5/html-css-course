@@ -167,5 +167,15 @@ body {
   font-family: "Inter", sans-serif;
 }
 ```
+
 El nombre de la letra justo como esta escrito en Google Fonts
 Se pone la coma antes y entre comillas, para decir que se la da prioridad a ese estilo
+
+> Line Height and Letter spacing
+
+Ambos se toman en pixeles
+
+```
+line-height: 1.1; <!-- 1.1px -->
+letter-spacing: -1; <!-- -1px de lo normal -->
+```
