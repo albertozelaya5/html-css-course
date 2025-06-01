@@ -156,3 +156,16 @@ Es sobre hacer un texto hermoso y fácil de leer
 - Luce limpio y simple
 - Sirve para interfaces modernas
 - Es mas fácil escoger un tipo para que encaje en la personalidad de la pagina
+
+## Implementing Typography
+
+Siempre que se implemente la tipografía en el html, hacerlo antes del link de nuestro archivo CSS
+Y se añade asi
+
+```
+body {
+  font-family: "Inter", sans-serif;
+}
+```
+El nombre de la letra justo como esta escrito en Google Fonts
+Se pone la coma antes y entre comillas, para decir que se la da prioridad a ese estilo
