@@ -214,6 +214,8 @@ letter-spacing: -1; <!-- -1px de lo normal -->
 
 The `primary color` es usado en buttons
 
+## Implementing Colors
+
 ```
 .btn:link,
 .btn:visited {
@@ -224,5 +226,13 @@ The `primary color` es usado en buttons
   padding: 16px 32px;
   display: inline-block;
 }
+```
+
+Se usa un `inline-block` ya que el elemento button, al ser inline, no crea un espacio vertical, y block si lo crea pero ocupa todo el espacio posible
+
+> Dos clases en un elemento
 
 ```
+btn btn--small
+```
+Solemos añadir una que es la general en este caso para todos los botones, y otra que es 
