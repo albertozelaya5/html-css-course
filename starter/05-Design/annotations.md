@@ -274,3 +274,32 @@ Y resaltan la personalidad de nuestro sitio, pueden ser 2d o 3d
 
 Pueden aparecer como un fondo de secciones enteras, o atrás de imágenes para adicionar un estilo visual interesante
 Pueden añadir creatividad a nuestro sitio, `no usarlas en exceso`
+
+## Web Design Rules #4: Icons
+
+1. Use a good icon pack - or use emojis too
+2. Use only one icon pack. Don't mix icons from different icon packs
+3. Use SVG icons or icon fonts. Don't use bitmap image formats(.jpg and .png) Esto porque son vector-based
+
+`NO violar las leyes de derechos de autor`
+
+4. Adjust to website personality! Roundness, weight and filled/outlined depend on Typography
+
+Algunas personalidades como minimalist or bold podrían no necesitar icons EN ABSOLUTO
+
+5. Use icons to provide visual assistance to text
+6. Use icons for product feature blocks
+   Estos son como cards o componentes con un icono en la parte superior, un small title y una description
+   En este caso se usan para describir las características de un producto o servicio
+7. Use icons associated with actions, and label them
+   Deberíamos etiquetar los iconos con texto, ya que algunos usuarios pueden no conocer el significado de estos, y algunos no son tan claros
+   A menos que no haya espacio, o el icono es 100% claro
+   Uno debe ser consistente, no usar texto para unas cosas y solo iconos para otras, porque se ve raro
+8. Use icons as bullet points
+9. To keep icons neutral, use same color as text. To draw more attention, use different color
+   Si se quiere llamar la atención se pueden usar diferentes colores para diferentes iconos
+10. Don't confuse your users: icons need to make sense and fit the text or action!
+    Ahora si mi icon pack no tiene algún icono relacionado, se debe ajustar ya sea el texto para que tenga relación, o usar otro paquete de iconos
+11. Don't make icons larger that what they were designed for. If needed, enclose them in a shape
+    Ver si el icono fue diseñado para ser mas grande o mas pequeño, en caso de alargarlo demasiado se puede meter en un circulo o cuadrado etc, para que se vea mas natural
+Usualmente los iconos mas grandes tienen mas detalles o lineas mas finas
