@@ -235,4 +235,42 @@ Se usa un `inline-block` ya que el elemento button, al ser inline, no crea un es
 ```
 btn btn--small
 ```
-Solemos añadir una que es la general en este caso para todos los botones, y otra que es 
+
+Solemos añadir una que es la general en este caso para todos los botones, y otra que es
+
+## Web Design Rules #3: Images and Illustrations
+
+1. Different types of images: product photos, storytelling photos, illustrations, patterns
+2. Use images to support your website's message and story. So only use relevant images!
+3. Prefer original images. If not possible, use original-looking stock images(not generic ones!), mejor buscar imágenes que luzcan autenticas y reales
+4. Try to use `real people` to trigger user's emotions
+5. If necessary, crop images to fit your message
+6. Experiment combining photos, illustrations and patterns
+7. Handling text on images: Darker or brighten image(completely or partially, using a gradient)
+8. Position text into a neutral image area(dejarlo en un area de fondo de un solo color por ejemplo)
+   Solo debemos de tener en cuenta dispositivos móviles, ya que el texto se puede sobreponer
+9. Put text in a box
+10. Tener en cuenta high-res screens, make image dimensions 2x o 3x as big as their displayed size
+    En celulares como el iPhone, se ocupan 3px para mostrar 1px o 2px
+11. Compress images for a lower file size and better performance
+12. When using multiple images side by side, make sure they have the exact same dimensions
+    Or at least el mismo aspect ratio
+
+> Product photos
+
+Para ilustrar el producto que se trata de vender en el website
+
+> Storytelling photos
+
+Se usan para contar una historia o transmitir un mensaje del sitio, no muestran el producto en si, sino alguien usando el producto
+O haciendo algo que este relacionado con el producto o con el mensaje del sitio
+
+> Illustrations
+
+Es básicamente una forma mas abstracta de hacer un story telling, adicionan originalidad al website
+Y resaltan la personalidad de nuestro sitio, pueden ser 2d o 3d
+
+> Patterns
+
+Pueden aparecer como un fondo de secciones enteras, o atrás de imágenes para adicionar un estilo visual interesante
+Pueden añadir creatividad a nuestro sitio, `no usarlas en exceso`
