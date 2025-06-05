@@ -302,4 +302,28 @@ Algunas personalidades como minimalist or bold podrían no necesitar icons EN AB
     Ahora si mi icon pack no tiene algún icono relacionado, se debe ajustar ya sea el texto para que tenga relación, o usar otro paquete de iconos
 11. Don't make icons larger that what they were designed for. If needed, enclose them in a shape
     Ver si el icono fue diseñado para ser mas grande o mas pequeño, en caso de alargarlo demasiado se puede meter en un circulo o cuadrado etc, para que se vea mas natural
-Usualmente los iconos mas grandes tienen mas detalles o lineas mas finas
+    Usualmente los iconos mas grandes tienen mas detalles o lineas mas finas
+
+## Implementing Icons
+
+SVG en realidad es código, es parecido a HTML pero para especificar diseños
+
+Se puede pegar directamente el svg en el html, y como una etiqueta de HTML, también se puede personalizar con su propia clase
+
+Para editar el color se usa la propiedad `stroke` cuando son outlines, and `fill` cuando son solid:
+
+```
+.features-icon {
+  stroke: #087f5b;
+  width: 32px;
+  height: 32px;
+}
+```
+
+Acordarse de no hacerlo demasiado grande, de modo que el grosor del icono sea parecido al grosor de las letras
+
+- Se usan nice packs of SVG Icons
+- Se usan para crear feature blocks(icono primero descripción después)
+- Visual assistance to text
+- Not so big
+- Iconos que realmente tengan un significado
