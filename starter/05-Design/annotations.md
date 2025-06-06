@@ -200,7 +200,7 @@ letter-spacing: -1; <!-- -1px de lo normal -->
 4. With more experience, you can add more colors: accent(secondary) colors(use a tool)
 5. For diversity, create a lighter and a darker "versions"(tints and shades)
    Los mas claros se llamaran `tins`, y los mas oscuros `shades`
-   Para escoger el main, grey y accent color, usar una herramienta como `palleton.com`
+   Para escoger el `main`, `grey` y `accent` color, usar una herramienta como `palleton.com`
 6. Use your main color to draw attention to the most important elements on the page
 7. Use colors to add interesting accents or make entire components or sections
 8. You can try to use tour color strategically in images and illustrations
@@ -288,7 +288,7 @@ Pueden añadir creatividad a nuestro sitio, `no usarlas en exceso`
 Algunas personalidades como minimalist or bold podrían no necesitar icons EN ABSOLUTO
 
 5. Use icons to provide visual assistance to text
-6. Use icons for product feature blocks
+6. Use icons for `product feature blocks`
    Estos son como cards o componentes con un icono en la parte superior, un small title y una description
    En este caso se usan para describir las características de un producto o servicio
 7. Use icons associated with actions, and label them
@@ -327,3 +327,60 @@ Acordarse de no hacerlo demasiado grande, de modo que el grosor del icono sea pa
 - Visual assistance to text
 - Not so big
 - Iconos que realmente tengan un significado
+
+## Web Design Rules #5: Shadows
+
+Pueden ser an important part in helping users figure out the relationships between parts of our designs
+Or using to add interesting visual details
+
+### Concepts
+
+Los shadows can be used on boxes and text
+
+> Skeuomorphic design
+
+- Lleno de detalles, efectos y muchos shadows(sombras)
+
+> Flat design
+
+- No more realistic details, gloss effects or shadows
+- Reducido a lo esencial(minimalistic)
+
+> Flat design 2.0
+
+- Sin el realismo, pero trajo de vuelta esos shadows y depth(profundidades) to better usage
+- Mientras el shadow(sombra) sea mas grande, es como si estuviera mas lejos el elemento de la pantalla
+
+Los shadows emulan o crean una cierta profundidad en nuestras user interfaces, como una 3ra dimension
+Mientras mas shadow le pongamos, mas profundidad tendrá
+Simula la existencia de una luz externa
+
+### Use Shadows Well
+
+1. Realmente no son necesarios si no encajan con nuestra `web personality`
+   Serio/Elegante = Less shadows - Playful/fun = More shadows
+   Debemos tener una idea de que tan serios o elegantes queremos ser
+2. Use Shadows in small doses(dosis): don't add shadows to every element!
+   Lo usamos para que un elemento destaque del resto, hacer algo mas prominente que el resto del contenido
+3. Go light on shadows, don't make them too dark!
+   Lo natural es mas sutil, nunca vemos algo tan oscuro in the real world
+
+Poner shadows en todos lados, y hacerlos muy oscuros, es una forma fácil de arruinar un diseño
+
+### Use Shadows in the right Situation
+
+4. Use small shadows for smaller elements that should stand out(to draw attention)
+   Como small forms, cards, buttons, mini boxes
+   El main color y el shadow llaman nuestra atención
+   Son importantes para la historia que cuentan, o mostrar el producto que esta siendo vendido
+5. Use medium-sized shadows for larger areas that should stand out a bit more
+   Haciendo storytelling, or normal cards
+6. Use large shadows for elements that should really float above the interface
+   Ejemplos serian navigation, or pop up windows como forms(también llamados call to action)
+7. Experiment with changing shadows on mouse interaction(click and hover)
+   Por ejemplo que al inicio no tenga shadow, cuando en el hover medio, y al darle click solo un poco
+
+El efecto con esto es que al usuario estar en hover arrastre el botón cerca de el, y al presionar se reduce haciendo un efecto de empujar ese botón
+
+8. Experiment with glows(colored shadows)
+   Para botones, buttons dentro de forms
