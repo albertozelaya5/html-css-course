@@ -178,7 +178,7 @@ Se pone la coma antes y entre comillas, para decir que se la da prioridad a ese 
 Ambos se toman en pixeles
 
 ```
-line-height: 1.1; <!--  1.5 and 2, big text go menos de 1.5 -->
+line-height: 1.1; <!--  1.5 and 2 normal, big text go menos de 1.5 -->
 letter-spacing: -1; <!-- -1px de lo normal -->
 ```
 
@@ -475,5 +475,21 @@ Comunica como diferentes piezas del layout are related unas a otras
 Crea relaciones invisibles entre los elementos del layout
 Hace mas fácil al usuario navegar
 
-1. Use tons of whitespace between sections
-2. Use a lot of whitespace between groups of elements dentro de una section
+1. Use tons of whitespace between sections 140px-200px
+2. Use a lot of whitespace between groups of elements dentro de una section 96-152, 24px
+   Para que se vea clean y entendible, que haya una separación
+   Nos enfocamos en el vertical, pero también es importante el horizontal whitespace
+   Usualmente espacio vertical > espacio horizontal
+3. Use whitespace between elements
+4. Inside groups of elements, try to use whitespace instead of lines
+   En elementos pequeños dentro de cards, es mejor whitespace
+5. The more some elements(groups of elements) belong together, the closer they should be!
+   Se le llama ley de proximidad
+   En una card, title y text belong together, less space that title and icon
+   Labels con inputs menos espacio
+   Ver que cosas están relacionadas a otras
+6. Start with a lot of whitespace, maybe even too much! Then remove whitespaces from there
+   Too much whitespace looks detached, too little looks crammed
+7. Match other design choices. If you have big text or big icons, you need more whitespaces
+8. Try a hard rule, such as using multiples of 16px for all spacing
+   2, 4, 8, 12, 16, 24, 32, 48, 64, 80, 96, 128px
