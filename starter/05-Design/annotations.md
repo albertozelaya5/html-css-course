@@ -498,6 +498,9 @@ Hace mas fácil al usuario navegar
 8. Try a hard rule, such as using multiples of 16px for all spacing
    2, 4, 8, 12, 16, 24, 32, 48, 64, 80, 96, 128px
 
+`SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128`
+
 ## Web Design Rules #8: Visual Hierarchy
 
 - Is about establishing which elements of a design are the most important ones
@@ -533,4 +536,11 @@ Groups of elements or big areas of content
 8. What components to emphasize? Testimonials, call-to-action sections,
    highlight sections, preview cards, forms, pricing tables, important
    rows/columns in tables, etc.
-El highlight sections son como stand out sections que queremos enfatizar, y eso se hace dándoles un color diferente
+   El highlight sections son como stand out sections que queremos enfatizar, y eso se hace dándoles un color diferente
+
+## Implementing Whitespace and Visual Hierarchy
+Al inicio del document con el primer title, poner un whitespace big-ton(64 / 80), y entre cada sección on ton( 80 / 96)
+
+- Entre secciones, al titulo big(32 / 48)
+- Entre iconos y titles de un mismo card(24 / 32 / 48)
+- Entre listas y elementos muy relacionados(16 / 18 / 20)
