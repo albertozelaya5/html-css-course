@@ -442,3 +442,31 @@ Examples for small, medium and big
 
 Con los botones e imágenes podemos solo poner un poco en los botones, hacerlos completamente redondos, o solo dos esquinas si otras dos esquinas no
 Icons, solo un poco o completamente
+
+## Implementing Border-radius
+
+Tango imágenes dentro de secciones como secciones, deberían tener le mismo size de border radius, o mínimo que no haya tanta diferencia
+
+```
+.testimonial-section {
+  border-radius: 12px;
+}
+
+.chair img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+```
+
+> El padding horizontal siempre debe ser mayor que el vertical en botones, 16px 32px
+> Siempre que se tenga prop href en labels, poner element:link en el CSS LVHA
+
+### Hacer un botón full rounded
+
+Hay dos maneras, pero la mas sencilla es poner un valor muy grande, mas que el size del elemento
+
+```
+.button{
+  border-radius: 100px;
+}
+```
