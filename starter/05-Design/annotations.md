@@ -418,20 +418,15 @@ Examples for small, medium and big
 
 > Small
 
-- offset 5px
-- blur 10px
-- spread 0px
-- rgba (0.05)
-  > Medium
-- offset 20px
-- blur 30px
-- spread 0px
-- rgba (0.07)
-  > Big
-- offset 40px
-- blur 60px
-- spread 0px
-- rgba (0.1)
+- offset 5px, blur 10px, spread 0px, rgba (0.05)
+
+> Medium
+
+- offset 20px, blur 30px, spread 0px, rgba (0.07)
+
+> Big
+
+- offset 40px, blur 60px, spread 0px, rgba (0.1)
 
 ## Web Design Rules #6: Border-radius
 
@@ -470,3 +465,15 @@ Hay dos maneras, pero la mas sencilla es poner un valor muy grande, mas que el s
   border-radius: 100px;
 }
 ```
+
+## Web Design Rules #7: Whitespace
+
+Es simplemente espacio entre los elementos
+La cantidad correcta puede hacer nuestros designs clean, moderna and polished, easier for the user to understand
+
+Comunica como diferentes piezas del layout are related unas a otras
+Crea relaciones invisibles entre los elementos del layout
+Hace mas fácil al usuario navegar
+
+1. Use tons of whitespace between sections
+2. Use a lot of whitespace between groups of elements dentro de una section
