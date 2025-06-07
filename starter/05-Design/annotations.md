@@ -27,6 +27,8 @@ Lo de la cita es opcional, poner de donde viene esa cita, pero recomendable
 
 Se usa para agrupar contenido multimedia o ilustraciones (como imágenes, gráficos, videos, fragmentos de código, etc.) que están relacionados con el contenido principal, pero que pueden entenderse por sí solos.
 
+Se usan en product cards, o se puede usar el article, pero figure es como un estándar
+
 > Usos de figure
 
 - Para envolver una imagen con su pie de foto
@@ -384,3 +386,59 @@ El efecto con esto es que al usuario estar en hover arrastre el botón cerca de 
 
 8. Experiment with glows(colored shadows)
    Para botones, buttons dentro de forms
+
+También se puede usar un text-shadow muy sutil, cuando se tiene texto on a top of an image
+
+## Implementing Shadows
+
+- Desplazamiento horizontal(offset) 1-2
+- Desplazamiento vertical
+- El blur(difuminado) del shadow (mientras mas size, mas blur)
+- El penúltimo(opcional) Que tanto se esparce o hace mas grande la sombra, 10px,si no se especifica will be 0
+- El ultimo es el color
+
+Cuando queremos representar un color con cierta opacidad, usamos rgba
+
+```
+text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2)
+```
+
+```
+.chair {
+  box-shadow: 0px 20px 0px 0px rgba(0, 0, 0, 0.8);
+}
+```
+
+Para un shadow, usamos un valor de opacity bajo(como 0.1, 0.05, 0.07)
+Si se deja el blur en 0, se hace como si fuera un box
+El blur no debe hacer que se solapen unos con otros
+20px de separación es un buen size para un tamaño medio
+
+Examples for small, medium and big
+
+> Small
+
+- offset 5px
+- blur 10px
+- spread 0px
+- rgba (0.05)
+  > Medium
+- offset 20px
+- blur 30px
+- spread 0px
+- rgba (0.07)
+  > Big
+- offset 40px
+- blur 60px
+- spread 0px
+- rgba (0.1)
+
+## Web Design Rules #6: Border-radius
+
+1. User border-radius to increase the playfulness and the fun of the design, to make it less serious
+   Serio/Elegante = Less radius - Playful/fun = More radius
+2. Typefaces(tipos de letra) have a certain roundness: make sure that border-radius matches that roundness
+3. Use border-radius on buttons, images, around icons, standout sections and other elements
+
+Con los botones e imágenes podemos solo poner un poco en los botones, hacerlos completamente redondos, o solo dos esquinas si otras dos esquinas no
+Icons, solo un poco o completamente
