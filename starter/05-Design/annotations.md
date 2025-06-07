@@ -238,7 +238,11 @@ Se usa un `inline-block` ya que el elemento button, al ser inline, no crea un es
 btn btn--small
 ```
 
-Solemos añadir una que es la general en este caso para todos los botones, y otra que es
+Solemos añadir una que es la general en este caso para todos los botones
+
+- Main color - color principal de la marca: botones primarios, enlaces activos, elementos clave(encabezados, iconos importantes), fondo de navegación o barra superior
+- Grey color - escala de grises o neutro: fondos suaves, bordes, texto secundario, etiquetas, descripciones, estados deshabilitados
+- Accent color - enfatizar acciones o datos importantes: notificaciones, indicadores activos, resultados importantes, iconos decorativos o decoraciones sutiles
 
 ## Web Design Rules #3: Images and Illustrations
 
@@ -493,3 +497,40 @@ Hace mas fácil al usuario navegar
 7. Match other design choices. If you have big text or big icons, you need more whitespaces
 8. Try a hard rule, such as using multiples of 16px for all spacing
    2, 4, 8, 12, 16, 24, 32, 48, 64, 80, 96, 128px
+
+## Web Design Rules #8: Visual Hierarchy
+
+- Is about establishing which elements of a design are the most important ones
+- Is about drawing attention to these most important elements
+- Is about defining a "path" for users, to guide them through the page
+- We use a combination of position, size, colors, spacing, borders and shadows to stablish a meaningful visual hierarchy between elements/components
+
+### Visual Hierarchy Fundamentals
+
+1. Position important elements closer to the top of the page, where they get more attention
+   Attention flows down the page(and components) navbar, header, main, etc
+2. Use images mindfully, as they draw a lot of attention(larger images get more attention)
+   Si queremos incluirlo y que el cliente realmente lea el texto, es mejor hacer la imagen mas pequeña
+3. Whitespace creates separation, so use whitespace strategically to emphasize elements
+   En varias paginas hay un montón de espacio entre el nav o lo inicial y los títulos
+   No siempre pero siguiendo las reglas todo bien
+4. For text elements, use font size, font weight, color, and whitespace to convey importance
+   Podemos hacer títulos mas grandes, bolds en ellos y en partes importantes, y hacer textos mas grises para hacerlos menos importantes
+   Whitespace according to importance, mucho para same el, tons para separaciones
+   Emphasize elements making bold, color to the link
+5. What text elements to emphasize? Titles, sub-titles, links, buttons, data points, icons
+   You can also de-emphasize less important text, like labels or secondary/additional information
+
+### Visual Hierarchy Between Components
+
+Groups of elements or big areas of content
+
+6. Emphasize an important component using background color, shadow, or
+   border (or multiple)
+7. Try emphasizing some component A over component B by deemphasizing
+   component B
+   Por ejemplo si ambos tienen background, quita rle background o shadows al otro
+8. What components to emphasize? Testimonials, call-to-action sections,
+   highlight sections, preview cards, forms, pricing tables, important
+   rows/columns in tables, etc.
+El highlight sections son como stand out sections que queremos enfatizar, y eso se hace dándoles un color diferente
