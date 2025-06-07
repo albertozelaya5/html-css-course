@@ -11,7 +11,7 @@ Inline annotation, pero no tiene ningún significado semántico
 Es mas o menos como un div, que no tiene ningún significado, pero para los elementos en linea
 Cuando ocupamos un pequeño fragmento de texto, usamos span
 
-### blockquote
+### blockquote - text line
 
 Esto es como para citar a alguien, o escribir algún testimonio, citar contenido textual que proviene de otra fuente, generalmente con una sangría para indicar que es una cita extensa o destacada.
 
@@ -539,8 +539,118 @@ Groups of elements or big areas of content
    El highlight sections son como stand out sections que queremos enfatizar, y eso se hace dándoles un color diferente
 
 ## Implementing Whitespace and Visual Hierarchy
+
 Al inicio del document con el primer title, poner un whitespace big-ton(64 / 80), y entre cada sección on ton( 80 / 96)
 
 - Entre secciones, al titulo big(32 / 48)
 - Entre iconos y titles de un mismo card(24 / 32 / 48)
 - Entre listas y elementos muy relacionados(16 / 18 / 20)
+
+## Web Design Rules #9: User Experience (UX)
+
+_Design is not just what it looks like and feels like. Design is how it works_
+
+`User interface` is the visual presentation of a product. It's how the graphical interface looks and feels like
+
+> looks like and feels like
+
+- Layout
+- Personality
+- Typography, colors, icons, etc
+
+> how it works
+
+`User experience` is the overall experience the user has while interacting with the product
+
+- Does the app feel logical and well thought out?
+- Does the navigation work intuitively?
+- Are users reaching their goals?
+
+### UI and UX Design
+
+UI Design is what makes and interface beautiful
+UX is what makes an interface useful and functional
+
+Si es dañino
+Arreglar eso en que uno siente inseguridad
+
+start budgeting
+basics of investing and fix it!
+
+Si no es dañino
+Ser yo mismo y lo queme gusta
+
+UX Deign _can not_ exist without UI Design!
+
+Un Ui bien diseñado ya contribuye bastante a la experiencia del usuario(UX)
+
+A website or application exist for a reason: a user has a goal for visiting it, and a business has a goal for creating it
+
+> User goals
+
+- Use a certain product to find some information
+- Buy some product
+
+> Business goals
+
+- Sell something (product or selling advertisements)
+
+Good UX design aligns the user's goals with the business goals, o llenar ambos objetivos
+
+> Examples
+
+User wants to designing websites faster
+Business wants to selling design kits for design tools (Sketch or Figma)
+
+Good user experience design will design a product that makes it easy to both the user and the business to fulfill their goals
+
+UX Example: Highlight one option in pricing table
+
+- Helps the user decide faster what is the best option
+- Helps the business to maximize revenue
+
+Usar un popup form in order to capture email addresses - ❌ Bad practice
+Have to be aware, that's not good UX Design
+
+> ❌ Bad UX Design
+
+- Hiding a button to cancel a subscription
+
+### UX Rules for Usability
+
+1. Don't design complicated layouts. Don't reinvent the wheel. Use patterns the users know
+   Usar patrones que para los usuarios son similares, en lugar de tratar de ser original
+   La creatividad es cuando se hace una 1% website o para ganar un premio
+
+Si es familiar, el usuario encontrara el objetivo mas fácil
+`Familiarity with the layout is way more important that being original`
+
+2. Make your call-to-action(usually button) the most prominent element, and make the text
+   descriptive
+   Que el botón describa exactamente lo que pasa when users clicked it
+3. Use blue text and underlined text only for links!
+4. Animations should have a purpose and be fast: (between 200 and 500
+   milliseconds)
+5. In forms, align labels and fields in a single vertical line, to make the form
+   easier to scan(not justify)
+6. Offer users good feedback for all actions: form errors, form success, etc.
+   [web apps]
+   Mostrar bien cuando hay errores, icono puede ayudar
+   Si algo se mandarla mostrarlo con una notification de success o un mensaje
+7. Place action buttons where they will create an effect (law of locality) [web
+   apps]
+   Si se crea algo abajo, poner el botón abajo por ejemplo
+   No aplica siempre a websites como call to action btn on marketing websites
+
+### UX Rules for Website Content
+
+8. Use a descriptive, keyword-focused headline on your main page. Don’t be
+   vague or fancy!
+   Usar keywords que describan bien lo que el negocio hace!
+   What the business does, or what website is all about!
+9. Only include relevant information, efficiently! Cut out fluff and make the
+   content 100% clear
+   Quitar texto innecesario, partes de imágenes, etc
+10. Use simple words! Avoid technical jargon and “smart-sounding” words
+11. Break up long text with sub-headings, images, block quotes, bullet points,
+etc.
