@@ -653,4 +653,103 @@ Si es familiar, el usuario encontrara el objetivo mas fácil
    Quitar texto innecesario, partes de imágenes, etc
 10. Use simple words! Avoid technical jargon and “smart-sounding” words
 11. Break up long text with sub-headings, images, block quotes, bullet points,
-etc.
+    etc.
+
+## The Website-Personalities-Framework
+
+Todas estas practicas vienen de modelos de mas de 100 designs
+Distilled into 7 website personalities `Rules should be applied according to selected website personality`
+
+La `website personality` es básicamente un sentimiento o una vibe, que queremos que nuestro sitio le transmita a nuestros usuarios,
+una vez sabido eso, choose one of the website personalities accordingly, or multiple personalities
+
+Cuando estemos escogiendo la personalidad de nuestro diseño: How do you want website to appear to users? What "vibe" do you want to transmit
+
+Apply personality traits to each design ingredient = Typography, colors, images, icons, shadows, border-radius, layout
+
+- Serious/Elegant: Real estate,high fashion, jewelry, luxury products or services
+  No usa shadows ni border radius
+
+  > Ingredients:
+
+  - Typography - Serif typefaces(especially in headings), light - font weight, small body font size
+  - Colors - Gold, pastel colors, black, dark blue or grey
+  - Images - Big, high-quality images are used to feature - elegant and expensive products
+  - Icons - Usually no icons, but thin icons and lines may be - used
+  - Shadows - Usually no shadows ❌
+  - Border-radius - Usually no border-radius ❌
+  - Layout - A creative and experimental layout is quite common
+
+- Minimalist/Simple: Fashion, portfolios, minimalism companies, software startups
+
+  > Ingredients:
+
+  - Typography - Boxy/squared sans-serif typefaces, small body font sizes - Si se usara un accent podría ser un font diferente(serif)
+  - Colors - Usually black or dark grey, on pure white background. Usually just one color throughout the design
+  - Images - Few images, which can be used to add some color to the design. Usually no illustrations(especially not 3d), but if, than just black
+  - Icons - Usually no icons, but small simple black icons may be used
+  - Shadows - Usually no shadows ❌
+  - Border-radius - Usually no border-radius ❌
+  - Layout - Simple layout, a narrow one-column layout is quite common
+
+- Plain/Neutral: Well-established corporations, companies that don't want to make an impact through design
+
+  > Ingredients:
+
+  - Typography - Boxy/squared sans-serif typefaces, small body font sizes - Si se usara un accent podría ser un font diferente(serif)
+  - Colors - Neutral-looking sans-serif typefaces are used, and text is usually small and doesn't have visual impact
+  - Images - Images are frequently used, but usually in a small format, tal vez solo en el header una big image
+  - Icons - Usually no icons, but small simple black icons may be used
+  - Shadows - Usually no shadows ❌
+  - Border-radius - Usually no border-radius ❌
+  - Layout - Structured and condensed layout, with lots of boxes and rows
+
+- Bold/Confident: Digital agencies, software startups, travel, "strong" companies
+
+  > Ingredients:
+
+  - Typography - Boxy/squared sans-serif typefaces, big and bold typography, especially headings. Uppercase headings are common
+  - Colors - Usually multiple bright colors. Big color blocks/sections are used to draw attention
+  - Images - Lots of big images are usually displayed
+  - Icons - Usually no icons ❌ (todos los X pueden ser usados pero solo escasamente)
+  - Shadows - Usually no shadows ❌
+  - Border-radius - Usually no border-radius ❌
+  - Layout - All kinds of layouts, no particular tendencies
+
+- Calm/Peaceful: Healthcare, all products with focus on consumer well-being
+
+  > Ingredients:
+
+  - Typography - Soft serif typefaces frequently used for headings, but sans-serif headings might be used too(ex, for software products)
+  - Colors - Pastel/washed-out colors: light oranges, yellows, browns, greens, blues
+  - Images - Images and illustrations are usual(lot ot people in there), matching with calm color palette in their photos
+  - Icons - Icons are quite frequent
+  - Shadows - Usually no shadows, but might be used sparingly(escasamente)
+  - Border-radius - ✅ Some border-radius is usual
+  - Layout - All kinds of layouts, no particular tendencies
+
+- Startup/Upbeat: Software startups, and other modern-looking companies
+
+  Usa shadows y border radius
+
+  > Ingredients:
+
+  - Typography - Medium-sized headings(not too large), usually one sans-serif typeface in whole design. Tendency for lighter text colors
+  - Colors - Blues, greens and purples are widely used. Lots of light backgrounds(mainly gray), gradients are also common
+  - Images - Images or illustrations are always used. 3D illustrations are modern. Sometimes patterns and shapes add visual details
+  - Icons - ✅ Icons are very frequent
+  - Shadows - ✅ Subtle shadows are frequent. Glows are becoming modern
+  - Border-radius - ✅ Some border-radius is very common
+  - Layout - Rows of cards, rows of product features and Z-patterns are usual, as well as animations
+
+- Playful/Fun: Colorful Child products, animal products, food
+
+  > Ingredients:
+
+  - Typography - Round and creative(ex handwritten) sans-serif typefaces are frequent. Centered text is more common
+  - Colors - Multiple colors are frequently used to design a colorful layout, all over backgrounds and text
+  - Images - Images, hand-drawn (or 3D) illustrations, and geometric shapes and patterns are all very frequently used
+  - Icons - ✅ Icons are very frequent, many times in a hand-drawn style
+  - Shadows - ✅ Subtle shadows are quite common, but not always used
+  - Border-radius - ✅ Border-radius is very common
+  - Layout - All kinds of layouts, no particular tendencies
