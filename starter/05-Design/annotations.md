@@ -83,22 +83,6 @@ Design or decisions for each ingredient are based on `website personality`
 
 > Revisar video 67 HTML CSS - Jonas
 
-### website personalities
-
-- Serious/Elegant: para mostrar luxury and elegance, based on thin serif typefaces, golden or pastel colors, ang big high-quality images
-
-- Minimalist/Simple: Focusses on the essential text content, using small or medium-sized sans-serif black text, lines, and few-images and small icons
-
-- PLain/Neutral: Design that gets out of the way by using neutral ans small typefaces, and very structured layout. Common in big corporations
-
-- Bold/Confident: Makes and impact, by featuring big and bold typography, paired with confident use of big colored blocks
-
-- Calm/Peaceful: For products and services that care, transmitted by calming pastel colors, soft serif headings, and matching images/illustrations
-
-- Startup/Upbeat: Widely used in startups, featuring medium-sized sans-serif typeface,s light-grey text and backgrounds, and rounded elements
-
-- Playful/Fun: Colorful and round designs, fueled by creative elements like hand-drawn icons or illustrations, animations and fun language
-
 Las diferentes reglas de como sera la página, dependerán del estilo que se desee construir para el sitio
 
 ## Web Design Rules #1: Typography
@@ -667,8 +651,10 @@ Cuando estemos escogiendo la personalidad de nuestro diseño: How do you want we
 
 Apply personality traits to each design ingredient = Typography, colors, images, icons, shadows, border-radius, layout
 
-- Serious/Elegant: Real estate,high fashion, jewelry, luxury products or services
-  No usa shadows ni border radius
+- `Serious/Elegant`: Real estate,high fashion, jewelry, luxury products or services
+
+  - Para mostrar luxury and elegance, based on thin serif typefaces, golden or pastel colors, ang big high-quality images
+    No usa shadows ni border radius
 
   > Ingredients:
 
@@ -680,7 +666,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Border-radius - Usually no border-radius ❌
   - Layout - A creative and experimental layout is quite common
 
-- Minimalist/Simple: Fashion, portfolios, minimalism companies, software startups
+- `Minimalist/Simple`: Fashion, portfolios, minimalism companies, software startups
+
+  - Focusses on the essential text content, using small or medium-sized sans-serif black text, lines, and few-images and small icons
 
   > Ingredients:
 
@@ -692,7 +680,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Border-radius - Usually no border-radius ❌
   - Layout - Simple layout, a narrow one-column layout is quite common
 
-- Plain/Neutral: Well-established corporations, companies that don't want to make an impact through design
+- `Plain/Neutral`: Well-established corporations, companies that don't want to make an impact through design
+
+  - Design that gets out of the way by using neutral ans small typefaces, and very structured layout. Common in big corporations
 
   > Ingredients:
 
@@ -704,7 +694,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Border-radius - Usually no border-radius ❌
   - Layout - Structured and condensed layout, with lots of boxes and rows
 
-- Bold/Confident: Digital agencies, software startups, travel, "strong" companies
+- `Bold/Confident`: Digital agencies, software startups, travel, "strong" companies
+
+  - Makes and impact, by featuring big and bold typography, paired with confident use of big colored blocks
 
   > Ingredients:
 
@@ -716,7 +708,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Border-radius - Usually no border-radius ❌
   - Layout - All kinds of layouts, no particular tendencies
 
-- Calm/Peaceful: Healthcare, all products with focus on consumer well-being
+- `Calm/Peaceful`: Healthcare, all products with focus on consumer well-being
+
+  - For products and services that care, transmitted by calming pastel colors, soft serif headings, and matching images/illustrations
 
   > Ingredients:
 
@@ -728,7 +722,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Border-radius - ✅ Some border-radius is usual
   - Layout - All kinds of layouts, no particular tendencies
 
-- Startup/Upbeat: Software startups, and other modern-looking companies
+- `Startup/Upbeat`: Software startups, and other modern-looking companies
+
+  - Widely used in startups, featuring medium-sized sans-serif typeface,s light-grey text and backgrounds, and rounded elements
 
   Usa shadows y border radius
 
@@ -742,7 +738,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Border-radius - ✅ Some border-radius is very common
   - Layout - Rows of cards, rows of product features and Z-patterns are usual, as well as animations
 
-- Playful/Fun: Colorful Child products, animal products, food
+- `Playful/Fun`: Colorful Child products, animal products, food
+
+  - Colorful and round designs, fueled by creative elements like hand-drawn icons or illustrations, animations and fun language
 
   > Ingredients:
 
@@ -753,3 +751,8 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Shadows - ✅ Subtle shadows are quite common, but not always used
   - Border-radius - ✅ Border-radius is very common
   - Layout - All kinds of layouts, no particular tendencies
+
+![Personalities Spectrum](persSpectrum.png)
+
+Se pueden hacer combinaciones de todos, implementando ciertas características de uno
+Usualmente cuando se inyecta bold o calm, es en los headers typefaces, en los titles de las sections, o illustrations in calming pastel colors
