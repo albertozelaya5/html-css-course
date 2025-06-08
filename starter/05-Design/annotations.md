@@ -756,3 +756,18 @@ Apply personality traits to each design ingredient = Typography, colors, images,
 
 Se pueden hacer combinaciones de todos, implementando ciertas características de uno
 Usualmente cuando se inyecta bold o calm, es en los headers typefaces, en los titles de las sections, o illustrations in calming pastel colors
+
+## The Missing Piece: Steal Like An Artist!
+
+El secreto para hacer grandes diseños, es copiar lo que nos gusta de otros grandes diseños
+(ver las paginas del video anterior)
+
+- Escoger una personalidad para el sitio
+- Pensar en todos los ingredients que llevaran
+
+No copiamos completamente un design! instead, it's about taking good parts(de uno o varios designs que nos gusten) y adaptarlas a nuestras necesidades
+Adaptando esos diseños con las rules y guidelines que aprendimos antes, que luego de ver varios diseños sea mas fácil hacer uno por cuenta propia
+
+---
+Seria recomendable cada par de tiempo, un mes, darle una ojeada a los sitios de inspiración, aunque no se tenga que hacer un design, para ver cuales son las tendencias.
+Mientras mas las veamos veremos ciertos patrones
