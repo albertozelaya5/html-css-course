@@ -98,6 +98,8 @@ Están dotted y dashed pero casi no se usan, para usarlos solo en un lado se usa
 
 Las pseudo-clases en CSS son palabras clave que se añaden a los selectores para aplicar estilos basados en un estado o posición especial de un elemento dentro del documento, sin necesidad de agregar clases o modificar el HTML.
 
+Una pseudo-clase representa un estado especial de un elemento que ya existe en el DOM, como un hover, focus, cuando es el segundo hijo etc
+
 En lugar de:
 
 ```
@@ -435,6 +437,8 @@ No es recomendable abusar de este recurso, sino usarlo para cosas pequeñas
 ## Pseudo-elements
 
 Son elementos que no existen en el HTML, pero que podemos estilizar en el CSS, como la primera letra de una palabra, etc, y para hacerlo usamos "::", y para pseudo clases ":", de esta forma:
+
+Un pseudo-elemento te permite estilizar una parte específica de un elemento o incluso crear contenido que no existe en el HTML original.
 
 ```
 h1::first-letter{
