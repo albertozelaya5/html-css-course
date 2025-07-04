@@ -516,7 +516,7 @@ Groups of elements or big areas of content
    border (or multiple)
 7. Try emphasizing some component A over component B by deemphasizing
    component B
-   Por ejemplo si ambos tienen background, quita rle background o shadows al otro
+   Por ejemplo si ambos tienen background, quitarle background o shadows al otro
 8. What components to emphasize? Testimonials, call-to-action sections,
    highlight sections, preview cards, forms, pricing tables, important
    rows/columns in tables, etc.
@@ -564,7 +564,7 @@ basics of investing and fix it!
 Si no es dañino
 Ser yo mismo y lo queme gusta
 
-UX Deign _can not_ exist without UI Design!
+UX Design _can not_ exist without UI Design!
 
 Un Ui bien diseñado ya contribuye bastante a la experiencia del usuario(UX)
 
