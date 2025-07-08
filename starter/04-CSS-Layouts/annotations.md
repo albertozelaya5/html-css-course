@@ -187,7 +187,7 @@ También, el espacio se puede distribuir uniformemente con `justify-content: spa
 
 ### Anotación de refuerzo
 
-para centrar elementos horizontalmente, se debe primero definir la anchura del padre en común, y los hijos(debe ser block asi como los hijos). Ya que, este margin horizontal auto toma como referencia la anchura del padre, y el espacio que sobre en el hijo, lo distribuye uniformemente:
+para `centrar elementos horizontalmente`, se debe primero definir la anchura del padre en común(opcional), y los hijos(debe ser block asi como los hijos). Ya que, este margin horizontal auto toma como referencia la anchura del padre, y el espacio que sobre en el hijo, lo distribuye uniformemente:
 
 ```
 article {

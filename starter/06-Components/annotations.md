@@ -75,3 +75,53 @@ Son estos elementos los combinamos en estos componentes
 6. Sidebar
 7. Multi-column/magazine
 8. Asymmetry/Experimental
+
+## Building an Accordion Component - Part 1
+
+```
+.accordion {
+  width: 700px; /* Funciona si tiene un espacio definido */
+  margin: 100px auto; /* va a centrar este elemento del padre */
+}
+```
+
+> [!NOTE]
+> Se le asigna un ancho definido para que se pueda centrar con `margin`
+
+> [!TIP]
+> En lugar de apuntar a la pseudo clase de last-child, se puede usar una list con flex y usar gap
+
+ANTES
+
+```
+.hidden-box ul:last-child {
+  color: #868e96;
+  margin-bottom: 12px;
+}
+```
+
+DESPUÉS
+
+```
+.hidden-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+```
+
+También, cuando se use flex o Grid, las propiedades de ancho y margen de un elemento pasan a ser manejadas por estas propiedades
+
+Cuando se rota un flex a column, el `main axis` (linea que sigue el flex) se rota a verticalmente
+
+Y el `cross axis`, pasa a ser horizontal
+
+Por lo que, propiedades como
+
+- align-items, los alinea horizontalmente
+- justify-content, verticalmente
+- gap vertical
+
+line-height: 1; /_ Se hereda _/, ya que son propiedades tipo texto
+
+Una propiedad tipo texto se hereda de cualquier elemento, la podemos usar en el body para resetearlo
