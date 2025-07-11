@@ -90,6 +90,7 @@ Son estos elementos los combinamos en estos componentes
 
 > [!TIP]
 > En lugar de apuntar a la pseudo clase de last-child, se puede usar una list con flex y usar gap
+> flex-direction: column;
 
 ANTES
 
@@ -125,3 +126,35 @@ Por lo que, propiedades como
 line-height: 1; /_ Se hereda _/, ya que son propiedades tipo texto
 
 Una propiedad tipo texto se hereda de cualquier elemento, la podemos usar en el body para resetearlo
+
+## Building an Accordion Component - Part 2
+
+### Optional class
+
+Podemos marcar asi como `.clase div{}`, lo mismo con una clase dentro de otra
+
+```
+.open .hidden-box {
+  display: block;
+}
+```
+
+Y aqui el estilo solo se aplicara si la clase hija tiene `open` como clase padre
+
+Tambien, haciendo otro uso del `display: grid` y el `box-shadow`
+
+```
+.item {
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: center;
+}
+```
+
+> [!NOTE]
+> Recordando que al poner `1fr` estamos designando todo el remaining space a esa columna o fila
