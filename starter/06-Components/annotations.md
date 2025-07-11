@@ -158,3 +158,38 @@ Tambien, haciendo otro uso del `display: grid` y el `box-shadow`
 
 > [!NOTE]
 > Recordando que al poner `1fr` estamos designando todo el remaining space a esa columna o fila
+
+> [!TIP]
+> Lazy loading images
+
+```
+const imgTargets = document.querySelectorAll('img[data-src]');
+
+const loadImg = function (entries, observer) {
+const [entry] = entries;
+
+if (!entry.isIntersecting) return;
+
+// Replace src with data-src
+entry.target.src = entry.target.dataset.src;
+
+entry.target.addEventListener('load', function () {
+entry.target.classList.remove('lazy-img');
+});
+
+observer.unobserve(entry.target);
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+root: null,
+threshold: 0,
+rootMargin: '200px',
+});
+
+imgTargets.forEach(img => imgObserver.observe(img));
+```
+
+El `img[data-src]` es todos los elementos tipo image que tenga como propiedad data-src, luego el uso de la API `IntersectionObserver`
+
+- Se cambia la src actual con el definido en el dataset.src
+- Cuando dicha imagen ya este completamente cargada se remueve una clase de espera
