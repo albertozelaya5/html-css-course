@@ -299,3 +299,40 @@ padding: 32px 48px 32px 86px <!-- Reloj: top, right, bottom, left -->
 - El padre suele llevar un nombre mas corto, ej "testimonial", y los hijos una extension del madre, "testimonial-text"
 
 - Si se tienen dos clases en el hijo, la primera común puede tener nombre corto, ej "dot" y la especifica la misma extension "dot--fill"
+
+## Building a Table Component - Part 1
+
+Antes se usaba la etiqueta `table` como parte del layout, pero desde que están grid y flex, este solo se usa de manera semántica para representar data que realmente puede verse en forma de tabla
+
+Dentro de table, se tienen las siguientes etiquetas
+
+- <tr> => Table Row (Para representar la fila)
+- <td> => Table Data (Para representar las columnas)
+- <table> => La etiqueta padre
+
+```
+<table>
+  <tr>
+    <td>Chair</td>
+    <td>The Laid Back</td>
+    <td>The Worker Bee</td>
+    <td>The Chair 4/2</td>
+  </tr>
+</table>
+```
+
+Lo mismo se podría lograr con un `CSS Grid`, sin embargo, hacerlo con la etiqueta table es la forma mas semántica
+Si realmente se tiene data que encaja en una tabla, la forma mas correcta es con `table`
+
+Usualmente la primera linea(row) es la mas importante, asi que una forma para decirle a nuestro HTML eso es diferenciado el head del body
+
+- <thead> => Table head (Para la primera fila de la tabla)
+- <tbody> => Table body (Para el resto de la tabla)
+
+Sin embargo, si queremos que cada celda se distinta del body, esta es la forma de hacerlo
+
+- <th> => Table head cell (Para los elementos individuales de la Table Head)
+
+Esta misma etiqueta la podemos usar, si queremos marcar una celda especifica como la mas importante o como un header único
+
+Esta es como una overview de las tables, lo que realmente es util
