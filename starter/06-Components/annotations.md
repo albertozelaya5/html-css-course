@@ -193,3 +193,47 @@ El `img[data-src]` es todos los elementos tipo image que tenga como propiedad da
 
 - Se cambia la src actual con el definido en el dataset.src
 - Cuando dicha imagen ya este completamente cargada se remueve una clase de espera
+
+## Building a Carousel Component - Part 1
+
+Usamos la etiqueta `blockquote` debido a que es una card de tipo testimonio
+
+También, al setear solamente el height o el width de una img, el otro se seteara de forma automática
+
+```
+img{
+  height: 200px;
+}
+```
+
+> [!TIP]
+> Al definir un width en un elemento, podemos centrarlo usando margin
+
+```
+margin: 100px auto;
+```
+
+El primero es eje y, el segundo es eje x
+
+Una buena táctica para estilizar, es comenzar de menos a mas, primero los size, colores, bordes, y ya luego los layouts
+
+### Transform
+
+Esta propiedad sirve para muchas cosas, pero el primer uso que le daremos sera escalar una imagen de su size inicial
+
+```
+img {
+  height: 200px;
+  transform: scale(1.5);
+}
+```
+
+Dentro del transform, hacemos uso de una `función` llamada `scale`, por defecto el 1 es el size por default, pero mientras mas grande sea se saldrá de su container e ira escalando
+
+Y ya luego para que el padding del background se siga viendo, usamos un padding-left grande
+
+```
+.carousel{
+  padding: 32px;
+}
+```
