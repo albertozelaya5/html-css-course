@@ -237,3 +237,65 @@ Y ya luego para que el padding del background se siga viendo, usamos un padding-
   padding: 32px;
 }
 ```
+
+## Building a Carousel Component - Part 2
+
+> [!TIP]
+> Al hacer un position absolute, se toma ese elemento completamente fuera de la pagina
+
+Y debemos setear al padre que queremos que tome como ref, como position `relative`
+
+Para tener un rounded complete, se debe o setear un border radius muy alto, o si son cuadrados iguales
+
+```
+border-radius: 50%
+```
+
+Ahora, ocupamos que los botones al ser un elemento individual, se ajusten verticalmente sin el display flex
+
+```
+top: 50%;
+```
+
+Ahora esto realmente lo hace, lo que pasa es que el elemento centralizado INICIA en ese 50% de height, pero luego lo demás ocupa espacio
+
+### Centrar verticalmente con absolute position
+
+Para hacer esto, nuevamente hacemos uso de `transform`, con la función `translate`
+
+```
+translate(0,-50%)
+```
+
+arg1: eje x(horizontal), arg2: eje y(vertical)
+
+La diferencia, es que ese 50% en el transform, es el 50 de la altura verdadera del elemento, no del padre
+
+Asi que, ya inicia al 50% del padre, y el translate hace que se mueva de abajo hacia arriba, 50% de la altura del elemento en si
+
+> [!NOTE]
+> A estos dos argumentos, si no se les asigna porcentaje, se les puede poner cualquier valor ej. 32px, 3rem, etc
+> Si se les asigna porcentaje, siempre tomaran el tamaño del elemento al que se le asigna transform
+
+---
+
+Cuando se hacen botones, una buena practica para botones de pagination es dejar un espacio vació, pero debido a que html no cuenta esos espacios vacíos
+
+Se tiene una html entity llamada _Non breaking space_ `&nbsp;`
+
+> TODO
+
+Practicar con la nueva prop transform, probar valores horizontales y verticales
+
+Ahora, el padding puede ser
+
+```
+padding: 200px 100px; <!-- Horizontal, vertical -->
+padding: 32px 48px 32px 86px <!-- Reloj: top, right, bottom, left -->
+```
+
+### Buenas convenciones
+
+- El padre suele llevar un nombre mas corto, ej "testimonial", y los hijos una extension del madre, "testimonial-text"
+
+- Si se tienen dos clases en el hijo, la primera común puede tener nombre corto, ej "dot" y la especifica la misma extension "dot--fill"
