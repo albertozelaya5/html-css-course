@@ -193,3 +193,146 @@ El `img[data-src]` es todos los elementos tipo image que tenga como propiedad da
 
 - Se cambia la src actual con el definido en el dataset.src
 - Cuando dicha imagen ya este completamente cargada se remueve una clase de espera
+
+## Building a Carousel Component - Part 1
+
+Usamos la etiqueta `blockquote` debido a que es una card de tipo testimonio
+
+También, al setear solamente el height o el width de una img, el otro se seteara de forma automática
+
+```
+img{
+  height: 200px;
+}
+```
+
+> [!TIP]
+> Al definir un width en un elemento, podemos centrarlo usando margin
+
+```
+margin: 100px auto;
+```
+
+El primero es eje y, el segundo es eje x
+
+Una buena táctica para estilizar, es comenzar de menos a mas, primero los size, colores, bordes, y ya luego los layouts
+
+### Transform
+
+Esta propiedad sirve para muchas cosas, pero el primer uso que le daremos sera escalar una imagen de su size inicial
+
+```
+img {
+  height: 200px;
+  transform: scale(1.5);
+}
+```
+
+Dentro del transform, hacemos uso de una `función` llamada `scale`, por defecto el 1 es el size por default, pero mientras mas grande sea se saldrá de su container e ira escalando
+
+Y ya luego para que el padding del background se siga viendo, usamos un padding-left grande
+
+```
+.carousel{
+  padding: 32px;
+}
+```
+
+## Building a Carousel Component - Part 2
+
+> [!TIP]
+> Al hacer un position absolute, se toma ese elemento completamente fuera de la pagina
+
+Y debemos setear al padre que queremos que tome como ref, como position `relative`
+
+Para tener un rounded complete, se debe o setear un border radius muy alto, o si son cuadrados iguales
+
+```
+border-radius: 50%
+```
+
+Ahora, ocupamos que los botones al ser un elemento individual, se ajusten verticalmente sin el display flex
+
+```
+top: 50%;
+```
+
+Ahora esto realmente lo hace, lo que pasa es que el elemento centralizado INICIA en ese 50% de height, pero luego lo demás ocupa espacio
+
+### Centrar verticalmente con absolute position
+
+Para hacer esto, nuevamente hacemos uso de `transform`, con la función `translate`
+
+```
+translate(0,-50%)
+```
+
+arg1: eje x(horizontal), arg2: eje y(vertical)
+
+La diferencia, es que ese 50% en el transform, es el 50 de la altura verdadera del elemento, no del padre
+
+Asi que, ya inicia al 50% del padre, y el translate hace que se mueva de abajo hacia arriba, 50% de la altura del elemento en si
+
+> [!NOTE]
+> A estos dos argumentos, si no se les asigna porcentaje, se les puede poner cualquier valor ej. 32px, 3rem, etc
+> Si se les asigna porcentaje, siempre tomaran el tamaño del elemento al que se le asigna transform
+
+---
+
+Cuando se hacen botones, una buena practica para botones de pagination es dejar un espacio vació, pero debido a que html no cuenta esos espacios vacíos
+
+Se tiene una html entity llamada _Non breaking space_ `&nbsp;`
+
+> TODO
+
+Practicar con la nueva prop transform, probar valores horizontales y verticales
+
+Ahora, el padding puede ser
+
+```
+padding: 200px 100px; <!-- Horizontal, vertical -->
+padding: 32px 48px 32px 86px <!-- Reloj: top, right, bottom, left -->
+```
+
+### Buenas convenciones
+
+- El padre suele llevar un nombre mas corto, ej "testimonial", y los hijos una extension del madre, "testimonial-text"
+
+- Si se tienen dos clases en el hijo, la primera común puede tener nombre corto, ej "dot" y la especifica la misma extension "dot--fill"
+
+## Building a Table Component - Part 1
+
+Antes se usaba la etiqueta `table` como parte del layout, pero desde que están grid y flex, este solo se usa de manera semántica para representar data que realmente puede verse en forma de tabla
+
+Dentro de table, se tienen las siguientes etiquetas
+
+- <tr> => Table Row (Para representar la fila)
+- <td> => Table Data (Para representar las columnas)
+- <table> => La etiqueta padre
+
+```
+<table>
+  <tr>
+    <td>Chair</td>
+    <td>The Laid Back</td>
+    <td>The Worker Bee</td>
+    <td>The Chair 4/2</td>
+  </tr>
+</table>
+```
+
+Lo mismo se podría lograr con un `CSS Grid`, sin embargo, hacerlo con la etiqueta table es la forma mas semántica
+Si realmente se tiene data que encaja en una tabla, la forma mas correcta es con `table`
+
+Usualmente la primera linea(row) es la mas importante, asi que una forma para decirle a nuestro HTML eso es diferenciado el head del body
+
+- <thead> => Table head (Para la primera fila de la tabla)
+- <tbody> => Table body (Para el resto de la tabla)
+
+Sin embargo, si queremos que cada celda se distinta del body, esta es la forma de hacerlo
+
+- <th> => Table head cell (Para los elementos individuales de la Table Head)
+
+Esta misma etiqueta la podemos usar, si queremos marcar una celda especifica como la mas importante o como un header único
+
+Esta es como una overview de las tables, lo que realmente es util
