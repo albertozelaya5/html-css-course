@@ -336,3 +336,54 @@ Sin embargo, si queremos que cada celda se distinta del body, esta es la forma d
 Esta misma etiqueta la podemos usar, si queremos marcar una celda especifica como la mas importante o como un header único
 
 Esta es como una overview de las tables, lo que realmente es util
+
+## Building a Table Component - Part 2
+
+Para estilizar poniendo bordes en las celdas, necesitamos estilizar las "td" y "td"
+
+```
+td,
+th {
+  border: 1px solid #343a40;
+}
+```
+
+Pero esto dará como resultado, que varias celdas tienen bordes repetidos, para eso usamos esta propiedad
+
+> border-collapse
+
+```
+table{
+  border-collapse: collapse;
+}
+```
+
+Lo que hace, es que en el valor `collapse` todos los bordes que estén pegados, se vuelven uno solo
+
+También se usa cuando solo hay bordes invisibles
+
+> [!IMPORTANT]
+> Las propiedades `margin` y `padding` al declararse dos valores, es (eje y, eje x )
+
+Ahora, para poner un color de fondo a la table head, no solemos seleccionar thead, en cambio, seleccionamos individualmente cada celda
+
+```
+table{
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: #087f5b;
+  color: #fff;
+}
+```
+
+Luego para seleccionar el color para las filas pares e impares, hacemos uso del ntn child
+
+```
+tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+```
+
+Esa pseudo clase `nth-child()` se puede poner cualquier valor numérico como argumento, aceptara 1er, 2do, 3er hijo, etc
