@@ -87,6 +87,7 @@ Son estos elementos los combinamos en estos componentes
 
 > [!NOTE]
 > Se le asigna un ancho definido para que se pueda centrar con `margin`
+> Lo que hace es que al darle ancho o alto, margin reparte el espacio del padre sobrante a ambos lados(en auto)
 
 > [!TIP]
 > En lugar de apuntar a la pseudo clase de last-child, se puede usar una list con flex y usar gap
@@ -387,3 +388,41 @@ tbody tr:nth-child(even) {
 ```
 
 Esa pseudo clase `nth-child()` se puede poner cualquier valor numérico como argumento, aceptara 1er, 2do, 3er hijo, etc
+
+## CHALLENGE #1: Building a Pagination Component
+
+Aun en una pseudo clase, podemos acceder al hijo de esta forma:
+
+```
+.btn:hover .btn-icon {
+  stroke: #fff;
+}
+```
+
+Cuando el botón este hover, poner este estilo en el btn-icon
+
+> [!IMPORTANT]
+> Los elementos inline por definición no se les puede aplicar height o width, ya que solo toman el espacio necesario
+> Ver la lectura de la prioridad de selectores
+
+> The "and" selector
+
+También, podemos asignar dos clases, de esta forma
+
+```
+.page-link.page-link--current {
+  background-color: #087f5b;
+  color: #fff;
+}
+
+<a href="#" class="page-link page-link--current">3</a>
+```
+
+Asi solo accedemos al elemento que tenga ambas clases(SIN ESPACIO), siempre nos debemos pegar a la especificidad del selector
+Con espacio seria un descendent selector
+
+```
+.page-link:visited
+```
+
+Un elemento al tener dos clases, aunque una sea clase y otra pseudo clase, incrementa us valor de especificidad
