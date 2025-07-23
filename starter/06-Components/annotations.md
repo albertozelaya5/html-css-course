@@ -402,10 +402,11 @@ Aun en una pseudo clase, podemos acceder al hijo de esta forma:
 Cuando el botón este hover, poner este estilo en el btn-icon
 
 > [!IMPORTANT]
-> Los elementos inline por definición no se les puede aplicar height o width, ya que solo toman el espacio necesario
+> Los elementos inline por definición no se les puede aplicar height o width, ya que solo toman el espacio necesario => The AND selector
 > Ver la lectura de la prioridad de selectores
 
-> The "and" selector
+> The "AND" selector
+> Con espacio seria "DESCENDED" selector
 
 También, podemos asignar dos clases, de esta forma
 
@@ -426,3 +427,47 @@ Con espacio seria un descendent selector
 ```
 
 Un elemento al tener dos clases, aunque una sea clase y otra pseudo clase, incrementa us valor de especificidad
+
+> Background
+
+Es un shorthand que sirve para varias cosas, cambiar el color de fondo, imagen de fondo
+
+> [!IMPORTANT]
+> En el button, esto es lo que se debe usar si se quiere dejar color transparente
+
+```
+.btn {
+  background: none;
+}
+```
+
+## Web Design Rules #10 - Part 2: Layout Patterns
+
+> [!NOTE]
+> Ver video n# 94
+
+Tocaremos los patrones mas grandes, siendo los `sections components`, y los `layout patterns`
+
+### Section components
+
+1. Navigation => Al hacer un hover o click, se despega un pequeño box con mas información, puede ser small or big box, u ocupar casi toda la pagina
+   En mobile versions, puede haber un overlay de ese navbar que se sobreponga a la pagina, secondary navigation
+2. Hero section => Very first section of the page, contains des on the site in main heading, buttons and images, pueden haber híbridos
+3. Footer => Is a trend to put a complete site man o this section, secondary or terciar information, policies, cell numbers, social icons, submit form
+4. Call to action section => Están casi al final de la pagina, subscribirse, enviar un email, etc
+   Use some visual hierarchy, color or background image
+5. Feature row => Small section que describen some feature of the product or service, storytelling, etc
+   image one side, text in other side, testimonial relacionado a lo que se vende, small uppercase title
+
+> Layout patterns
+
+Una forma especifica de repetir un componente varias veces, el mas simple puede ser el row of cards
+
+1. Row of boxes or cards
+2. Grid of boxes or cards => possible 2 dimensional grid, también podemos poner patrones dentro de componentes, describir características, features de un servicio o producto
+3. Z pattern => es una forma de repetir feature rows, pero con diferentes configuraciones(diferente orden), esto se hace porque nuestros ojos tienen una tendencia a leer filas opuestas, se suelen usar 3 rows pero puede variar
+4. F pattern => también repite las feature rows, pero de una forma mas horizontal, este no se alterna y sigue una sola dirección, imagen y luego contenido es lo normal, pero puede ser al revés
+5. Single column => Se usa mas on responsive websites, mobile or very simple websites o blogs, sin sidebars
+6. Sidebar => Se puede usar para blogs, u options on web apps, table of content or summary
+7. Multi-column/magazine => Combinar diferentes columns, con diferente width, y hacer una especie de layout, como si fuera un periódico o una revista
+8. Asymmetry/Experimental => Layouts parecidos al anterior pero destacados, sin orden especifico, se usan para dar un impacto a nuestros usuarios, y en estos se suele usar el `CSS Grid`, cualquiera que sea de dos dimensiones, se suelen usar para ciertas sections destacadas, no para toda la pagina
