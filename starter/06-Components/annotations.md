@@ -471,3 +471,19 @@ Una forma especifica de repetir un componente varias veces, el mas simple puede 
 6. Sidebar => Se puede usar para blogs, u options on web apps, table of content or summary
 7. Multi-column/magazine => Combinar diferentes columns, con diferente width, y hacer una especie de layout, como si fuera un periódico o una revista
 8. Asymmetry/Experimental => Layouts parecidos al anterior pero destacados, sin orden especifico, se usan para dar un impacto a nuestros usuarios, y en estos se suele usar el `CSS Grid`, cualquiera que sea de dos dimensiones, se suelen usar para ciertas sections destacadas, no para toda la pagina
+
+## Building a Hero Section - Part 1
+
+El `header` es la etiqueta introductoria al website
+
+> [!IMPORTANT]
+> En los `anchor` y los elementos inline, siempre al poner un margin bottom en el elemento encima de ellos, se deben cambiar a
+
+```
+display: inline-block
+```
+
+Esto porque al ser inline, solo toman el alto necesario, Y NO LES IMPORTA el margin bottom, y en si el espaciado vertical
+
+---
+Otra técnica, es hacer el truco de margin 0 auto, 
