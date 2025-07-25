@@ -530,7 +530,59 @@ background-image: url(hero.jpg);
 background-size: cover;
 ```
 
-`background-image` 
+`background-image`
 
 - Que en ella, en la función `url`, solo debemos especificar la ruta de donde queremos sacara la imagen,
 - Y en `background-size`, el valor de cover, hace que se calcule el size en el cual la imagen cobra toda la pagina
+
+> Poner un color de fondo en una imagen
+
+Para hacer esto, ocupamos una propiedad extra, ya que al poner multiples imágenes en `background-image`, pone la primera sobre la segunda, y asi
+
+Entonces, `linear-gradient` cuenta como si fuera una imagen
+
+```
+background-image: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6)), url(hero.jpg);
+```
+
+Por lo que al ponerlo antes de la imagen(el linear gradient en rgba), se colorea esta misma imagen
+
+---
+
+### Linear gradient
+
+Es una función, que sirve para poner multiples colores, a diferencia de `background-color`
+
+```
+linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6))
+```
+
+La forma mas básica de hacerlo, es poner dos colores
+
+> Una de las formas de alinear contenido verticalmente
+
+Hay varias, pero la usada en este video fue poner el padre en `position: relative`, al hijo en `absolute`,
+
+PADRE
+
+```
+header{
+  position: relative;
+}
+```
+
+HIJO
+
+```
+.header-container {
+  position: absolute;
+
+  /* In relation to PARENT size*/
+  top: 50%;
+  left: 50%;
+
+  /* In relation to ELEMENT size */
+  transform: translate(-50%, -50%);
+  /* background-color: violet; */
+}
+```
