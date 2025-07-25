@@ -510,3 +510,27 @@ header {
 ```
 
 También existe el `viewport width`, aunque ese no se suele usar tanto, ya que en los `block elements`, estos ocupan el 100% del ancho que tienen por defecto
+
+## Building a Hero Section - Part 2
+
+Un width en porcentaje funciona mejor cuando se tiene un ancho o un alto definido
+
+```
+width: 50%;
+```
+
+Solo es cuestión de pensar lógicamente en las boxes, y al final, donde queremos que estén
+
+### Background image
+
+Comenzamos con esta propiedad
+
+```
+background-image: url(hero.jpg);
+background-size: cover;
+```
+
+`background-image` 
+
+- Que en ella, en la función `url`, solo debemos especificar la ruta de donde queremos sacara la imagen,
+- Y en `background-size`, el valor de cover, hace que se calcule el size en el cual la imagen cobra toda la pagina
