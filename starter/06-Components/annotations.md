@@ -486,4 +486,27 @@ display: inline-block
 Esto porque al ser inline, solo toman el alto necesario, Y NO LES IMPORTA el margin bottom, y en si el espaciado vertical
 
 ---
-Otra técnica, es hacer el truco de margin 0 auto, 
+
+> Utility Class
+
+Otra técnica, es hacer el truco de margin 0 auto, definir el ancho deseado, y esto ponerlo en una clase aparte, asi solo seleccionamos los elementos que queremos que tengan esa propiedad
+
+```
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+```
+
+> Viewport Height(vh)
+
+Es una medida que usamos para que abarque cierta parte o TODA la pantalla, el alto de la pantalla
+
+```
+header {
+  background-color: orangered;
+  height: 100vh;
+}
+```
+
+También existe el `viewport width`, aunque ese no se suele usar tanto, ya que en los `block elements`, estos ocupan el 100% del ancho que tienen por defecto

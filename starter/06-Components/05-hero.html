@@ -22,13 +22,25 @@
       GREY COLOR: #343a40
       */
 
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
       html {
         font-family: "Rubik", sans-serif;
         color: #444;
       }
 
       .container {
+        width: 1200px;
         margin: 0 auto;
+      }
+
+      header {
+        background-color: orangered;
+        height: 100vh;
       }
 
       nav {
@@ -36,6 +48,7 @@
         font-weight: 700;
         display: flex;
         justify-content: space-between;
+        background-color: green;
       }
 
       h1 {
@@ -67,7 +80,9 @@
       }
 
       section {
+        /* No se centra toda la sección porque queremos poner una imagen de background */
         padding: 96px 0;
+        background-color: #f7f7f7;
       }
     </style>
   </head>
