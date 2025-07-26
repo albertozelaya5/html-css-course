@@ -645,3 +645,63 @@ menu {
   grid-column: 2/-1;
 }
 ```
+
+## Building a Web Application Layout - Part 2
+
+- Los margenes horizontales, cuando se establecen como `auto` toman por defecto todo el remaining space
+
+```
+menu{
+  display: flex;
+}
+
+button:last-child {
+  margin-left: auto;
+}
+```
+
+Esto puede ser de utilidad en un apdre flex, que queremos que solo un elemento se vaya hasta el otro lado
+
+---
+
+> [!TIP]
+> Para los elementos tipo texto, tambien se aplica la propiedad `display flex`, ya que esta los puede transformar para alinearlos vertical y horizontalmente
+
+```
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1 0 auto;
+}
+```
+
+Pero, los elementos por defecto cuando sean flex, se encojeran, por lo que debemos decirle que no se pueden encojer de ser necesario => `flex-shrink: 0`
+
+> [!IMPORTANT]
+> Y estas propiedades del flex `0 1 auto`, se aplican en la clase de los hijos, no del padre
+
+> Overflow scroll
+
+Ahora, cuando un container tiene varios hijos, su comportamiento es que se ajuste a la altura de ellos
+
+Sin embargo, hay un truco para que este no sobrepase el alto de la pagina
+
+```
+section{
+  overflow: scroll;
+}
+```
+
+Mete todos los hijos dentro de las dimensiones del container para que no lo sobrepasen o se salgan
+
+Tambien podemos
+
+```
+section{
+  overflow: hidden;
+}
+```
+
+Que esto ocultara los elementos hijos del container
