@@ -586,3 +586,62 @@ HIJO
   /* background-color: violet; */
 }
 ```
+
+## Building a Web Application Layout - Part 1
+
+> Menu (etiqueta)
+
+A difernecia de nav, que se usa casi siempre(para enlaces dentro y fuera del sitio), `manu` es para esa parta del sitio que agrupo botones de menu
+
+- Descargar
+- Abrir
+- Filtrar
+- Gurdar
+
+Pero es mas recomendable usar `nav`, ya que su uso ha quedado obsoleto
+
+### Altura en los block elements
+
+- Ocupan todo el ancho disponible del contenedor padre.
+- Solo usan el alto necesario para mostrar su contenido.
+- Son como una caja que se estira horizontalmente, pero su altura se adapta al contenido.
+
+El `height` auto, quiere decir que se adaptan al contenido
+
+Si queremos que este sea mas grande o small, lo debemos definir
+
+---
+
+En este caso, queremos que el body ocupe todo el alto de la pagina
+
+```
+body{
+  height: 100vh;
+}
+```
+
+En conjunto con
+
+```
+body{
+  display: grid;
+  grid-template-columns: 80px 400px 1fr 250px;
+  grid-template-rows: 80px 1fr;
+}
+```
+
+> [!NOTE]
+> En el `display grid`, al poner 1fr, quiere decir que abarca todo el espacio restante, ya sea en rows o en columns
+
+- `grid-template-rows: 80px 1fr` => Toma todo el alto restante(Los 100vh)
+
+Y ya luego solo definimos de que punto a que punto ocuparan espacio los elementos predonminantes
+
+```
+nav {
+  grid-row: 1/-1;
+}
+menu {
+  grid-column: 2/-1;
+}
+```
