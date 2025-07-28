@@ -586,3 +586,122 @@ HIJO
   /* background-color: violet; */
 }
 ```
+
+## Building a Web Application Layout - Part 1
+
+> Menu (etiqueta)
+
+A difernecia de nav, que se usa casi siempre(para enlaces dentro y fuera del sitio), `manu` es para esa parta del sitio que agrupo botones de menu
+
+- Descargar
+- Abrir
+- Filtrar
+- Gurdar
+
+Pero es mas recomendable usar `nav`, ya que su uso ha quedado obsoleto
+
+### Altura en los block elements
+
+- Ocupan todo el ancho disponible del contenedor padre.
+- Solo usan el alto necesario para mostrar su contenido.
+- Son como una caja que se estira horizontalmente, pero su altura se adapta al contenido.
+
+El `height` auto, quiere decir que se adaptan al contenido
+
+Si queremos que este sea mas grande o small, lo debemos definir
+
+---
+
+En este caso, queremos que el body ocupe todo el alto de la pagina
+
+```
+body{
+  height: 100vh;
+}
+```
+
+En conjunto con
+
+```
+body{
+  display: grid;
+  grid-template-columns: 80px 400px 1fr 250px;
+  grid-template-rows: 80px 1fr;
+}
+```
+
+> [!NOTE]
+> En el `display grid`, al poner 1fr, quiere decir que abarca todo el espacio restante, ya sea en rows o en columns
+
+- `grid-template-rows: 80px 1fr` => Toma todo el alto restante(Los 100vh)
+
+Y ya luego solo definimos de que punto a que punto ocuparan espacio los elementos predonminantes
+
+```
+nav {
+  grid-row: 1/-1;
+}
+menu {
+  grid-column: 2/-1;
+}
+```
+
+## Building a Web Application Layout - Part 2
+
+- Los margenes horizontales, cuando se establecen como `auto` toman por defecto todo el remaining space
+
+```
+menu{
+  display: flex;
+}
+
+button:last-child {
+  margin-left: auto;
+}
+```
+
+Esto puede ser de utilidad en un apdre flex, que queremos que solo un elemento se vaya hasta el otro lado
+
+---
+
+> [!TIP]
+> Para los elementos tipo texto, tambien se aplica la propiedad `display flex`, ya que esta los puede transformar para alinearlos vertical y horizontalmente
+
+```
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1 0 auto;
+}
+```
+
+Pero, los elementos por defecto cuando sean flex, se encojeran, por lo que debemos decirle que no se pueden encojer de ser necesario => `flex-shrink: 0`
+
+> [!IMPORTANT]
+> Y estas propiedades del flex `0 1 auto`, se aplican en la clase de los hijos, no del padre
+
+> Overflow scroll
+
+Ahora, cuando un container tiene varios hijos, su comportamiento es que se ajuste a la altura de ellos
+
+Sin embargo, hay un truco para que este no sobrepase el alto de la pagina
+
+```
+section{
+  overflow: scroll;
+}
+```
+
+Mete todos los hijos dentro de las dimensiones del container para que no lo sobrepasen o se salgan
+
+Tambien podemos
+
+```
+section{
+  overflow: hidden;
+}
+```
+
+Que esto ocultara los elementos hijos del container
