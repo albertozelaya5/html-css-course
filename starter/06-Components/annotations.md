@@ -705,3 +705,22 @@ section{
 ```
 
 Que esto ocultara los elementos hijos del container
+
+> [!TIP]
+> Los apartados para la propiedad `cover` son los siguientes
+
+- para imágenes tipo `img` se usa
+
+```
+.img{
+  object-fit: cover
+}
+```
+
+- Para background images de divs, etc
+
+```
+div{
+  background-size: cover
+}
+```
