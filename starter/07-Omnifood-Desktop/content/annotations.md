@@ -48,7 +48,7 @@ Esto se basa del paso anterior
 - Make sure website works well in `all major websites`(Chrome, Firefox, Safari, Edge, maybe even old IE 😱)
 - Test the website on `actual mobile devices`, not just in DevTools
 - Optimize all `images`, in terms of dimensions and file size(ver images lecture)
-- Fis simple `accessibility` problems (ej color contrast issues)
+- Fix simple `accessibility` problems (ej color contrast issues)
 - Run the `Lighthouse` performance test in Chrome DevTools and try to fix reported issues
 - Pensar en la optimización de los motores de búsqueda (SEO) <= BUSCAR ESTO
 
@@ -64,3 +64,10 @@ Esto se basa del paso anterior
 - Keep the website content `updated over time`. If you're working with a client, you can create monthly maintenance contract (ingresos recurrentes 🤑)
 - Install `analytics software` (ej Google Analytics or Fathom) to get statistics about website users. This may `inform future changes` in the site structure and content
 - A `blog` that is updated regularly is a good way to keep users coming back, and is also good for SEO
+
+## Defining and Planning the Project (Steps 1 and 2)
+
+- `Your first "job"!`
+- `You were hired to design and build a website` for a fictional company called Omnifood
+- Omnifood is startup that uses Ai to create and deliver custom healthy meal plans
+- They provided us with all the content for the website (content.md)
