@@ -71,3 +71,35 @@ Esto se basa del paso anterior
 - `You were hired to design and build a website` for a fictional company called Omnifood
 - Omnifood is startup that uses Ai to create and deliver custom healthy meal plans
 - They provided us with all the content for the website (content.md)
+
+## Defining and Planning the Project (Steps 1 and 2)
+
+### DEFINE THE PROJECT
+
+- Define WHO the website is for:
+  For a client
+
+- Define WHAT the website is for (Hacer coincidir los objetivos de la empresa con los del usuario)
+
+`Business goal`: Selling monthly food subscription
+`User goal`: Eating well effortlessly, without spending a lot of time and money
+
+- Define target audience
+
+Busy people who like technology, are interested in a healthy diet, and have a well-paying-job <= ver en base a la empresa y la description
+
+### PLAN THE PROJECT
+
+✅ Plan and gather website content
+
+- Plan out the sitemap
+
+  We will just build a one page marketing website (oftentimes called a landing page), so no sitemap
+
+- Define the website personality
+
+  Based on the tech centered target audience, as well as the actual product being sold, we will use the `startup/upbeat` personality. We might add some elements of the `calm/peaceful` personality, since the product is all about customer well being as well
+
+- Plan page sections(en base al contenido)
+
+En base a analizar el contenido, ver como distribuirlo entre secciones
