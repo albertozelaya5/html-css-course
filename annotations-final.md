@@ -1879,7 +1879,7 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Border-radius - ✅ Border-radius is very common
   - Layout - All kinds of layouts, no particular tendencies
 
-![Personalities Spectrum](persSpectrum.png)
+![Personalities Spectrum](personalitySpectrum.png)
 
 Se pueden hacer combinaciones de todos, implementando ciertas características de uno
 Usualmente cuando se inyecta bold o calm, es en los headers typefaces, en los titles de las sections, o illustrations in calming pastel colors
