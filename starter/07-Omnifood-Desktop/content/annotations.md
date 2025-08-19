@@ -103,3 +103,23 @@ Busy people who like technology, are interested in a healthy diet, and have a we
 - Plan page sections(en base al contenido)
 
 En base a analizar el contenido, ver como distribuirlo entre secciones
+
+## Sketching Initial Layout Ideas (Step 3) => También ver el layout
+
+Ver la lectura de
+
+- Logo + Navigation
+- Hero => Ya que tenemos una headline y una description summary
+- Featured in (just with the logos) => logos one beside other
+- How it works => Z pattern con fotos del teléfono
+- Meals (and list of diets) <= Al estar relacionados, se ponen side by side => Card
+- Testimonials + gallery <= side by side
+- Pricing + features (como en una tabla podrían estar con las features)
+- Call to Action (CTA) form <= Siempre es la ULTIMA sección antes del footer
+- Footer
+
+Luego de ver estos componentes, hacer un sketch en excalidraw o Figma, o a mano
+
+> [!IMPORTANT]
+> No tiene que ser toda la pagina, sino aproximadamente como la mitad
+> También se pueden probar con varios sketches para experimentar
