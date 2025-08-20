@@ -1896,24 +1896,25 @@ No copiamos completamente un design! instead, it's about taking good parts(de un
 Adaptando esos diseños con las rules y guidelines que aprendimos antes, que luego de ver varios diseños sea mas fácil hacer uno por cuenta propia
 
 ---
+
 Seria recomendable cada par de tiempo, un mes, darle una ojeada a los sitios de inspiración, aunque no se tenga que hacer un design, para ver cuales son las tendencias.
 Mientras mas las veamos veremos ciertos patrones
 
 ## Web Design Rules #10 - Part 1: Elements and Components (Inspiration)
 
 > [!NOTE]
-> Ver video n# 86
+> Ver video n# 86 <= Para tener guidelines de componentes y secciones
 
-Un ingrediente crusial que habiamos estado pasando por alto, es el `diseño de componentes, y layouts(diseños)`
+Un ingrediente crucial que habíamos estado pasando por alto, es el `diseño de componentes, y layouts(diseños)`
 
 ### From Elements to WebPage
 
 Cuando solo tenemos el contenido, y tenemos que diseñar la pagina, nos podemos sentir realmente perdidos, pero no tiene porque ser así, y aqui vienen unos ya establecidos `patrones de diseño`
 
-- Comenzamos con small, paragraph, images and buttons, que contendran el contenido real
+- Comenzamos con small, paragraph, images and buttons, que contendrán el contenido real
 - Los ensamblamos en componentes comunes(feature card, pricing table, tab Component, feature rol)
 
-- Tomamos todos estos componentes, y los usamos para hacer nuestro layuout, utilizando patrones de diseño comunes
+- Tomamos todos estos componentes, y los usamos para hacer nuestro layout, utilizando patrones de diseño comunes
 - Y en base a tomar estos diseños, ensamblamos una pagina final con ellos, asi es como llegamos a un `diseño final`
 
 Los elementos se organizan en componentes, que se organizan en layouts, que terminan conformado una pagina web final

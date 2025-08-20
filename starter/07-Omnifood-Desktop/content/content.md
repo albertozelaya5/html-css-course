@@ -126,3 +126,17 @@ Careers
 Recipe directory
 Help center
 Privacy & terms
+
+#####
+
+## Sections
+
+- Logo + Navigation
+- Hero
+- Featured in (just with the logos)
+- How it works
+- Meals (and list of diets) <= Al estar relacionados, se ponen side by side
+- Testimonials + gallery <= side by side
+- Pricing + features (como en una tabla podrían estar con las features)
+- Call to Action (CTA) form <= Siempre es la ULTIMA sección antes del footer
+- Footer
