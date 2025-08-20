@@ -123,3 +123,50 @@ Luego de ver estos componentes, hacer un sketch en excalidraw o Figma, o a mano
 > [!IMPORTANT]
 > No tiene que ser toda la pagina, sino aproximadamente como la mitad
 > También se pueden probar con varios sketches para experimentar
+
+## First Design and Development Steps (Step 4)
+
+Ir haciendo el sistema poco a poco, sentar las bases, colores primarios, fuentes, reglas de font size y whitespace, shadows poco, border igual
+
+```css
+/* 
+---- 01  TYPOGRAPHY SYSTEM
+
+- Font sizes (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+- Font weights:
+Default: 400
+
+- Line heights:
+Default: 1
+
+---- 01 COLORS
+
+- Primary: #e67e22
+- Tints (Light versions):
+- Shades (Dark versions):
+- Accents:
+- Greys:
+#555
+
+---- ICONS <= ESTA VEZ NO
+
+---- 05 SHADOWS
+Es mejor ser consistente, usar pocos pero efectivos
+
+---- 06 BORDER RADIUS
+
+---- 07 WHITESPACE
+
+- Spacing System (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+*/
+```
+
+> [!IMPORTANT]
+> Ver style.css
+
+Tambien veremos el responsive design, que necesitan ser aplicados al `principio` de nuestro proyecto
