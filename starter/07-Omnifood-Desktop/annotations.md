@@ -291,3 +291,15 @@ html {
 Asi, al modificar la font size del navegador, se modificara el tamaño de los demás elementos
 
 A partir de ahora, usaremos rems, en lugar de pixeles
+
+## Building the Hero - Part 1
+
+Cuando a un elemento se le da width 100%, va a tomar todo el ancho de su contenedor padre
+
+```css
+.hero-img {
+  width: 100%;
+}
+```
+
+fixed width => ancho fijo
