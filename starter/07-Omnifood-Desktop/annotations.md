@@ -222,3 +222,72 @@ Es la forma mas tradicional, y muchas veces la mas fácil <= We will do `desktop
 - Forces us to reduce websites and apps to the `absolute essentials`
 
 Es la forma opuesta básicamente, la idea es realmente pensar como sera la experiencia en móviles, es la forma mas moderna y reciente
+
+## How rem and max-width Work
+
+### max-width
+
+Imaginemos que cuando se encoje mucho la pantalla(el viewport), queremos que el elemento tome el ancho del contenedor padre
+Eso es lo que hace `max-width`
+
+```css
+.test {
+  /* width: 1000px; */
+  background-color: red;
+  padding: 100px;
+  max-width: 1000px;
+}
+```
+
+Mientras se haga mas pequeño, el elemento se ira adaptando al tamaño del padre, ocupando el 100% del width del padre
+Y si el padre es mas ancho que el `max-width`, el elemento tomara el ancho del `max-width`
+
+### rem
+
+Por definición, is the root element font size
+
+- La ruta del documento, es el html element, o sea el elemento padre de todos los demás
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Omnifood</title>
+  </head>
+  <body>
+    <h1>A healthy meal delivered to your door, every single day</h1>
+  </body>
+</html>
+```
+
+Igualmente, si no define el tamaño del html, 1rem sera el tamaño por defecto del navegador => Que es 16px
+
+- Justamente en que nos basemos en un font size, es donde reside la fuerza del rem, ya que al cambiar el font size en el html element, todos los elementos usados con rem, cambiaran su valor
+
+```css
+html {
+  font-size: 10px;
+}
+```
+
+Al cambiar el font size en el `html` element, todos los elementos definidos con `rem`, cambiaron su valor
+Al usar pantallas pequeñas, en lugar de usar media queries para encoger todos los valores, simplemente usaríamos el font size del html, para modificarlo todo
+
+> [!TIP]
+> Para facilitarnos los cálculos, un truco es usar el font size como 10px
+
+Sin embargo, si por alguna razón el usuario modifica el font size de su navegador, este valor no se ajustara, ya que el valor del html esta en duro
+En order to prevent that, podemos escoger un porcentaje del font size del navegador, haciéndolo de esta manera:
+
+```css
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font size setting */
+  font-size: 62.5%; /* Al escoger un porcentaje, es el porcentaje del tamaño de fuente del navegador */
+}
+```
+
+Asi, al modificar la font size del navegador, se modificara el tamaño de los demás elementos
+
+A partir de ahora, usaremos rems, en lugar de pixeles
