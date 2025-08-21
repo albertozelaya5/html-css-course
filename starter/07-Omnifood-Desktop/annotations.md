@@ -123,3 +123,102 @@ Luego de ver estos componentes, hacer un sketch en excalidraw o Figma, o a mano
 > [!IMPORTANT]
 > No tiene que ser toda la pagina, sino aproximadamente como la mitad
 > También se pueden probar con varios sketches para experimentar
+
+## First Design and Development Steps (Step 4)
+
+Ir haciendo el sistema poco a poco, sentar las bases, colores primarios, fuentes, reglas de font size y whitespace, shadows poco, border igual
+
+```css
+/* 
+---- 01  TYPOGRAPHY SYSTEM
+
+- Font sizes (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+- Font weights:
+Default: 400
+
+- Line heights:
+Default: 1
+
+---- 01 COLORS
+
+- Primary: #e67e22
+- Tints (Light versions):
+- Shades (Dark versions):
+- Accents:
+- Greys:
+#555
+
+---- ICONS <= ESTA VEZ NO
+
+---- 05 SHADOWS
+Es mejor ser consistente, usar pocos pero efectivos
+
+---- 06 BORDER RADIUS
+
+---- 07 WHITESPACE
+
+- Spacing System (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+*/
+```
+
+> [!IMPORTANT]
+> Ver style.css
+
+También veremos el responsive design, que necesitan ser aplicados al `principio` de nuestro proyecto
+
+## Responsive Design Principles
+
+- Es una design technique to make a webpage adjust its layout and visual style to `any possible screen size` (window or viewport size)
+- In practice, this means that responsive design makes websites usable on all devices, such as `desktop computers, tablets, and mobile phones`
+- Its a set of practices, `not a separate technology`. Its all just CSS!
+
+### Responsive design INGREDIENTS
+
+Pueden haber mas y ser clasificados de manera diferente, pero estos son los mas importantes
+
+1. Fluid layouts
+
+- To allow website to adapt to the `current viewport` width (or even height), adaptarse al tamaño de lo visible en pantalla
+- Use %(or vh/vw) unit instead of px for elements that `should adapt to viewport (usually layout)`
+- Use max-width instead of width, Grid y Flex son fluid por defecto
+  Cosas que se deben adaptar al viewport, deben usar porcentajes y no pixeles
+
+2. Responsive units
+
+- Use rem unit instead of px for most lengths
+- To make it easy to `scale the entire layout down` or up automatically
+- `Helpful trick`: setting 1rem to 10px for easy calculations
+
+3. Flexible images
+
+- By default, images `don't scale automatically` as we change the viewport, so we need to fix that
+- Always use % for image dimensions, together with the max-width property
+
+4. Media queries
+
+- Bring responsive sites to life!
+- To change CSS styles on `certain viewport widths` (called breakpoints)
+
+Van justo en ese orden, de lo contrario el media no servirá de nada
+
+### DESKTOP-FIRST VS MOBILE FIRST DEVELOPMENT
+
+#### DESKTOP-FIRST
+
+- Start writing CSS for the desktop: `large screen`
+- Then, media queries `shrink design` to smaller screens
+
+Es la forma mas tradicional, y muchas veces la mas fácil <= We will do `desktop first` in this project. It's easier to learn
+
+#### MOBILE FIRST
+
+- Start writing CSS for mobile devices: `small screen`
+- Then, media queries `expand design` to a large screen
+- Forces us to reduce websites and apps to the `absolute essentials`
+
+Es la forma opuesta básicamente, la idea es realmente pensar como sera la experiencia en móviles, es la forma mas moderna y reciente

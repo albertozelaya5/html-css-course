@@ -1289,7 +1289,7 @@ Se pone la coma antes y entre comillas, para decir que se la da prioridad a ese 
 Ambos se toman en pixeles
 
 ```
-line-height: 1.1; <!--  1.5 and 2 normal, big text go menos de 1.5 -->
+line-height: 1.1; <!-- Entre 1, 1.5 and 2 normal, big text go menos de 1.5 -->
 letter-spacing: -1; <!-- -1px de lo normal -->
 ```
 
