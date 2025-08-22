@@ -374,3 +374,33 @@ Asi cuando ocupemos alguna propiedad en un elemento especifico, podemos usarla s
 Cuando queremos esta propiedad, realmente queremos que el estilo se aplique, por eso usamos `!important`
 
 Hay varios usos, pero de forma general se usa para margenes que queremos usar en varios lugares, pero no queremos que estén en todos lados, porque puede dar conflictos de reutilización
+
+## Building the Hero - Part 3
+
+> [!TIP]
+> Para mas de 3 niveles de anidación, lo recomendable es dejar de usar clases y acceder directamente al elemento con un `descendent selector`
+
+```html
+<div class="delivered-meals">
+  <div class="delivered-imgs">
+    <img src="img/customers/customer-1.jpg" alt="Customer photo" />
+    <!-- ... -->
+  </div>
+</div>
+```
+
+```css
+.delivered-imgs img {
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+```
+
+También, en nuestras imágenes queremos el efecto que se sobrepongan sobre otras, para ello podemos usar un margin negativo
+
+- Asi, los elementos colapsan, y se da la ilusión de in z-index
+- Otro truco es usar un border del mismo color de fondo, para dar la ilusión de separación
