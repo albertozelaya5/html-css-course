@@ -724,7 +724,7 @@ Apply personality traits to each design ingredient = Typography, colors, images,
 
 - `Startup/Upbeat`: Software startups, and other modern-looking companies
 
-  - Widely used in startups, featuring medium-sized sans-serif typeface,s light-grey text and backgrounds, and rounded elements
+  - Widely used in startups, featuring medium-sized sans-serif typefaces, light-grey text and backgrounds, and rounded elements
 
   Usa shadows y border radius
 

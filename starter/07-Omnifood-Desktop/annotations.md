@@ -303,3 +303,104 @@ Cuando a un elemento se le da width 100%, va a tomar todo el ancho de su contene
 ```
 
 fixed width => ancho fijo
+
+## Building the Hero - Part 2
+
+Cuando un boton queda transparente, queremos que al hacer hover se mira un borde, ahora, si lo hacemos con border esto se vera antinatural, ya que aparecera solo en el hover, active
+
+```css
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  /* border: 3px solid #fff; */
+
+  /* Trick to add border inside */
+  box-shadow: inset 0 0 0 3px #fff;
+  /* inset con esta keyword, el shadow se pondrá en el interior del elemento*/
+}
+```
+
+En su lugar, usamos `box-shadow`, con el keyword `inset` para que se pinte ese mismo color, dentro del elemento, sin diferencia de altura
+
+Ahora, cuando hacemos un hover no cambia el color de un solo, sino que de manera suave con una transicion, por lo que usaremos esta nueva propiedad
+
+### Transition
+
+Nos permite hacer una transicion entre dos valores, usando una animacion
+
+- Put transition on original "state"
+- Para ello necesitamos saber que propiedades necesitan ser animadas
+
+```css
+.btn:link,
+.btn:visited {
+  /* Put transition on original "state" */
+
+  transition: all 1s; /* Esto significa que se animaran todas las propiedades */
+  transition: background-color 1s; /* Esto significa que se animaran todas las propiedades */
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f; /* La propiedad que sera afectada */
+}
+```
+
+Como segundo valor, ocupamos el tiempo que va a tomar la transicion, pueden ser segundos o milisegundos
+
+> [!IMPORTANT]
+> Animation en si, es cambiar el valor de una propiead, de un valor a otro
+
+---
+
+Una técnica que podemos usar, cuando tenemos dos botones al lado de otro, es usar una helper class
+
+```css
+.margin-right-sm {
+  margin-right: 1.6rem !important; /* Nos aseguramos que siempre tendrá la prioridad mas alta */
+}
+```
+
+Lo podemos usar con display flex, pero seria mucho trabajo
+
+```html
+<a href="#" class="btn btn--full margin-right-sm">Start eating well</a>
+<a href="#" class="btn btn--outline">Learn more &darr;</a>
+```
+
+Asi cuando ocupemos alguna propiedad en un elemento especifico, podemos usarla sin romper la reutilización de las otras clases
+
+Cuando queremos esta propiedad, realmente queremos que el estilo se aplique, por eso usamos `!important`
+
+Hay varios usos, pero de forma general se usa para margenes que queremos usar en varios lugares, pero no queremos que estén en todos lados, porque puede dar conflictos de reutilización
+
+## Building the Hero - Part 3
+
+> [!TIP]
+> Para mas de 3 niveles de anidación, lo recomendable es dejar de usar clases y acceder directamente al elemento con un `descendent selector`
+
+```html
+<div class="delivered-meals">
+  <div class="delivered-imgs">
+    <img src="img/customers/customer-1.jpg" alt="Customer photo" />
+    <!-- ... -->
+  </div>
+</div>
+```
+
+```css
+.delivered-imgs img {
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+```
+
+También, en nuestras imágenes queremos el efecto que se sobrepongan sobre otras, para ello podemos usar un margin negativo
+
+- Asi, los elementos colapsan, y se da la ilusión de in z-index
+- Otro truco es usar un border del mismo color de fondo, para dar la ilusión de separación
