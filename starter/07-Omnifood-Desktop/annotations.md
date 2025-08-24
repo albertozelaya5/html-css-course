@@ -404,3 +404,20 @@ También, en nuestras imágenes queremos el efecto que se sobrepongan sobre otra
 
 - Asi, los elementos colapsan, y se da la ilusión de in z-index
 - Otro truco es usar un border del mismo color de fondo, para dar la ilusión de separación
+
+## Building the Header
+
+Tenemos la etiqueta `main` que simboliza el contenido principal de la pagina
+
+Algo que no cuenta como contenido principal, es algo que se repite o se ve en todo el sitio, por lo que lo que esta dentro del `header` no contaria como parte del main, y lo mismo con el `footer`
+
+---
+Tambien queremos que a medida vayamos bajando, el heading permanezca arriba, por lo que sale mas facil usar una fixed height
+
+```css
+.header {
+  /* ... */
+  /* Because we want header to be sticky later */
+  height: 9.6rem;
+}
+```
