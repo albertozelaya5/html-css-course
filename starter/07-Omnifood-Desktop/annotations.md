@@ -433,3 +433,94 @@ Tambien queremos que a medida vayamos bajando, el heading permanezca arriba, por
   gap: 3.2rem; /* Los li los solemos editar desde el padre */
 }
 ```
+
+## Setting Up a Reusable Grid
+
+> [!NOTE]
+> Para recordar, la manera de seleccionar el primer, segundo, tercer, o n elemento
+
+```html
+<section class="section-how grid">
+  <div>Test 1</div>
+</section>
+```
+
+```css
+.section-how div:nth-child(1) {
+  background-color: aqua;
+}
+.section-how div:nth-child(2) {
+  background-color: blue;
+}
+.section-how div:nth-child(3) {
+  background-color: violet;
+}
+.section-how div:nth-child(4) {
+  background-color: yellow;
+}
+```
+
+La diferencia con `last chilld`, es que esa si selecciona el ultimo hijo de una clase, selector o elemento padre, mientras que `nth-child(numero)` selecciona el primer o valor n del elemento que encuentraa
+
+---
+
+Ahora, hay momentos en los cuales queremos una clase reutilizable, por ejemplo queremos un grid
+
+```css
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+```
+
+Y tener la flexibilidad que en algunos elementos poder escoger entre 2, 3 o mas columnas
+En ese caso para no afectar la reusable class, usamos otras reusable class con prefjo "--" para simbolizar que son helpers de la principal
+
+```css
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+```
+
+Y luego la usamos como nos plazca
+
+```html
+<section class="section-how grid grid--2-cols"></section>
+<section class="section-how grid grid--3-cols"></section>
+```
+
+---
+
+Cuando asignnamos un container para que centre la info principal, una convencion es 1200px, y otra 1140px
+
+```css
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  margin: 0 auto;
+}
+```
+
+Y lo ponemos en un `max-width` para que al reducirse, ocupe todo el ancho del contenedor padre, y el `margin: 0 auto` distribuira el espacio horizontal para centrar el elemento
+
+Y ya que el margin distribuye el espacio que esta fuera del container, lo centrara
+
+> [!NOTE]
+> Cuando ponemos padding en un inline element, el ancho vertical no se aplicara, ya que por defecto el inline solo toma el espacio necesario
+> Para ello lo establecemos en `display: inline-block` para que acepte el espacio horizontal
+
+Y otra cosa que queremos, es que le color del fondo, se extienda en todo el width
+
+```html
+<section class="section-how">
+  <div class="container grid grid--2-cols"></div>
+</section>
+```
+
+Por lo que el margin, lo metemos dentro del div, para que simepre el section tome todo el ancho posible
+
+Y otra linea, es que el hero section, que es la primera seccion de la pagina, sea un poco mas ancha que las demas secciones
