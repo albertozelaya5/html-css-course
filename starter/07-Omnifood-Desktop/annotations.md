@@ -404,3 +404,70 @@ También, en nuestras imágenes queremos el efecto que se sobrepongan sobre otra
 
 - Asi, los elementos colapsan, y se da la ilusión de in z-index
 - Otro truco es usar un border del mismo color de fondo, para dar la ilusión de separación
+
+## Text area and selects examples
+
+> [!NOTE]
+> Todos estos se accede su valor mediante `document.querySelector(".nombre").value`
+
+### Input type text
+
+````html
+<label for="nombre">Nombre:</label>
+<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" />```
+````
+
+### Input type file
+
+> [!IMPORTANT]
+> Este se accede mediante `document.querySelector(".nombre").files`
+
+```html
+<label for="curriculum">Sube tu CV:</label> <input type="file" id="curriculum" name="curriculum" />
+```
+
+### Input type text area
+
+```html
+<label for="mensaje">Mensaje:</label>
+<textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+```
+
+### Input type select
+
+```html
+<label for="pais">Elige tu país:</label>
+<select id="pais" name="pais">
+  <option value="">--Selecciona un país--</option>
+  <option value="espania">España</option>
+  <option value="mexico">México</option>
+  <option value="argentina">Argentina</option>
+</select>
+```
+
+## Download a File from a button
+
+```js
+const button = document.getElementById(".descargarBtn");
+
+button.addEventListener("click", () => {
+  // La URL del archivo que quieres descargar. Puede ser una imagen, un PDF, un ZIP, etc.
+  const urlArchivo = "https://picsum.photos/200/300"; // Ejemplo de URL de una imagen.
+
+  // 3. Crea un elemento de enlace dinámicamente.
+  const enlace = document.createElement("a");
+  enlace.href = urlArchivo;
+
+  // 4. Establece el nombre del archivo. El navegador usará este nombre.
+  enlace.download = "mi_imagen.jpg";
+
+  // 5. Agrega el enlace al cuerpo del documento (es necesario para que funcione en algunos navegadores).
+  document.body.appendChild(enlace);
+
+  // 6. Simula un clic en el enlace para iniciar la descarga.
+  enlace.click();
+
+  // 7. Elimina el enlace del DOM para limpiar.
+  document.body.removeChild(enlace);
+});
+```
