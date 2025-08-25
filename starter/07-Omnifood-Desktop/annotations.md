@@ -405,6 +405,153 @@ También, en nuestras imágenes queremos el efecto que se sobrepongan sobre otra
 - Asi, los elementos colapsan, y se da la ilusión de in z-index
 - Otro truco es usar un border del mismo color de fondo, para dar la ilusión de separación
 
+## Building the Header
+
+Tenemos la etiqueta `main` que simboliza el contenido principal de la pagina
+
+Algo que no cuenta como contenido principal, es algo que se repite o se ve en todo el sitio, por lo que lo que esta dentro del `header` no contaria como parte del main, y lo mismo con el `footer`
+
+---
+
+Tambien queremos que a medida vayamos bajando, el heading permanezca arriba, por lo que sale mas facil usar una fixed height
+
+```css
+.header {
+  /* ... */
+  /* Because we want header to be sticky later */
+  height: 9.6rem;
+}
+```
+
+## Building the Navigation
+
+```css
+/* Esto es el ul> li */
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 3.2rem; /* Los li los solemos editar desde el padre */
+}
+```
+
+## Setting Up a Reusable Grid
+
+> [!NOTE]
+> Para recordar, la manera de seleccionar el primer, segundo, tercer, o n elemento
+
+```html
+<section class="section-how grid">
+  <div>Test 1</div>
+</section>
+```
+
+```css
+.section-how div:nth-child(1) {
+  background-color: aqua;
+}
+.section-how div:nth-child(2) {
+  background-color: blue;
+}
+.section-how div:nth-child(3) {
+  background-color: violet;
+}
+.section-how div:nth-child(4) {
+  background-color: yellow;
+}
+```
+
+La diferencia con `last chilld`, es que esa si selecciona el ultimo hijo de una clase, selector o elemento padre, mientras que `nth-child(numero)` selecciona el primer o valor n del elemento que encuentraa
+
+---
+
+Ahora, hay momentos en los cuales queremos una clase reutilizable, por ejemplo queremos un grid
+
+```css
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+```
+
+Y tener la flexibilidad que en algunos elementos poder escoger entre 2, 3 o mas columnas
+En ese caso para no afectar la reusable class, usamos otras reusable class con prefjo "--" para simbolizar que son helpers de la principal
+
+```css
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+```
+
+Y luego la usamos como nos plazca
+
+```html
+<section class="section-how grid grid--2-cols"></section>
+<section class="section-how grid grid--3-cols"></section>
+```
+
+---
+
+Cuando asignnamos un container para que centre la info principal, una convencion es 1200px, y otra 1140px
+
+```css
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  margin: 0 auto;
+}
+```
+
+Y lo ponemos en un `max-width` para que al reducirse, ocupe todo el ancho del contenedor padre, y el `margin: 0 auto` distribuira el espacio horizontal para centrar el elemento
+
+Y ya que el margin distribuye el espacio que esta fuera del container, lo centrara
+
+> [!NOTE]
+> Cuando ponemos padding en un inline element, el ancho vertical no se aplicara, ya que por defecto el inline solo toma el espacio necesario
+> Para ello lo establecemos en `display: inline-block` para que acepte el espacio horizontal
+
+Y otra cosa que queremos, es que le color del fondo, se extienda en todo el width
+
+```html
+<section class="section-how">
+  <div class="container grid grid--2-cols"></div>
+</section>
+```
+
+Por lo que el margin, lo metemos dentro del div, para que simepre el section tome todo el ancho posible
+
+Y otra linea, es que el hero section, que es la primera seccion de la pagina, sea un poco mas ancha que las demas secciones
+
+## Building the How-It-Works Section - Part 1
+
+### IntersectionObserver
+
+```js
+const headerObserver = new IntersectionObserver(callBack, {
+  root: null,
+  threshold: 1.0,
+  rootMargin: `${sectionHero.clientHeight - header.clientHeight}px`,
+});
+
+function callBack(entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) header.classList.add("float");
+  else if (header.classList.contains("float")) header.classList.remove("float");
+}
+```
+
+- root: Es el elemento con el cual se intersecta, puede ser un padre o ancestro del elemento a observar, o si es `null` es el viewport
+- threshold: Es el rango visible del elemento, para llamar la funcion, puede ser del 0-1.0 (siendo este 100%)
+- rootMargin: Es un margen extra, faltan tantos pixeles para que esto este o deje de ester 100% visible, y se dispare la funcion
+
+La funcion callBack provee dos argumentos
+
+- entries => un array de el o los elementos que se estan observando
+- observer => es el elemento que se esta observando, junto con sus metodos como unobserve, etc
+
 ## Text area and selects examples
 
 > [!NOTE]

@@ -731,7 +731,7 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   > Ingredients:
 
   - Typography - Medium-sized headings(not too large), usually one sans-serif typeface in whole design. Tendency for lighter text colors
-  - Colors - Blues, greens and purples are widely used. Lots of light backgrounds(mainly gray), gradients are also common
+  - Colors - Blues, greens and purples are widely used. Lots of light backgrounds(mainly gray), gradients are also common, neutral greys
   - Images - Images or illustrations are always used. 3D illustrations are modern. Sometimes patterns and shapes add visual details
   - Icons - ✅ Icons are very frequent
   - Shadows - ✅ Subtle shadows are frequent. Glows are becoming modern
