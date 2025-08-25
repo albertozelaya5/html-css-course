@@ -463,7 +463,7 @@ h3 + p::first-line {
 ```
 
 Es como decir "todos los p que esten siguientes al h3"
-Tambien tenemos los pseudo after y before, que es crear un elemento antes o despues del que se hace referencia:
+Tambien tenemos los pseudo after y before, que es crear un elemento antes o despues del que se hace referencia(ultimo hijo):
 
 ```
 h2::after {

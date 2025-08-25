@@ -527,31 +527,6 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 
 ## Building the How-It-Works Section - Part 1
 
-### IntersectionObserver
-
-```js
-const headerObserver = new IntersectionObserver(callBack, {
-  root: null,
-  threshold: 1.0,
-  rootMargin: `${sectionHero.clientHeight - header.clientHeight}px`,
-});
-
-function callBack(entries, observer) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) header.classList.add("float");
-  else if (header.classList.contains("float")) header.classList.remove("float");
-}
-```
-
-- root: Es el elemento con el cual se intersecta, puede ser un padre o ancestro del elemento a observar, o si es `null` es el viewport
-- threshold: Es el rango visible del elemento, para llamar la funcion, puede ser del 0-1.0 (siendo este 100%)
-- rootMargin: Es un margen extra, faltan tantos pixeles para que esto este o deje de ester 100% visible, y se dispare la funcion
-
-La funcion callBack provee dos argumentos
-
-- entries => un array de el o los elementos que se estan observando
-- observer => es el elemento que se esta observando, junto con sus metodos como unobserve, etc
-
 ## Text area and selects examples
 
 > [!NOTE]
@@ -618,3 +593,40 @@ button.addEventListener("click", () => {
   document.body.removeChild(enlace);
 });
 ```
+
+## Building the How-It-Works Section - Part 2
+
+Se separan los archivos en dos, el style, y el general
+
+También hacemos uso del z-index
+
+```css
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* NO SE NOS PERMITE PONER pseudo elements EN IMÁGENES */
+.step-img-box::before {
+  width: 60%;
+  /* height: 60%; */
+
+  /* 60% of parent's width */
+  padding-bottom: 60%;
+
+  background-color: #fdf2e9;
+  z-index: -2;
+}
+```
+
+> [!TIP] > `padding-bottom: 60%` es un aspect ratio hack ✨
+> Cuando ponemos un porcentaje en el pseudo element, ese toma la altura y anchura del padre, y el padre al no tener altura definida, no se asigna altura
+> La solución a esto es poner un padding, ya que este asigna espacio dentro del elemento, y este lo toma del ancho del elemento padre, al igual el margin
