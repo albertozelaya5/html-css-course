@@ -86,13 +86,25 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.heading-primary {
-  font-size: 5.2rem;
+.heading-primary,
+.heading-secondary {
   font-weight: 700;
-  line-height: 1.05;
   letter-spacing: -0.5px;
   color: #333;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
   margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+}
+
+.subheading {
 }
 
 .btn:link,
@@ -267,5 +279,15 @@ body {
 
 .section-how {
   padding: 9.6rem 0;
-  background-color: orangered;
+}
+
+.float {
+  position: sticky;
+  top: 0;
+  /* bottom: 0px; */
+  background-color: rgb(253, 242, 233, 0.8);
+}
+
+.step-img {
+  width: 50%;
 }

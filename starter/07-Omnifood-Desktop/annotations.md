@@ -524,3 +524,30 @@ Y otra cosa que queremos, es que le color del fondo, se extienda en todo el widt
 Por lo que el margin, lo metemos dentro del div, para que simepre el section tome todo el ancho posible
 
 Y otra linea, es que el hero section, que es la primera seccion de la pagina, sea un poco mas ancha que las demas secciones
+
+## Building the How-It-Works Section - Part 1
+
+### IntersectionObserver
+
+```js
+const headerObserver = new IntersectionObserver(callBack, {
+  root: null,
+  threshold: 1.0,
+  rootMargin: `${sectionHero.clientHeight - header.clientHeight}px`,
+});
+
+function callBack(entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) header.classList.add("float");
+  else if (header.classList.contains("float")) header.classList.remove("float");
+}
+```
+
+- root: Es el elemento con el cual se intersecta, puede ser un padre o ancestro del elemento a observar, o si es `null` es el viewport
+- threshold: Es el rango visible del elemento, para llamar la funcion, puede ser del 0-1.0 (siendo este 100%)
+- rootMargin: Es un margen extra, faltan tantos pixeles para que esto este o deje de ester 100% visible, y se dispare la funcion
+
+La funcion callBack provee dos argumentos
+
+- entries => un array de el o los elementos que se estan observando
+- observer => es el elemento que se esta observando, junto con sus metodos como unobserve, etc
