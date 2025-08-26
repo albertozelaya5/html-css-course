@@ -630,3 +630,68 @@ También hacemos uso del z-index
 > [!TIP] > `padding-bottom: 60%` es un aspect ratio hack ✨
 > Cuando ponemos un porcentaje en el pseudo element, ese toma la altura y anchura del padre, y el padre al no tener altura definida, no se asigna altura
 > La solución a esto es poner un padding, ya que este asigna espacio dentro del elemento, y este lo toma del ancho del elemento padre, al igual el margin
+
+## Building the Featured-In Section
+
+> [!TIP]
+> En las imágenes es mejor setear la altura, ya que se ve mas natural
+
+```css
+.logos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logos img {
+  height: 3.2rem;
+}
+```
+
+La diferencia entre `space-around` y `space-between`, es que en around la mitad del espacio que hay entre cada elemento, se aplica al inicio y al final también
+
+### Filter
+
+Con esta propiedad se pueden aplicar **efectos visuales** a imágenes y otros elementos.  
+Los valores se definen mediante **funciones** que aceptan parámetros entre `0–1`, `0%–100%`, grados o números según el caso.
+
+##### Ejemplos de funciones:
+
+- **`grayscale()`**  
+  Convierte la imagen a escala de grises.  
+  `0` = sin cambios, `1` o `100%` = completamente en grises.
+
+- **`blur()`**  
+  Aplica un desenfoque.  
+  El valor se da en píxeles, por ejemplo `blur(5px)`.
+
+- **`hue-rotate(45deg)`**  
+  Rota los colores de la imagen en el círculo cromático.  
+  El valor son grados (`deg`).
+
+- **`saturate(4)`**  
+  Aumenta o disminuye la saturación de los colores.  
+  `1` = sin cambios, valores mayores saturan más, menores a `1` desaturan.
+
+- **`brightness(0)`**  
+  Ajusta el brillo de la imagen.  
+  `1` = sin cambios, `0` = negro total, valores mayores a `1` la hacen más brillante, o en porcentaje
+
+```css
+.logos img {
+  height: 3.2rem;
+  filter: brightness(100%);
+  opacity: 50%;
+}
+```
+
+### Opacity
+
+> [!IMPORTANT]
+> También podemos ajustar la `opacity` igualmente en porcentajes
+> ESTE sera el truco para hacer las imágenes grises
+
+Esta propiedad no es exclusiva de imágenes
+
+> [!NOTE]
+> Ahora, el color del titulo y de estos logos sera aproximadamente #888, sin embargo si nos vamos al **contrast checker**,
+> Pero esto en ocasiones no importa, ya que hay ciertos elementos que queremos que no sean importantes, para resaltar mas los que si lo sons
