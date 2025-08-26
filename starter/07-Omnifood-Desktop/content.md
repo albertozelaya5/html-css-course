@@ -47,7 +47,7 @@ Paleo
 Low FODMAP
 Kid-friendly
 
-### Sample meals
+### Sample meals (comidas de muestra)
 
 **Omnifood AI chooses from 5,000+ recipes**
 

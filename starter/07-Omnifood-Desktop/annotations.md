@@ -695,3 +695,19 @@ Esta propiedad no es exclusiva de imágenes
 > [!NOTE]
 > Ahora, el color del titulo y de estos logos sera aproximadamente #888, sin embargo si nos vamos al **contrast checker**,
 > Pero esto en ocasiones no importa, ya que hay ciertos elementos que queremos que no sean importantes, para resaltar mas los que si lo sons
+
+## Building the Meals Section - Part 1
+
+Es mejor en lugar de categorías separadas, poner los valores, y quitar los dos puntos
+
+- Category: Vegetarian
+- Calories: 650
+- NutriScore (Registered): 74
+- Average rating: 4.9
+- Number reviews: 537
+
+```html
+<ul class="meal-attributes">
+  <li class="meal-attribute">650 Calories</li>
+</ul>
+```
