@@ -536,7 +536,12 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 
 ````html
 <label for="nombre">Nombre:</label>
-<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" />```
+<input
+  type="text"
+  id="nombre"
+  name="nombre"
+  placeholder="Escribe tu nombre completo"
+/>```
 ````
 
 ### Input type file
@@ -545,14 +550,21 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 > Este se accede mediante `document.querySelector(".nombre").files`
 
 ```html
-<label for="curriculum">Sube tu CV:</label> <input type="file" id="curriculum" name="curriculum" />
+<label for="curriculum">Sube tu CV:</label>
+<input type="file" id="curriculum" name="curriculum" />
 ```
 
 ### Input type text area
 
 ```html
 <label for="mensaje">Mensaje:</label>
-<textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+<textarea
+  id="mensaje"
+  name="mensaje"
+  rows="4"
+  cols="50"
+  placeholder="Escribe tu mensaje aquí..."
+></textarea>
 ```
 
 ### Input type select
@@ -710,4 +722,38 @@ Es mejor en lugar de categorías separadas, poner los valores, y quitar los dos 
 <ul class="meal-attributes">
   <li class="meal-attribute">650 Calories</li>
 </ul>
+```
+
+- &reg; Es una html entity para decir "marca registrada"
+
+Aqui usaremos una pagina llamada [ionic.io](https://ionic.io/ionicons)
+
+Donde con ayuda de unos scripts, tendremos una etiqueta personalizada
+
+```html
+<!-- VAN DENTRO DEL HEAD -->
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
+```
+
+Y asi obtenemos uso de esta etiqueta
+
+```html
+<ion-icon name="heart"></ion-icon>
+```
+
+Ya que, al usar un svg, consume mucho espacio y puede ser algo confuso
+
+```html
+<li class="meal-attribute">
+  <ion-icon name="restaurant-outline"></ion-icon>
+  <span>NutriScore &reg;</span>
+  74
+</li>
 ```
