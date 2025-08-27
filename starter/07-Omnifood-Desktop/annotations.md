@@ -536,12 +536,7 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 
 ````html
 <label for="nombre">Nombre:</label>
-<input
-  type="text"
-  id="nombre"
-  name="nombre"
-  placeholder="Escribe tu nombre completo"
-/>```
+<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" />```
 ````
 
 ### Input type file
@@ -550,21 +545,14 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 > Este se accede mediante `document.querySelector(".nombre").files`
 
 ```html
-<label for="curriculum">Sube tu CV:</label>
-<input type="file" id="curriculum" name="curriculum" />
+<label for="curriculum">Sube tu CV:</label> <input type="file" id="curriculum" name="curriculum" />
 ```
 
 ### Input type text area
 
 ```html
 <label for="mensaje">Mensaje:</label>
-<textarea
-  id="mensaje"
-  name="mensaje"
-  rows="4"
-  cols="50"
-  placeholder="Escribe tu mensaje aquí..."
-></textarea>
+<textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
 ```
 
 ### Input type select
@@ -732,14 +720,8 @@ Donde con ayuda de unos scripts, tendremos una etiqueta personalizada
 
 ```html
 <!-- VAN DENTRO DEL HEAD -->
-<script
-  type="module"
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-></script>
-<script
-  nomodule
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 ```
 
 Y asi obtenemos uso de esta etiqueta
@@ -756,4 +738,82 @@ Ya que, al usar un svg, consume mucho espacio y puede ser algo confuso
   <span>NutriScore &reg;</span>
   74
 </li>
+```
+
+- &reg; Es una html entity para decir "marca registrada"
+
+Aqui usaremos una pagina llamada [ionic.io](https://ionic.io/ionicons)
+
+Donde con ayuda de unos scripts, tendremos una etiqueta personalizada
+
+```html
+<!-- VAN DENTRO DEL HEAD -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+```
+
+Y asi obtenemos uso de esta etiqueta
+
+```html
+<ion-icon name="heart"></ion-icon>
+```
+
+Ya que, al usar un svg, consume mucho espacio y puede ser algo confuso
+
+```html
+<li class="meal-attribute">
+  <ion-icon name="restaurant-outline"></ion-icon>
+  <span>NutriScore &reg;</span>
+  74
+</li>
+```
+
+## Building the Meals Section - Part 2
+
+Cuando formateamos icons, deben ser del mismo size, ya que se ponen dentro de una caja rectangular
+
+```css
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+```
+
+En este caso, estos paquetes son tratados como texto, por lo que comparten sus propiedades, por lo que también funcionaria con `font-size` por ejemplo
+
+---
+
+Le ponemos ciertas etiquetas a cada card, para hacerlo mas fácil de leer y entendible
+
+```css
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+```
+
+Usualmente en los box shadow, el blur es el doble del size del shadow vertical
+
+```css
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden; /* !!!! */
+}
+```
+
+También, cuando ponemos un border radius en el padre, el comportamiento por defecto de todos los elementos, es desbordarse del elemento padre (overflowing)
+
+Por lo que, desde el elemento padre, debemos poner que todo lo que desborda se oculte, o en otras palabras `overflow: hidden`
+
+> [!IMPORTANT]
+> Siempre cuando usamos imágenes, mas en cards, debemos fijarnos que tengan las mismas dimensiones, o MÍNIMO el mismo aspect ratio
+
+```css
+.meal-img {
+  width: 100%; /* 100% del elemento padre */
+}
 ```

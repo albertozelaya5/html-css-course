@@ -1228,8 +1228,10 @@ Las diferentes reglas de como sera la página, dependerán del estilo que se des
 - Usar menos de 75 caracteres por linea
 - For normal-sized text, use a line height between 1.5 and 2, big text go menos de 1.5
   Mientras mas grande sea el texto menos line height deberá tener
-- Disminuir letter spacing in headlines, if it looks unnatural
-- Experiment todo with capitalize para títulos pequeños. Make them small and bold an increase letter-spacing
+- Disminuir letter spacing in headlines, if it looks unnatural, go
+  letter-spacing: -1px; <!-- Entre 1px y -1px de lo normal -->
+
+- Experiment with capitalize para títulos pequeños. Make them small and bold an increase letter-spacing
 - Usually, don't justify text(es una convención mas que nada)
 - No center long text blocks. Small blocks are fine
 
@@ -1290,7 +1292,7 @@ Ambos se toman en pixeles
 
 ```
 line-height: 1.1; <!-- Entre 1, 1.5 and 2 normal, big text go menos de 1.5 -->
-letter-spacing: -1; <!-- -1px de lo normal -->
+letter-spacing: -1px; <!-- Entre 1px y -1px de lo normal -->
 ```
 
 ## Web Design Rules #2: Colors
