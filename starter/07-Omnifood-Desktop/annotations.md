@@ -872,3 +872,38 @@ Y al poner solo Y, solo movemos el elemento en dirección vertical, por ultimo
 Cuando un elemento se acerca a una fuente de luz, su sombra se hace mas grande y a la vez de un gris mas claro, por ello cambiamos de box shadow
 
 ## Building the Testimonials Section - Part 1
+
+### full lead section
+
+Aquí en lugar de un solo container con fixed width, vamos a usar todo el ancho de la pagina para unir dos componentes en uno
+
+> [!TIP]
+> La etiqueta `blockquote` se usa para poner testimonios, product reviews, citar a alguien en un articulo o blog
+
+También es común, tener una linea con la persona que hizo o dijo el testimonio, que en este caso "-" seria un `&mdash;`
+
+```html
+<div class="testimonials">
+  <figure class="testimonial">
+    <img class="testimonial-img" src="img/customers/dave.jpg" alt="Photo of customer Dave Bryson" />
+
+    <blockquote class="testimonial-text">
+      Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.
+    </blockquote>
+  </figure>
+  <p class="testimonial-name" &mdash;>Dave Bryson</p>
+</div>
+```
+
+Cuando las imágenes son cuadradas, solo es necesario establecer el width
+
+```css
+.testimonial-img {
+  width: 6.4rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8; /* MULTIPLICARA EL SIZE DE LA FUENTE */
+}
+```
