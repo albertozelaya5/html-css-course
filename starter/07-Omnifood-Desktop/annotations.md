@@ -870,3 +870,5 @@ Y al momento del hover, usamos la `translate` function, que funciona en X, Y
 
 Y al poner solo Y, solo movemos el elemento en dirección vertical, por ultimo
 Cuando un elemento se acerca a una fuente de luz, su sombra se hace mas grande y a la vez de un gris mas claro, por ello cambiamos de box shadow
+
+## Building the Testimonials Section - Part 1
