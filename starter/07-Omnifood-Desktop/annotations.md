@@ -817,3 +817,56 @@ Por lo que, desde el elemento padre, debemos poner que todo lo que desborda se o
   width: 100%; /* 100% del elemento padre */
 }
 ```
+
+## Building the Meals Section - Part 3
+
+Normalmente, en un enlace nosotros ponemos un underline, pero NO con `text-decoration`
+
+```css
+.link:link,
+.link:visited {
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+```
+
+En su lugar, usamos `border-bottom`, ya que ahi tenemos una keyword especial que toma el mismo color del texto, llamada `currentColor`
+Esto sirve especialmente cuando se esta en hover u en otros estados
+
+Otra practica que tenemos, es quitar ese underline el momento de hacer hover, SIN EMBARGO, si se la quitamos con `border-bottom: none`, producirá un error en nuestro diseño, por el pixel que declaramos al inicio
+
+```css
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+```
+
+> [!NOTE]
+> La propiedad `text-align: center`, sirve con elementos tipo block, NO inline
+
+Por ultimo, podemos agregar un hover muy bonito en las cards, donde al poner el mouse encima, se hacen para arriba
+
+Tenemos la clase principal, la base
+
+```css
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  transition: all 0.4s;
+}
+```
+
+Y al momento del hover, usamos la `translate` function, que funciona en X, Y
+
+```css
+.meal:hover {
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+  transform: translateY(-1.2rem);
+}
+```
+
+Y al poner solo Y, solo movemos el elemento en dirección vertical, por ultimo
+Cuando un elemento se acerca a una fuente de luz, su sombra se hace mas grande y a la vez de un gris mas claro, por ello cambiamos de box shadow
