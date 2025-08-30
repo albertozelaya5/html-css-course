@@ -536,7 +536,12 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 
 ````html
 <label for="nombre">Nombre:</label>
-<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" />```
+<input
+  type="text"
+  id="nombre"
+  name="nombre"
+  placeholder="Escribe tu nombre completo"
+/>```
 ````
 
 ### Input type file
@@ -545,14 +550,21 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 > Este se accede mediante `document.querySelector(".nombre").files`
 
 ```html
-<label for="curriculum">Sube tu CV:</label> <input type="file" id="curriculum" name="curriculum" />
+<label for="curriculum">Sube tu CV:</label>
+<input type="file" id="curriculum" name="curriculum" />
 ```
 
 ### Input type text area
 
 ```html
 <label for="mensaje">Mensaje:</label>
-<textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+<textarea
+  id="mensaje"
+  name="mensaje"
+  rows="4"
+  cols="50"
+  placeholder="Escribe tu mensaje aquí..."
+></textarea>
 ```
 
 ### Input type select
@@ -720,8 +732,14 @@ Donde con ayuda de unos scripts, tendremos una etiqueta personalizada
 
 ```html
 <!-- VAN DENTRO DEL HEAD -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
 ```
 
 Y asi obtenemos uso de esta etiqueta
@@ -748,8 +766,14 @@ Donde con ayuda de unos scripts, tendremos una etiqueta personalizada
 
 ```html
 <!-- VAN DENTRO DEL HEAD -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
 ```
 
 Y asi obtenemos uso de esta etiqueta
@@ -885,10 +909,15 @@ También es común, tener una linea con la persona que hizo o dijo el testimonio
 ```html
 <div class="testimonials">
   <figure class="testimonial">
-    <img class="testimonial-img" src="img/customers/dave.jpg" alt="Photo of customer Dave Bryson" />
+    <img
+      class="testimonial-img"
+      src="img/customers/dave.jpg"
+      alt="Photo of customer Dave Bryson"
+    />
 
     <blockquote class="testimonial-text">
-      Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.
+      Inexpensive, healthy and great-tasting meals, without even having to order
+      manually! It feels truly magical.
     </blockquote>
   </figure>
   <p class="testimonial-name" &mdash;>Dave Bryson</p>
@@ -905,5 +934,38 @@ Cuando las imágenes son cuadradas, solo es necesario establecer el width
 .testimonial-text {
   font-size: 1.8rem;
   line-height: 1.8; /* MULTIPLICARA EL SIZE DE LA FUENTE */
+}
+```
+
+## Building the Testimonials Section - Part 2
+
+> [!NOTE]
+> Usualmente el `column-gap` necesita mas espacio que el `row-gap`
+
+```css
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+```
+
+## Overflow
+
+overflow funciona cuando los elementos hijos se desbordan o son mas grandes que el elemento padre, y aqui es que decidimos hacer con ello
+
+Podemos ocultarlo, ponerlos en un scroll, etc
+
+```css
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  /* transition: transform 0.4s; */
+  transition: all 0.4s; /* Los transition siempre en el elemento base*/
 }
 ```
