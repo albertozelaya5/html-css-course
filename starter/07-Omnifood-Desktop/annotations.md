@@ -969,3 +969,7 @@ Podemos ocultarlo, ponerlos en un scroll, etc
   transition: all 0.4s; /* Los transition siempre en el elemento base*/
 }
 ```
+
+## Building the Pricing Section - Part 1
+
+Hacemos uso de la ley de proximidad y la visual hierarchy
