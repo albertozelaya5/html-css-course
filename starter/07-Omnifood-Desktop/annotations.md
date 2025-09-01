@@ -995,3 +995,53 @@ También lo podemos hacer de otra forma, usando la pseudo clase `not`
 ```
 
 Aquí le estamos diciendo **cuando no sea el ultimo elemento, agrega este `margin-bottom`**
+
+## Building the Features Part
+
+Debido a que es una librería, no toma bien el box model, ya que aunque le definimos el ancho y largo, este toma padding y margin fuera de las medidas establecidas
+
+```css
+.feature-icon {
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+```
+
+También, en muchos lugares podemos usar el `aside` como un contenido relacionado, MAS NO CRUCIAL para la pagina
+
+Por ejemplo este texto relacionado
+
+```html
+<aside class="plan-details">
+  Prices include all applicable taxes. You can cancel at any time. Both plans include the following
+</aside>
+```
+
+> [!NOTE]
+> Muchas veces vamos a ocupar utilizar estilos similares, por ejemplo helpers, pero luego queremos customizar esos estilos
+> Existen varias maneras, pero una que podemos usar es usar otro helper
+
+Si tenemos esta clase
+
+```css
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+```
+
+Podemos usarla para crear un espacio vertical en un elemento, pero si luego queremos reducir ese espacio
+
+```css
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+```
+
+Usamos otro helper, que tiene un selector de mayor especificidad, buscar artículos de especificidad

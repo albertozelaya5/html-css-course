@@ -94,7 +94,7 @@ body {
   /* margin-bottom: 9.6rem; */
 }
 
-.gird:not(:last-child) {
+.grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }
 
