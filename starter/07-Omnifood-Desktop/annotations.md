@@ -1254,3 +1254,30 @@ Se puede pensar que ese es un pequeño detalle del cual no hay que preocuparse, 
 ### COSAS A BUSCAR / APRENDER
 
 - Como estilizar checkboxes
+
+## Building the Footer - Part 1
+
+Como es el footer, lo podremos fuera del `main` ya que aquí van las secciones que NO se repiten
+
+Y tanto un header navBar como un footer, se pueden repetir en toda la pagina, `main` es para la parte que es especifica de esa pagina
+
+---
+
+Cuando seleccionamos el icono principal, ya sea en el header o footer, queremos que nos mande de vuelta a la parte alta de la pagina principal, y para ello hacemos esto
+
+```html
+<a href="#">
+  <img class="logo" src="img/omnifood-logo.png" alt="Omnifood logo" />
+</a>
+```
+
+Y el logo se seguirá viendo igual!
+
+Podemos poner anchors especiales, que al darles click, ya sea hagan una llamada por teléfono, o redirijan al correo
+
+```html
+<a href="tel:415-201-6370">415-201-6370</a><br />
+<a href="mailto:hello@omnifood.com">hello@omnifood.com</a>
+```
+
+Usando esos dos prefijos `mailto:`, `tel:` y poniendo su valor correspondiente
