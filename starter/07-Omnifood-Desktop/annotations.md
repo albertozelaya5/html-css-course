@@ -1117,3 +1117,54 @@ Todo esto se trata de accesibilidad, ya que hay usuarios ciegos o que tienen pan
 ---
 
 Hay resoluciones donde el navegador no siempre sera completamente pixel perfect, asi que debemos tener en cuenta eso, por ejemplo en los border radius
+
+## Building the Call-To-Action Section - Part 2
+
+### form
+
+Para mandar información, tenemos dos comportamientos por defecto
+
+```html
+<form class="cta-form" action="#">
+  <input type="text" />
+  <input type="email" />
+  <!-- <input type="submit" value="" /> -->
+  <button class="btn">Sign up now</button>
+</form>
+```
+
+- El input tipo `submit`
+- Poner un botón dentro del form
+  Por defecto hará que cuando se presione, recargue la pagina
+
+También tenemos la propiedad `action` del form, que sera hacia que dirección enviaremos esos datos
+
+### Inputs
+
+Tenemos inputs de diferentes tipos, texto, numero, email, password, etc
+
+```html
+<label for="full-name">Full name</label> <input id="full-name" type="text" placeholder="John Cena" required />
+```
+
+Ademas, usualmente se acompaña el input con un texto de ejemplo, para ello tenemos dos opciones
+
+- un `placeholder` que es usado como un ejemplo del texto requerido
+- un `label` que dice que campo sera, en este caso el nombre completo
+
+Si le ponemos la prop `required` no dejara enviar el formulario hasta que se llene el campo
+
+```html
+<label for="select-where">Where did you hear from us?</label>
+<select name="" id="select-where" required>
+  <option value="">Please choose one option:</option>
+  <option value="friends">Friends and family</option>
+  <option value="youtube">YouTube video</option>
+  <option value="podcast">Podcast</option>
+  <option value="ad">Facebook ad</option>
+  <option value="others">Others</option>
+</select>
+```
+
+> [!NOTE]
+> Todos estos elementos inputs y labels son inline-elements
