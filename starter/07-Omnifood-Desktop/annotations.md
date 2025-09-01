@@ -1166,5 +1166,91 @@ Si le ponemos la prop `required` no dejara enviar el formulario hasta que se lle
 </select>
 ```
 
+Y al poner un `id` en los inputs, con la propiedad `for` en el label, al dar click dará un focus al input relacionado
+
 > [!NOTE]
 > Todos estos elementos inputs y labels son inline-elements
+
+## Building the Call-To-Action Section - Part 3
+
+Ahora vamos a estilizar los inputs, dándoles un ancho, un tamaño de letra y una fuente, dado que a estos tipos de elementos no heredan la fuente de sus padres por defecto
+
+```css
+.cta-form label {
+  display: block; /* Aquí ocupara todo el ancho del padre */
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit; /* Hereda la fuente */
+}
+```
+
+La palabra clave `inherit` hereda diferentes propiedades de sus elementos padre
+
+Y para estilizar su placeholder, recordemos que los pseudo elementos que podemos estilizar, pero realmente no existen en la pagina:
+
+- la primera linea
+- la primera letra
+- El placeholder
+
+Otro estado que podemos estilizar es cuando un input o elemento esta en focus, y al ser otro estado es otra pseudo class
+
+Aquí decimos, todos los elementos, que estén en estado `focus`
+
+```css
+*:focus {
+  outline: none;
+}
+```
+
+NUNCA HACER ESTO ❌
+
+En el pasado, una solución para quitar la linea azul de un elemento, es establecer esa propiedad `outline` (encargada de mostrar esa linea azul) como none, pero esto es terrible para quienes solo pueden usar el teclado
+
+### outline
+
+Esta propiedad, la podemos usar como estilizamos un border
+
+```css
+*:focus {
+  outline: 4px dotted #e67e22;
+  outline-offset: 8px;
+}
+```
+
+`outline-offset` <= Es como un espacio de ese borde
+
+Pero lo malo es que eso no hereda el border radius, en cambio algo que si lo hace es esto
+
+```css
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+```
+
+Que es establecer una pequeña sombra, que si heredera el radius, ya que al final es una sombra, que se envuelve al rededor el elemento
+
+Y este universal selector, lo podemos usar también como descendent selector
+
+```css
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+```
+
+Se puede pensar que ese es un pequeño detalle del cual no hay que preocuparse, pero la accesibilidad realmente es importante
+
+> [!IMPORTANT]
+> Esos estados focus son cosas que debemos definir en nuestra propia pagina
+
+### COSAS A BUSCAR / APRENDER
+
+- Como estilizar checkboxes
