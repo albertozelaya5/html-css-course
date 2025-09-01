@@ -1045,3 +1045,75 @@ Podemos usarla para crear un espacio vertical en un elemento, pero si luego quer
 ```
 
 Usamos otro helper, que tiene un selector de mayor especificidad, buscar artículos de especificidad
+
+## Building the Call-To-Action Section - Part 1
+
+Mientras mas oscuro sea el color de fondo, mas oscura necesita ser la forma, de otra forma no se vera
+
+### Linear gradient
+
+Podemos establecer un fondo de varios colores con esta propiedad
+Primero debemos llamarla asi
+
+```css
+.cta {
+  background-image: linear-gradient(90deg, rgb(230, 126, 34), rgb(235, 152, 78));
+
+  /* background-image: linear-gradient(to right, red, rgb(235, 152, 78)); */
+}
+```
+
+Y se hace dentro de `background-image`, ya que se se le trata a esta función como una imagen
+
+- Como primer argumento, tenemos el `degree` o la dirección de los colores, que usualmente va en sentido contrario
+- Si ponemos `to right` el ultimo color establecido ira a la derecha, y asi sucesivamente
+- O podemos usar esquinas (corners), por ejemplo `to right bottom`, siendo el ultimo color el que ira en al esquina inferior derecha
+
+---
+
+Otra cosa que podemos hacer es poner una imagen con una sombra, tipo una imagen polarizada
+
+```css
+.cta-img-box {
+  background-image: linear-gradient(to right bottom, rgba(235, 151, 78, 0.35), rgba(230, 125, 34, 0.35)),
+    url("../img/eating.jpg");
+}
+```
+
+Estableciendo varios valores en `background-image`, esos se sobre pondrán de izquierda a derecha
+
+> [!IMPORTANT]
+> Desde el lugar que estemos, debemos buscar los resources, en este caso, desde el `style.css`, buscar la imagen `eating.jpg`, que esta afuera de ese nivel, como texto ""
+
+- **../** significa moverse al folder padre, en el file tree o árbol de archivos
+
+```css
+.cta-img-box {
+  background-image: url("../img/eating.jpg");
+  background-size: cover;
+  /* object-fit: cover; */ /* PARA LAS IMÁGENES */
+  background-position: bottom;
+}
+```
+
+`background-size: cover` significa que no importa la dimension, la imagen de fondo siempre lo cubrirá por completo
+
+Otra propiedad interesante es `background-position`, que cuando el elemento padre no sea tan grande y no abarque toda la imagen, podemos alinearla
+
+Ahora el ser una imagen de fondo, si no tiene un contenido no se mostrara apropiadamente, ya que ahora solo existe en nuestro css, y por ello existe una nueva propiedad en nuestro HTML llamada `role`
+
+### role
+
+Le podemos decir a un elemento "actúa como este elemento"
+
+```html
+<div class="cta-img-box" role="img" aria-label="Woman enjoying food"></div>
+```
+
+Y en lugar de usar `alt` que es exclusivo de las imágenes, usaremos `aria-label` que sirve para el mismo propósito
+
+Todo esto se trata de accesibilidad, ya que hay usuarios ciegos o que tienen pantallas reducidas, y NUNCA debemos olvidarnos de estos usuarios
+
+---
+
+Hay resoluciones donde el navegador no siempre sera completamente pixel perfect, asi que debemos tener en cuenta eso, por ejemplo en los border radius
