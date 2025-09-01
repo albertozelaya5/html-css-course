@@ -536,12 +536,7 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 
 ````html
 <label for="nombre">Nombre:</label>
-<input
-  type="text"
-  id="nombre"
-  name="nombre"
-  placeholder="Escribe tu nombre completo"
-/>```
+<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" />```
 ````
 
 ### Input type file
@@ -550,21 +545,14 @@ Y otra linea, es que el hero section, que es la primera seccion de la pagina, se
 > Este se accede mediante `document.querySelector(".nombre").files`
 
 ```html
-<label for="curriculum">Sube tu CV:</label>
-<input type="file" id="curriculum" name="curriculum" />
+<label for="curriculum">Sube tu CV:</label> <input type="file" id="curriculum" name="curriculum" />
 ```
 
 ### Input type text area
 
 ```html
 <label for="mensaje">Mensaje:</label>
-<textarea
-  id="mensaje"
-  name="mensaje"
-  rows="4"
-  cols="50"
-  placeholder="Escribe tu mensaje aquí..."
-></textarea>
+<textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
 ```
 
 ### Input type select
@@ -732,14 +720,8 @@ Donde con ayuda de unos scripts, tendremos una etiqueta personalizada
 
 ```html
 <!-- VAN DENTRO DEL HEAD -->
-<script
-  type="module"
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-></script>
-<script
-  nomodule
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 ```
 
 Y asi obtenemos uso de esta etiqueta
@@ -766,14 +748,8 @@ Donde con ayuda de unos scripts, tendremos una etiqueta personalizada
 
 ```html
 <!-- VAN DENTRO DEL HEAD -->
-<script
-  type="module"
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-></script>
-<script
-  nomodule
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 ```
 
 Y asi obtenemos uso de esta etiqueta
@@ -909,15 +885,10 @@ También es común, tener una linea con la persona que hizo o dijo el testimonio
 ```html
 <div class="testimonials">
   <figure class="testimonial">
-    <img
-      class="testimonial-img"
-      src="img/customers/dave.jpg"
-      alt="Photo of customer Dave Bryson"
-    />
+    <img class="testimonial-img" src="img/customers/dave.jpg" alt="Photo of customer Dave Bryson" />
 
     <blockquote class="testimonial-text">
-      Inexpensive, healthy and great-tasting meals, without even having to order
-      manually! It feels truly magical.
+      Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.
     </blockquote>
   </figure>
   <p class="testimonial-name" &mdash;>Dave Bryson</p>
@@ -973,3 +944,54 @@ Podemos ocultarlo, ponerlos en un scroll, etc
 ## Building the Pricing Section - Part 1
 
 Hacemos uso de la ley de proximidad y la visual hierarchy
+
+## Building the Pricing Section - Part 2
+
+Siempre debemos asegurarnos que el size en cards y en elementos iguales repetidos sea el mismo, para evitar conflictos con el size y el responsive
+
+```css
+.pricing-plan--starter {
+  justify-self: end;
+  /* box-shadow: inset 0 0 0 2px #fdf2e9; */
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+}
+```
+
+También, para poner una cinta tipo **Best value**, podemos hacer un rotate
+El rotate se puede usar con transform y filter, filter es para las imágenes, mientras que transform para los elementos
+
+```css
+.pricing-plan--complete::before {
+  content: "Best value";
+  transform: rotate(45deg);
+}
+```
+
+También, siempre podemos modificar las propiedades generales en orden para poner cosas automáticas, por ejemplo el espacio entre elementos de forma vertical
+
+```css
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+
+  margin-bottom: 9.6rem;
+}
+
+.grid:last-child {
+  margin-bottom: 0; /* ATENCIÓN */
+}
+```
+
+Cuando grid sea el ultimo elemento de un padre, su `margin-bottom` sera 0
+
+También lo podemos hacer de otra forma, usando la pseudo clase `not`
+
+```css
+.gird:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+```
+
+Aquí le estamos diciendo **cuando no sea el ultimo elemento, agrega este `margin-bottom`**
