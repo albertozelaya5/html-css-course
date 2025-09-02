@@ -988,6 +988,8 @@ Cuando grid sea el ultimo elemento de un padre, su `margin-bottom` sera 0
 
 También lo podemos hacer de otra forma, usando la pseudo clase `not`
 
+## The not pseudo class
+
 ```css
 .gird:not(:last-child) {
   margin-bottom: 9.6rem;
