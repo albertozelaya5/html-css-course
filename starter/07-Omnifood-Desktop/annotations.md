@@ -1281,3 +1281,58 @@ Podemos poner anchors especiales, que al darles click, ya sea hagan una llamada 
 ```
 
 Usando esos dos prefijos `mailto:`, `tel:` y poniendo su valor correspondiente
+
+## Building the Footer - Part 2
+
+> [!TIP]
+> Al usar un flexBox, podemos usar margin para crear una separation adecuada
+
+```css
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+```
+
+Al poner un `margin-top`, mandaremos todo el espacio restante hacia la direction donde existe ese espacio, en este caso abajo
+
+```css
+.copyright {
+  margin-top: auto;
+}
+```
+
+Ya que tienen como padre a un elemento grid, cuya altura es mas de la que abarcan, entonces el `margin` es una forma de manejar ese espacio
+
+Funciona tanto horizontal como vertical
+
+---
+
+### margin: auto
+
+- Se aplica hacia afuera del elemento (espacio entre el elemento y su padre).
+
+- En Flexbox y Grid, margin: auto absorbe el espacio libre disponible en la dirección permitida.
+
+Mientras que
+
+### padding
+
+- Se aplica hacia adentro del elemento padre.
+- Define el espacio entre el borde del padre y su contenido.
+- No puede absorber espacio libre dinámicamente.
+- El padding siempre suma un valor fijo que tú defines, no se reparte como margin: auto., NO hay concepto de auto en padding ❌
+
+---
+
+Otro truco que tenemos con el padding y margin
+
+```css
+.section-cta {
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* top / horizontal / bottom */
+  padding: 4.8rem 0 12.8rem;
+}
+```
