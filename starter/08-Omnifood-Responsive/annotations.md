@@ -64,3 +64,72 @@ Poner los breakpoints cuando el design breaks down, en esta estrategia podemos i
 Y tratar de hacerlo sin pensar en dispositivos, ahora, es complicado hacerlo sin pensar en dispositivos, como esto sera para phone, tablets, etc
 
 Asi que, vamos a utilizar esta estrategia, en conjunto con la good strategy
+
+## Responding to Small Laptops
+
+Antes de hacer responsive design, SIEMPRE debemos fijarnos que exista esta linea en nuestro html
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+Lo que le navegador hace por defecto, es que en dispositivos mobiles reducirán la pagina hasta que se ajuste a la pantalla
+
+- Lo que hace esa linea es encargase de que la pagina se ajuste al ancho de la pantalla
+- El ancho sera igual al ancho del dispositivo
+- Y la escala inicial sera del 100%
+
+Lo que hace esa linea, es que no se reducirá para adaptarse a la pantalla
+
+Ahora, tampoco debemos usar pixeles en media queries, asi como no debemos usarlos en nuestros diseños
+La razón? al usar pixeles, no se ajustara a la font-size setting en el navegador, y tampoco al nivel de zoom del usuario
+
+Es por ello que usamos REM, ya que rem se adapta mediante el size del elemento root (en este caso el html), al diferente font size y zoom level que estableció el usuario en su navegador
+
+```css
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+}
+```
+
+> [!IMPORTANT]
+> Aunque, en los media queries no se tomara el font size del html, sino que sera siempre por defecto el font size del navegador, o sea 1rem === 16px en media queries
+
+### Que es em?
+
+Es básicamente, el font-size del elemento padre inmediato, mientras que rem el del elemento raíz (html)
+
+Aunque, si no se declara font-size en el padre (por ejemplo en media queries), tomara el ancestro mas cercano, o sino font size del navegador por defecto (16 px)
+
+Por especificación, en media queries, em y rem se calculan siempre respecto al font-size inicial del navegador (generalmente 16px), no respecto a lo que pusiste en tu html
+
+```css
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+```
+
+En pantallas pequeñas, ahora 1em = 14px, porque hereda el nuevo valor de html
+
+La razón por la que lo mencionamos, es que rem tiene algunos fallos en algunos navegadores cuando se usa en media queries, por ello usaremos em
+
+Luego, como queremos comenzar con una res de laptops small tipo 1366px, establecemos un valor entre 1300px y 1366px
+
+```css
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+}
+```
+
+Dentro del layout, em y rem siguen tu html { font-size }.
+
+Tampoco es bueno añadir 20 media queries, no es una buena practica, lo mejor es ir ajustando y arreglando el diseño a medida vamos reduciendo el tamaño y algo se va rompiendo
+
+Y lo mismo pero al contrario si comenzamos desde dispositivos mobiles, todo el código escrito seria para mobiles, y a medida incrementemos el size pondríamos media queries con `min-width`, para ajustar el size desde arriba hasta un punto
