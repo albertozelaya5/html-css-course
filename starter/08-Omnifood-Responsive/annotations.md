@@ -185,3 +185,21 @@ De la misma forma el whitespace, si es necesario aumentarlo en ciertos casos en 
   margin-top: 1.2rem;
 }
 ```
+
+## Building the Mobile Navigation
+
+Podemos seleccionar un elemento basado en atributos, por ejemplo
+
+```html
+<ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+<ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+```
+
+Teniendo este código, quiero seleccionar el cual, el attribute "name" sea igual a "menu-outline"
+
+```css
+.icon-mobile-nav[name="menu-outline"] {
+}
+```
+
+De esta forma `[atributo="valor"]`
