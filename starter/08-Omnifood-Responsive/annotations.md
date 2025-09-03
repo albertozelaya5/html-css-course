@@ -133,3 +133,22 @@ Dentro del layout, em y rem siguen tu html { font-size }.
 Tampoco es bueno añadir 20 media queries, no es una buena practica, lo mejor es ir ajustando y arreglando el diseño a medida vamos reduciendo el tamaño y algo se va rompiendo
 
 Y lo mismo pero al contrario si comenzamos desde dispositivos mobiles, todo el código escrito seria para mobiles, y a medida incrementemos el size pondríamos media queries con `min-width`, para ajustar el size desde arriba hasta un punto
+
+## Responding to Landscape Tablets
+
+Usualmente esta resolución de tablets grandes suele ser de 1200px, que convertido a 16px seria 75em
+
+```css
+@media (max-width: 75em) {
+  html {
+    /* 8 / 16 =>  0.5 *100 = 50% */
+    font-size: 56.25%;
+  }
+}
+```
+
+Ahora, tenemos la GRAN ventaja, que al usar rem units, al solo modificar el elemento root(html), cambiara todo el documento, ya que casi todo hemos definido su size usando estas unidades
+
+Y nuevamente, siempre sacamos el porcentaje a partir del font size del navegador, para que se ajuste al hacerlo el font size
+
+Entonces, en esta resolution cambiara todo lo definido con `rem`, aun asi hay particularidades del diseño que necesitan ser cambiadas
