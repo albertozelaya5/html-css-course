@@ -152,3 +152,36 @@ Ahora, tenemos la GRAN ventaja, que al usar rem units, al solo modificar el elem
 Y nuevamente, siempre sacamos el porcentaje a partir del font size del navegador, para que se ajuste al hacerlo el font size
 
 Entonces, en esta resolution cambiara todo lo definido con `rem`, aun asi hay particularidades del diseño que necesitan ser cambiadas
+
+## Responding to Tablets
+
+Como norma general, un media query, debería funcionar en un rango al menos de 200px o 300px
+
+Siempre debemos de fijarnos en que rango de resolution se rompe nuestro diseño y escoger algo un pelin mas alto, no poner a lo tonto 900px, 600px etc
+
+Por ejemplo ahorita que lo ponemos en 944px, debe funcionar mínimo hasta los 700px mas o menos
+
+Lo demás es irse fijando, en estas resoluciones mas pequeñas, cuando usamos diferentes flex y grids, como acomodarlos en un espacio reducido, ya sea si es necesario replantear las dimensiones
+
+```css
+.cta {
+  /* 3/5 = 60% + 2/5 = 40% */
+  grid-template-columns: 3fr 2fr;
+}
+```
+
+O si es mejor dividirlos en una sola columna
+
+```css
+.cta-form {
+  grid-template-columns: 1fr;
+}
+```
+
+De la misma forma el whitespace, si es necesario aumentarlo en ciertos casos en orden para entender la proximidad de cada elemento
+
+```css
+.btn--form {
+  margin-top: 1.2rem;
+}
+```
