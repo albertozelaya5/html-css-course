@@ -203,3 +203,102 @@ Teniendo este código, quiero seleccionar el cual, el attribute "name" sea igual
 ```
 
 De esta forma `[atributo="valor"]`
+
+Si no se establece ningún padre como `relative` se toma el viewport, que en este caso se pega el elemento al html
+
+```css
+.main-nav {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+```
+
+Ahora como este elemento hace de padre al `html`, si ponemos el `width: 100%`, ocupara el 100% de este padre, pero siempre es NECESARIO poner un padre en `position: relative`, en este caso su padre inmediato
+
+```css
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+}
+```
+
+Ya que haremos por defecto este menu a la izquierda, para meterle una animación, y en este caso ocultar los elementos desbordantes horizontalmente
+
+> [!NOTE]
+> Cuando ponemos `display: none`, no podemos hacer animaciones con ello
+> Por lo que, al volverlo visible no se verán transiciones
+
+### Entonces, como ocultar un elemento sin display none
+
+- Primero, debemos establecer su opacidad a 0, para que no sea visible
+- Luego, deshabilitarlo de los tabs y los eventos del teclado y mouse - `pointer-events: none`, de no hacerlo seguirá siendo accesible
+- Por ultimo, desactivarlo de los lectores y narradores de pantalla - `visibility: hidden`
+
+```css
+.main-nav {
+  /* 1 - Hide it visually */
+  opacity: 0;
+
+  /* 2 - Make it unaccessible to mouse and keyboard */
+  pointer-events: none;
+
+  /* 3 - Hide it from screen readers */
+  visibility: hidden;
+}
+```
+
+Ahora, lo que usaremos es una clase opcional, que al darle click a un elemento la adicione
+
+```css
+.nav-open .main-nav {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+}
+```
+
+Asi, solo si la clase `nav-open` existe, el hijo que este dentro de ella tendrá esa propiedad
+
+Y cuando se active, ocupamos volver a las propiedades a sus estados iniciales
+
+```css
+.nav-open .main-nav {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+```
+
+Lo mismo con el close icon, solo si existe la clase `nav-open`
+
+```css
+.nav-open .icon-mobile-nav[name="close-outline"] {
+  display: block;
+}
+```
+
+---
+
+Estas animaciones, lo mas preferible es usar propiedades como `transform` y `opacity`, ya que están optimizadas para producir animaciones a comparación de las otras
+
+## Transitions - animations
+
+Por ultimo, tenemos la tercera propiedad de transitions, que es el tipo de animación
+
+```css
+.main-nav {
+  transition: all 0.4s ease-in;
+}
+```
+
+Si no le aplicamos nada, por defecto la transition es `linear`, pero podemos poner una transition curve
+
+Por ejemplo, `ease-in` significa que inicia lento, y se mueve rápido en el final, y lo contrario con `ease-out`
