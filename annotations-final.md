@@ -1055,16 +1055,19 @@ Ahora, si el valor es solo un numero de distancia del primer valor, se puede omi
 
 Ahora, si el valor de distancia final es mas de uno, abarcara hasta el `track`(espacio) especificado
 
-> Span keyword
+> Span keyword - CSS Grid
 
-```
+```css
 .el--2 {
   grid-column: 1 / span 3;
   grid-row: 2 / 4;
+  /* grid-column: span 2; */
 }
 ```
 
 Con esto, nos dejamos de tanta matemática ya que le decimos _expande este elemento tres veces, tres celdas_
+
+Span es como decir => Abarca hasta este numero de cols o rows
 
 > Expandir por toda la columna
 

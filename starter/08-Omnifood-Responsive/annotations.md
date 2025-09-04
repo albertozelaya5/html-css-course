@@ -249,7 +249,7 @@ Ya que haremos por defecto este menu a la izquierda, para meterle una animación
   /* 2 - Make it unaccessible to mouse and keyboard */
   pointer-events: none;
 
-  /* 3 - Hide it from screen readers */
+  /* 3 - Hide it from screen readers, tampoco ocupa espacio en el layout */
   visibility: hidden;
 }
 ```
@@ -302,3 +302,29 @@ Por ultimo, tenemos la tercera propiedad de transitions, que es el tipo de anima
 Si no le aplicamos nada, por defecto la transition es `linear`, pero podemos poner una transition curve
 
 Por ejemplo, `ease-in` significa que inicia lento, y se mueve rápido en el final, y lo contrario con `ease-out`
+
+## Responding to Smaller Tablets
+
+Ahora en resoluciones todavía mas pequeñas, en lugar de cambiar muchas lineas, solo adaptamos las que ya están
+
+```css
+/* 704 / 16 = 44em */
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+```
+
+Asi en lugar de cambiar y agregar muchas clases, con una sola linea adaptamos gran parte del diseño
+
+> [!NOTE]
+
+```css
+/* distribuye el grid completo en el espacio horizontal */
+justify-content: space-between;
+
+/* alinea los ítems dentro de cada celda */
+justify-items: center;
+```
