@@ -328,3 +328,32 @@ justify-content: space-between;
 /* alinea los ítems dentro de cada celda */
 justify-items: center;
 ```
+
+## Responding to Phones
+
+En resoluciones para phones, los botones pueden ir en un size reverso, o sea, mas altos que anchos, para que sea mas fácil interactuar con ellos
+
+```css
+@media (max-width: 34.5em) {
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+}
+```
+
+> [!TIP]
+> Cuando tenemos varios hijos de un grid o un flex, podemos usar `nth-child` para cambiar su orden
+
+```css
+.step-img-box:nth-child(2) {
+  grid-row: 1;
+}
+
+.step-img-box:nth-child(6) {
+  grid-row: 5;
+}
+```
+
+Lo tenemos casi todo, solo queremos que el navBar se quede sticky cuando se baje, y los botones dirijan hacia las secciones correspondientes, eso lo veremos con Javascript
