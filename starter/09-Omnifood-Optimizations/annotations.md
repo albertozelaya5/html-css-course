@@ -163,3 +163,11 @@ Otra manera de optimizar imágenes, es usando estos atributos, que sirven defini
 ```
 
 Para hacer un deploy a netlify, solo es necesario mover los archivos de la carpeta ahi
+
+## Making the Form Work With Netlify Forms
+
+## Recomendaciones finales
+
+Recrear diseños de otros componentes, layouts que me gusten, twitter o Tesla interface for example
+
+- Advanced CSS, Sass, Jamstack
