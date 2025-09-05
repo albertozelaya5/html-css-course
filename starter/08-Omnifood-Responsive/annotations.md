@@ -357,3 +357,4 @@ En resoluciones para phones, los botones pueden ir en un size reverso, o sea, ma
 ```
 
 Lo tenemos casi todo, solo queremos que el navBar se quede sticky cuando se baje, y los botones dirijan hacia las secciones correspondientes, eso lo veremos con Javascript
+
