@@ -909,6 +909,19 @@ Comenzamos por las columnas, con la propiedad `grid-template-columns`, mientras 
 }
 ```
 
+> [!TIP]
+> Para auto calcular las columns
+
+```css
+.grid {
+  grid-template-columns: repeat(auto-fill, 12.8rem);
+}
+```
+
+- Cada columna mide 12.8rem.
+- El navegador calcula cuántas de esas columnas caben en el ancho del grid.
+- Va a llenar el espacio con tantas columnas fijas como pueda.
+
 > grid-template-rows
 
 Luego de ello, se crearan automáticamente las filas para agrupar todo el contenido(todos los hijos).
