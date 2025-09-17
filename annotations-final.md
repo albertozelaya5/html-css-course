@@ -4500,3 +4500,205 @@ Para hacer un deploy a netlify, solo es necesario mover los archivos de la carpe
 Recrear diseños de otros componentes, layouts que me gusten, twitter o Tesla interface for example
 
 - Advanced CSS, Sass, Jamstack
+
+## Specificity
+
+Podemos pensar en la especifidad como un conjunto de puntos que otorga cada selector, y los que en conjunto suman mas, prevalecen
+
+La especificidad constra de tres componentes: A, B y C.
+
+- A: Especificidad similar a un ID
+- B: Especificidad similar a la clase
+- C: Especificidad similar a un elemento
+
+A menudo, se representa con la notación (A,B,C). Por ejemplo: (1,0,2). También se usa con frecuencia la notación alternativa A-B-C.
+
+Para comparar las especificidades, se comparan los tres componentes en orden: la especificidad con un valor A más alto es más específica; si los dos valores A están empatados, la especificidad con un valor B más alto es más específica; si los dos valores B también están empatados, la especificidad con un valor C más alto es más específica; si todos los valores están empatados, las dos especificidades son iguales.
+
+Por ejemplo, (1,0,0) se considera una especificidad más alta que (0,4,3) porque el valor de A en (1,0,0) (que es 1) es mayor que el valor de A de (0,4,3) (que es 0).
+
+### Universal selector
+
+Un selector universal (\*) no agrega especificidad, por lo que su valor se mantiene en la especificidad inicial de (0,0,0).
+
+```css
+* {
+  color: red;
+}
+```
+
+### Selector de elemento o pseudoelemento
+
+Un selector de elemento (tipo) o pseudoelemento agrega especificidad similar a un elemento, que incrementa el componente C en 1.
+
+```css
+div {
+  color: red;
+}
+
+::selection {
+  color: red;
+}
+```
+
+### Selector de clase, pseudoclase o atributo
+
+Un selector de clase, pseudoclase o atributo agrega especificidad similar a la clase, que incrementa el componente B en 1.
+
+```css
+.my-class {
+  color: red;
+}
+
+:hover {
+  color: red;
+}
+
+[href="#"] {
+  color: red;
+}
+```
+
+### ID selector
+
+Un selector de ID agrega especificidad similar a un ID, que incrementa el componente A en 1, siempre y cuando uses un selector de ID (#myID) y no un selector de atributos ([id="myID"]).
+
+```css
+#myID {
+  color: red;
+}
+```
+
+### Otros selectores
+
+CSS tiene muchos selectores. No todos agregan especificidad. Por ejemplo, la pseudoclase :not() en sí no agrega nada al cálculo de especificidad.
+
+Sin embargo, los selectores que se pasan como argumentos se agregan al cálculo de especificidad.
+
+```css
+div:not(.my-class) {
+  color: red;
+}
+
+:is(h1, h2, h3) {
+  color: blue;
+}
+
+:is(h1, h2, h3, #my-heading) {
+  color: blue;
+}
+```
+
+Independientemente de la especificidad de cualquiera de sus argumentos, siempre tiene una especificidad de (0,0,0)
+
+```css
+:where(h1, h2, h3, #my-heading) {
+  color: blue;
+}
+```
+
+### !important
+
+Un !important al final de una declaración de CSS no afecta la especificidad, pero coloca la declaración en un origen diferente, es decir, !important de autor.
+
+Cuando dos declaraciones son !important, la especificidad vuelve a entrar en juego, ya que el paso de origen de la cascada aún no pudo determinar el ganador.
+
+```css
+.branding {
+  color: blue !important;
+}
+
+button {
+  color: red !important;
+}
+```
+
+En este caso, la cascada recurre a el paso de orden de aparición, en caso ambos tengan la misma especificidad
+
+```css
+[onclick] {
+  background: grey;
+}
+
+.my-button {
+  background: blue;
+}
+```
+
+Se apliara el azul
+
+## Selectores de atributos en CSS
+
+1. [atributo]
+
+Selecciona elementos que tengan ese atributo, sin importar su valor
+
+```css
+input[required] {
+  border: 2px solid red;
+}
+```
+
+2. [atributo="valor"]
+
+Selecciona elementos cuyo atributo sea exactamente ese valor.
+
+```css
+a[target="_blank"] {
+  color: blue;
+}
+```
+
+3. [atributo~="valor"]
+
+Selecciona elementos cuyo atributo contenga esa palabra en una lista separada por espacios.
+
+👉 Selecciona lang="en" o lang="en-US".
+
+```css
+div[class~="card"] {
+  border: 1px solid gray;
+}
+```
+
+4. [atributo|="valor"]
+
+Selecciona elementos cuyo atributo sea exactamente valor o empiece con valor-.
+
+```css
+p[lang|="en"] {
+  color: green;
+}
+```
+
+5. [atributo^="valor"]
+
+Selecciona elementos cuyo atributo empiece con cierto valor.
+
+```css
+a[href^="https://"]
+{
+  font-weight: bold;
+}
+```
+
+6. [atributo$="valor"]
+
+Selecciona elementos cuyo atributo termine con cierto valor.
+
+```css
+img[src$=".png"] {
+  border: 2px solid orange;
+}
+```
+
+7. [atributo*="valor"]
+
+Selecciona elementos cuyo atributo contenga cierta cadena en cualquier parte.
+👉 Selecciona cualquier enlace que tenga "google" en su URL.
+
+```css
+a[href*="google"] {
+  color: red;
+}
+```
