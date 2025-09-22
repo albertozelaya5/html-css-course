@@ -4702,3 +4702,10 @@ a[href*="google"] {
   color: red;
 }
 ```
+
+Remover un elemento, este metodo y `remove()`
+
+```js
+var elementToRemove = document.getElementById("myElementId");
+elementToRemove.parentNode.removeChild(elementToRemove);
+```
