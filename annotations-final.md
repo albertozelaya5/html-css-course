@@ -909,6 +909,19 @@ Comenzamos por las columnas, con la propiedad `grid-template-columns`, mientras 
 }
 ```
 
+> [!TIP]
+> Para auto calcular las columns
+
+```css
+.grid {
+  grid-template-columns: repeat(auto-fill, 12.8rem);
+}
+```
+
+- Cada columna mide 12.8rem.
+- El navegador calcula cuántas de esas columnas caben en el ancho del grid.
+- Va a llenar el espacio con tantas columnas fijas como pueda.
+
 > grid-template-rows
 
 Luego de ello, se crearan automáticamente las filas para agrupar todo el contenido(todos los hijos).
@@ -1239,7 +1252,6 @@ Las diferentes reglas de como sera la página, dependerán del estilo que se des
 - No center long text blocks. Small blocks are fine
 
   > En sans serif
-
   - inter
   - open sans
   - roboto
@@ -1248,7 +1260,6 @@ Las diferentes reglas de como sera la página, dependerán del estilo que se des
   - Lato
 
   > En serif
-
   - Merriweather
   - Aleo
   - Playfair Display
@@ -1784,12 +1795,10 @@ Cuando estemos escogiendo la personalidad de nuestro diseño: How do you want we
 Apply personality traits to each design ingredient = Typography, colors, images, icons, shadows, border-radius, layout
 
 - `Serious/Elegant`: Real estate,high fashion, jewelry, luxury products or services
-
   - Para mostrar luxury and elegance, based on thin serif typefaces, golden or pastel colors, ang big high-quality images
     No usa shadows ni border radius
 
   > Ingredients:
-
   - Typography - Serif typefaces(especially in headings), light - font weight, small body font size
   - Colors - Gold, pastel colors, black, dark blue or grey
   - Images - Big, high-quality images are used to feature - elegant and expensive products
@@ -1799,11 +1808,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Layout - A creative and experimental layout is quite common
 
 - `Minimalist/Simple`: Fashion, portfolios, minimalism companies, software startups
-
   - Focusses on the essential text content, using small or medium-sized sans-serif black text, lines, and few-images and small icons
 
   > Ingredients:
-
   - Typography - Boxy/squared sans-serif typefaces, small body font sizes - Si se usara un accent podría ser un font diferente(serif)
   - Colors - Usually black or dark grey, on pure white background. Usually just one color throughout the design
   - Images - Few images, which can be used to add some color to the design. Usually no illustrations(especially not 3d), but if, than just black
@@ -1813,11 +1820,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Layout - Simple layout, a narrow one-column layout is quite common
 
 - `Plain/Neutral`: Well-established corporations, companies that don't want to make an impact through design
-
   - Design that gets out of the way by using neutral ans small typefaces, and very structured layout. Common in big corporations
 
   > Ingredients:
-
   - Typography - Boxy/squared sans-serif typefaces, small body font sizes - Si se usara un accent podría ser un font diferente(serif)
   - Colors - Neutral-looking sans-serif typefaces are used, and text is usually small and doesn't have visual impact
   - Images - Images are frequently used, but usually in a small format, tal vez solo en el header una big image
@@ -1827,11 +1832,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Layout - Structured and condensed layout, with lots of boxes and rows
 
 - `Bold/Confident`: Digital agencies, software startups, travel, "strong" companies
-
   - Makes and impact, by featuring big and bold typography, paired with confident use of big colored blocks
 
   > Ingredients:
-
   - Typography - Boxy/squared sans-serif typefaces, big and bold typography, especially headings. Uppercase headings are common
   - Colors - Usually multiple bright colors. Big color blocks/sections are used to draw attention
   - Images - Lots of big images are usually displayed
@@ -1841,11 +1844,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Layout - All kinds of layouts, no particular tendencies
 
 - `Calm/Peaceful`: Healthcare, all products with focus on consumer well-being
-
   - For products and services that care, transmitted by calming pastel colors, soft serif headings, and matching images/illustrations
 
   > Ingredients:
-
   - Typography - Soft serif typefaces frequently used for headings, but sans-serif headings might be used too(ex, for software products)
   - Colors - Pastel/washed-out colors: light oranges, yellows, browns, greens, blues
   - Images - Images and illustrations are usual(lot ot people in there), matching with calm color palette in their photos
@@ -1855,13 +1856,11 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Layout - All kinds of layouts, no particular tendencies
 
 - `Startup/Upbeat`: Software startups, and other modern-looking companies
-
   - Widely used in startups, featuring medium-sized sans-serif typeface,s light-grey text and backgrounds, and rounded elements
 
   Usa shadows y border radius
 
   > Ingredients:
-
   - Typography - Medium-sized headings(not too large), usually one sans-serif typeface in whole design. Tendency for lighter text colors
   - Colors - Blues, greens and purples are widely used. Lots of light backgrounds(mainly gray), gradients are also common
   - Images - Images or illustrations are always used. 3D illustrations are modern. Sometimes patterns and shapes add visual details
@@ -1871,11 +1870,9 @@ Apply personality traits to each design ingredient = Typography, colors, images,
   - Layout - Rows of cards, rows of product features and Z-patterns are usual, as well as animations
 
 - `Playful/Fun`: Colorful Child products, animal products, food
-
   - Colorful and round designs, fueled by creative elements like hand-drawn icons or illustrations, animations and fun language
 
   > Ingredients:
-
   - Typography - Round and creative(ex handwritten) sans-serif typefaces are frequent. Centered text is more common
   - Colors - Multiple colors are frequently used to design a colorful layout, all over backgrounds and text
   - Images - Images, hand-drawn (or 3D) illustrations, and geometric shapes and patterns are all very frequently used
@@ -3692,8 +3689,8 @@ Otra cosa que podemos hacer es poner una imagen con una sombra, tipo una imagen 
 
 ```css
 .cta-img-box {
-  background-image: linear-gradient(to right bottom, rgba(235, 151, 78, 0.35), rgba(230, 125, 34, 0.35)),
-    url("../img/eating.jpg");
+  background-image:
+    linear-gradient(to right bottom, rgba(235, 151, 78, 0.35), rgba(230, 125, 34, 0.35)), url("../img/eating.jpg");
 }
 ```
 
@@ -4487,3 +4484,242 @@ Para hacer un deploy a netlify, solo es necesario mover los archivos de la carpe
 Recrear diseños de otros componentes, layouts que me gusten, twitter o Tesla interface for example
 
 - Advanced CSS, Sass, Jamstack
+
+## Specificity
+
+Podemos pensar en la especifidad como un conjunto de puntos que otorga cada selector, y los que en conjunto suman mas, prevalecen
+
+La especificidad constra de tres componentes: A, B y C.
+
+- A: Especificidad similar a un ID
+- B: Especificidad similar a la clase
+- C: Especificidad similar a un elemento
+
+A menudo, se representa con la notación (A,B,C). Por ejemplo: (1,0,2). También se usa con frecuencia la notación alternativa A-B-C.
+
+Para comparar las especificidades, se comparan los tres componentes en orden: la especificidad con un valor A más alto es más específica; si los dos valores A están empatados, la especificidad con un valor B más alto es más específica; si los dos valores B también están empatados, la especificidad con un valor C más alto es más específica; si todos los valores están empatados, las dos especificidades son iguales.
+
+Por ejemplo, (1,0,0) se considera una especificidad más alta que (0,4,3) porque el valor de A en (1,0,0) (que es 1) es mayor que el valor de A de (0,4,3) (que es 0).
+
+### Universal selector
+
+Un selector universal (\*) no agrega especificidad, por lo que su valor se mantiene en la especificidad inicial de (0,0,0).
+
+```css
+* {
+  color: red;
+}
+```
+
+### Selector de elemento o pseudoelemento
+
+Un selector de elemento (tipo) o pseudoelemento agrega especificidad similar a un elemento, que incrementa el componente C en 1.
+
+```css
+div {
+  color: red;
+}
+
+::selection {
+  color: red;
+}
+```
+
+### Selector de clase, pseudoclase o atributo
+
+Un selector de clase, pseudoclase o atributo agrega especificidad similar a la clase, que incrementa el componente B en 1.
+
+```css
+.my-class {
+  color: red;
+}
+
+:hover {
+  color: red;
+}
+
+[href="#"] {
+  color: red;
+}
+```
+
+### ID selector
+
+Un selector de ID agrega especificidad similar a un ID, que incrementa el componente A en 1, siempre y cuando uses un selector de ID (#myID) y no un selector de atributos ([id="myID"]).
+
+```css
+#myID {
+  color: red;
+}
+```
+
+### Otros selectores
+
+CSS tiene muchos selectores. No todos agregan especificidad. Por ejemplo, la pseudoclase :not() en sí no agrega nada al cálculo de especificidad.
+
+Sin embargo, los selectores que se pasan como argumentos se agregan al cálculo de especificidad.
+
+```css
+div:not(.my-class) {
+  color: red;
+}
+
+:is(h1, h2, h3) {
+  color: blue;
+}
+
+:is(h1, h2, h3, #my-heading) {
+  color: blue;
+}
+```
+
+Independientemente de la especificidad de cualquiera de sus argumentos, siempre tiene una especificidad de (0,0,0)
+
+```css
+:where(h1, h2, h3, #my-heading) {
+  color: blue;
+}
+```
+
+### !important
+
+Un !important al final de una declaración de CSS no afecta la especificidad, pero coloca la declaración en un origen diferente, es decir, !important de autor.
+
+Cuando dos declaraciones son !important, la especificidad vuelve a entrar en juego, ya que el paso de origen de la cascada aún no pudo determinar el ganador.
+
+```css
+.branding {
+  color: blue !important;
+}
+
+button {
+  color: red !important;
+}
+```
+
+En este caso, la cascada recurre a el paso de orden de aparición, en caso ambos tengan la misma especificidad
+
+```css
+[onclick] {
+  background: grey;
+}
+
+.my-button {
+  background: blue;
+}
+```
+
+Se apliara el azul
+
+## Selectores de atributos en CSS
+
+1. [atributo]
+
+Selecciona elementos que tengan ese atributo, sin importar su valor
+
+```css
+input[required] {
+  border: 2px solid red;
+}
+```
+
+2. [atributo="valor"]
+
+Selecciona elementos cuyo atributo sea exactamente ese valor.
+
+```css
+a[target="_blank"] {
+  color: blue;
+}
+```
+
+3. [atributo~="valor"]
+
+Selecciona elementos cuyo atributo contenga esa palabra en una lista separada por espacios.
+
+👉 Selecciona lang="en" o lang="en-US".
+
+```css
+div[class~="card"] {
+  border: 1px solid gray;
+}
+```
+
+4. [atributo|="valor"]
+
+Selecciona elementos cuyo atributo sea exactamente valor o empiece con valor-.
+
+```css
+p[lang|="en"] {
+  color: green;
+}
+```
+
+5. [atributo^="valor"]
+
+Selecciona elementos cuyo atributo empiece con cierto valor.
+
+```css
+a[href^="https://"] {
+  font-weight: bold;
+}
+```
+
+6. [atributo$="valor"]
+
+Selecciona elementos cuyo atributo termine con cierto valor.
+
+```css
+img[src$=".png"] {
+  border: 2px solid orange;
+}
+```
+
+7. [atributo*="valor"]
+
+Selecciona elementos cuyo atributo contenga cierta cadena en cualquier parte.
+👉 Selecciona cualquier enlace que tenga "google" en su URL.
+
+```css
+a[href*="google"] {
+  color: red;
+}
+```
+
+Remover un elemento, este metodo y `remove()`
+
+```js
+var elementToRemove = document.getElementById("myElementId");
+elementToRemove.parentNode.removeChild(elementToRemove);
+```
+
+### feat: auto block modal
+
+### Como blouqear un modal, y evitar el `display: none`
+
+Usamos una propiedad de Javascript llamada `inert`
+
+> [!TIP]
+> Lo que hace insert es que bloquea todo lo que esta dentro del elemento, en este caso #root
+> elemento: clicks, teclado, focus, scroll.
+
+```jsx
+useEffect(() => {
+  const mainContent = document.querySelector("#root");
+  if (mainContent) mainContent.inert = true;
+
+  return () => {
+    if (mainContent) mainContent.inert = false; // Al desmontar: desbloquea #root
+  };
+}, []); // [] = solo corre al montar y desmontar
+```
+
+Luego, tenemos que hacer que el componente o modal que queremos que aparezca como modal de bloqueo, este fuera del `#root`, para ello usamos `createPortal`
+
+Es un metodo de React que renderiza un componente fuera del arbol de React normal, se usa como si fuera un `memo`
+
+```jsx
+return createPortal(<Componente></Componente>, document.body);
+```
+
+Y como segundo argumento, ponemos a donde lo queremos guardar, en este caso en el `body`
